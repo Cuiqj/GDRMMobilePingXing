@@ -8,7 +8,7 @@
 
 #import "DataSyncController.h"
 #import "OMGToast.h"
-#import "InitBasicData.h"
+//#import "InitBasicData.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 @interface  DataSyncController()<UIAlertViewDelegate>

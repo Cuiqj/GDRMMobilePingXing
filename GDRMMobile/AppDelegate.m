@@ -101,18 +101,18 @@
     //检查版本更新
     NSString *filePath=@"http://124.172.189.177:81/xbyh/app/update.json";
     NSURL *fileUrl=[NSURL URLWithString:filePath];
-    if ([WebServiceHandler isServerReachable]){
-    id Update=[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:fileUrl] options:NSJSONReadingMutableLeaves error:nil];
-        if(  [Update[@"versionNum"] intValue]> [VERSION_NUMBER intValue]){
-            if([Update[@"isMustUpdate"] boolValue]){
-                [[[UIAlertView alloc]initWithTitle:@"版本更新提示" message:Update[@"log"] delegate:self cancelButtonTitle:@"去更新" otherButtonTitles:nil, nil] show];
-            }else{
-                [[[UIAlertView alloc]initWithTitle:@"版本更新提示" message:Update[@"log"] delegate:self cancelButtonTitle:@"不了" otherButtonTitles:@"去更新", nil] show];
-            }
-        }
-    }else{
-      [OMGToast showWithText:@"无法连接服务器，请检查网络连接。" bottomOffset:100 duration:5];
-    }
+//    if ([WebServiceHandler isServerReachable]){
+//    id Update=[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfURL:fileUrl] options:NSJSONReadingMutableLeaves error:nil];
+//        if(  [Update[@"versionNum"] intValue]> [VERSION_NUMBER intValue]){
+//            if([Update[@"isMustUpdate"] boolValue]){
+//                [[[UIAlertView alloc]initWithTitle:@"版本更新提示" message:Update[@"log"] delegate:self cancelButtonTitle:@"去更新" otherButtonTitles:nil, nil] show];
+//            }else{
+//                [[[UIAlertView alloc]initWithTitle:@"版本更新提示" message:Update[@"log"] delegate:self cancelButtonTitle:@"不了" otherButtonTitles:@"去更新", nil] show];
+//            }
+//        }
+//    }else{
+//      [OMGToast showWithText:@"无法连接服务器，请检查网络连接。" bottomOffset:100 duration:5];
+//    }
     
     
     [IQKeyboardManager sharedManager].enable=YES;
@@ -183,9 +183,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     UploadRecord *uploadCheck = [[UploadRecord alloc] init];
     [uploadCheck asyncDel];
-    if([WebServiceHandler isServerReachable]) {
-        [self hasUpdateVersion];
-    }
+    [self hasUpdateVersion];
 }
 //如果有最新版本上传到蒲公英，提示更新
 - (void)hasUpdateVersion{

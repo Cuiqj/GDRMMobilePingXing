@@ -154,36 +154,36 @@
             WAITFORPARSER
             
             //31
-            InitInspection * insPectionData = [[InitInspection alloc] init];
-            [insPectionData downloadInspectionforOrgID:orgID];
-            WAITFORPARSER
-            InitInspectionPath * insPectionpathData = [[InitInspectionPath alloc] init];
-            [insPectionpathData downloadInspectionPathforOrgID:orgID];
-            WAITFORPARSER
-            InitInspectionRecord * insPectionRecordData = [[InitInspectionRecord alloc] init];
-            [insPectionRecordData downloadInspectionRecordforOrgID:orgID];
-            WAITFORPARSER
+//            InitInspection * insPectionData = [[InitInspection alloc] init];
+//            [insPectionData downloadInspectionforOrgID:orgID];
+//            WAITFORPARSER
+//            InitInspectionPath * insPectionpathData = [[InitInspectionPath alloc] init];
+//            [insPectionpathData downloadInspectionPathforOrgID:orgID];
+//            WAITFORPARSER
+//            InitInspectionRecord * insPectionRecordData = [[InitInspectionRecord alloc] init];
+//            [insPectionRecordData downloadInspectionRecordforOrgID:orgID];
+//            WAITFORPARSER
             InitBridgeCheckItem *iInitBridgeCheckItem=[[InitBridgeCheckItem alloc]init];
             [iInitBridgeCheckItem downLoadBridgeCheckItem:orgID];
             WAITFORPARSER
-            InitCaseInfo * caseinfoitem = [[InitCaseInfo alloc] init];
-            [caseinfoitem downLoadcaseinfofortable:@"CaseInfo" withorgID:orgID withtypeID:nil];
+//            InitCaseInfo * caseinfoitem = [[InitCaseInfo alloc] init];
+//            [caseinfoitem downLoadcaseinfofortable:@"CaseInfo" withorgID:orgID withtypeID:nil];
             WAITFORPARSER
-            InitCaseInquire * inquireData = [[InitCaseInquire alloc] init];
-            [inquireData downloadCaseInquireforOrgID:orgID];
-            WAITFORPARSER
-            InitCaseMap * mapData = [[InitCaseMap alloc] init];
-            [mapData downloadCaseMapforOrgID:orgID];
-            WAITFORPARSER
-            InitCitizen * citizenData = [[InitCitizen alloc] init];
-            [citizenData downloadCitizenforOrgID:orgID];
-            WAITFORPARSER
-            InitCaseProveInfo * ProveInfoData = [[InitCaseProveInfo alloc] init];
-            [ProveInfoData downloadCaseProveInfoforOrgID:orgID];
-            WAITFORPARSER
-            InitCaseDeformation * deformationData = [[InitCaseDeformation alloc] init];
-            [deformationData downloadCaseDeformationforOrgID:orgID];
-            WAITFORPARSER
+//            InitCaseInquire * inquireData = [[InitCaseInquire alloc] init];
+//            [inquireData downloadCaseInquireforOrgID:orgID];
+//            WAITFORPARSER
+//            InitCaseMap * mapData = [[InitCaseMap alloc] init];
+//            [mapData downloadCaseMapforOrgID:orgID];
+//            WAITFORPARSER
+//            InitCitizen * citizenData = [[InitCitizen alloc] init];
+//            [citizenData downloadCitizenforOrgID:orgID];
+//            WAITFORPARSER
+//            InitCaseProveInfo * ProveInfoData = [[InitCaseProveInfo alloc] init];
+//            [ProveInfoData downloadCaseProveInfoforOrgID:orgID];
+//            WAITFORPARSER
+//            InitCaseDeformation * deformationData = [[InitCaseDeformation alloc] init];
+//            [deformationData downloadCaseDeformationforOrgID:orgID];
+//            WAITFORPARSER
            
             
             

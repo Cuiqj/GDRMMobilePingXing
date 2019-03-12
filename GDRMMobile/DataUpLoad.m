@@ -388,7 +388,6 @@ static NSString *dataNameArray[UPLOADCOUNT]={@"Project",@"Task",@"AtonementNotic
                     service.delegate=self;
                     [service uploadPhotot:dataXML updatedObject:photo];
                 }
-     
             }
         }else{
             NSString *dataTypeString = [NSClassFromString(currentDataName) complexTypeString];

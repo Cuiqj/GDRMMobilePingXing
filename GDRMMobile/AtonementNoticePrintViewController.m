@@ -402,6 +402,7 @@ static NSString * xmlName = @"AtonementNoticeTable";
     }
 }
 
+//    套打
 -(NSURL *)toFormedPDFWithPath:(NSString *)filePath{
     [self savePageInfo];
     if (![filePath isEmpty]) {
@@ -422,7 +423,7 @@ static NSString * xmlName = @"AtonementNoticeTable";
         
         CaseProveInfo *proveInfo = [CaseProveInfo proveInfoForCase:self.caseID];
         [self drawDateTable:xmlName withDataModel:proveInfo];
-        
+        [self drawStaticTable1:xmlName];
         UIGraphicsEndPDFContext();
         return [NSURL fileURLWithPath:formatFilePath];
     } else {

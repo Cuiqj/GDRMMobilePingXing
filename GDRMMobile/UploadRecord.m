@@ -29,7 +29,6 @@
         if (![findStr isEmpty]) {
             NSMutableDictionary *content = [NSMutableDictionary dictionary];
             [content setObject:tableName forKey:@"tableName"];
-            
             [content setObject:findStr forKey:@"findStr"];
             [_fileListArray addObject:content];
         }

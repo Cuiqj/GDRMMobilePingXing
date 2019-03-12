@@ -222,7 +222,7 @@ self.labelPhotoIndex.alpha  = 1.0;\
 
     [super viewDidLoad];
     [self setUpForDismissKeyboard];
-    [self addleftofRightBarButton];
+//    [self addleftofRightBarButton];
     
     // Do any additional setup after loading the view.
     self.navigationItem.title=@"保险案件";

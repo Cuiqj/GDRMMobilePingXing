@@ -63,7 +63,7 @@
 InspectionCheckState inspectionState;
 
 - (void)viewDidLoad{
-    [self addleftofRightBarButton];
+//    [self addleftofRightBarButton];
     
     self.state               = kRecord;
     UIFont *segFont          = [UIFont boldSystemFontOfSize:14.0f];

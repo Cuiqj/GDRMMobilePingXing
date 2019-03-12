@@ -202,7 +202,7 @@ BOOL _wasKeyboardManagerEnabled;
 }
 - (void)viewDidLoad{
 //    [self initWithControl];
-    [self addleftofRightBarButton];
+//    [self addleftofRightBarButton];
 
     [self.docListView setHidden:YES];
     [[AipOcrService shardService] authWithAK:@"tHCvUMcIvtGzc3S6jPVbDXcv" andSK:@"Cif4vhWMz6s7T2ELVe4tEoEbLKTuQtsG"];

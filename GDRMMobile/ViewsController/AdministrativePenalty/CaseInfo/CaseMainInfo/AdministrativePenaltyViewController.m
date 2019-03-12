@@ -154,7 +154,7 @@ BOOL _wasKeyboardManagerEnabled;
 
 - (void)viewDidLoad{
     [CaseInfo deleteEmptyCaseInfo];//删除无用的案件数据
-    [self addleftofRightBarButton];
+//    [self addleftofRightBarButton];
     self.textRoadSegment.font = [UIFont systemFontOfSize:10];
     [super viewDidLoad];
     
