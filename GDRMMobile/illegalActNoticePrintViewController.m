@@ -150,7 +150,8 @@ static NSString * xmlName = @"illegalActNotice";
     CaseProveInfo *proveInfo = [CaseProveInfo proveInfoForCase:self.caseID];
     if ([proveInfo.event_desc isEmpty] || proveInfo.event_desc == nil) {
         //proveInfo.event_desc = [CaseProveInfo generateEventDescForCase:self.caseID];
-        proveInfo.event_desc = [CaseProveInfo generateEventDescForNotices:self.caseID];
+        
+        proveInfo.event_desc = [[CaseProveInfo generateEventDescForNotices:self.caseID] componentsSeparatedByString:@"人员伤亡和车辆损坏"][0];;
     }
     NSDateFormatter *codeFormatter = [[NSDateFormatter alloc] init];
     [codeFormatter setDateFormat:@"yyyyMM'0'dd"];
@@ -160,7 +161,7 @@ static NSString * xmlName = @"illegalActNotice";
     //notice.case_desc = [proveInfo.event_desc substringFromIndex:range.location+1];
     //notice.case_desc = [@"于" stringByAppendingString:[proveInfo.event_desc substringFromIndex:range.location+1]];
     
-    notice.case_desc =[CaseProveInfo generateEventDescForNotices:self.caseID];
+    notice.case_desc =proveInfo.event_desc = [[CaseProveInfo generateEventDescForNotices:self.caseID] componentsSeparatedByString:@"人员伤亡和车辆损坏"][0];
     notice.citizen_name = proveInfo.citizen_name;
     //notice.witness = @"现场照片、勘验检查笔录、询问笔录、现场勘验图";
     notice.witness = @"勘验笔录，证人证词和现场拍摄的照片等材料";

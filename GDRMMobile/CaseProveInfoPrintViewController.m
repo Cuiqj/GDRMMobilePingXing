@@ -32,7 +32,6 @@ static NSString * const xmlName = @"ProveInfoTable";
 //    NSLog(@"测试中xmlname------%@",xmlName);
     CGRect viewFrame = CGRectMake(0.0, 0.0, VIEW_FRAME_WIDTH, VIEW_FRAME_HEIGHT);
     self.view.frame = viewFrame;
-
     if (![self.caseID isEmpty]) {
         self.caseProveInfo = [CaseProveInfo proveInfoForCase:self.caseID];     //读取案号对应的勘验记录
         [self generateDefaultInfo:self.caseProveInfo];                         //根据案件记录，完整勘验信息
@@ -93,22 +92,18 @@ static NSString * const xmlName = @"ProveInfoTable";
             caseProveInfo.prover = inspectorName;
         }
     }
-    
     if (caseProveInfo.recorder == nil) {
         caseProveInfo.recorder = currentUserName;        
     }
-
+    //完整勘验信息
     if ([caseProveInfo.event_desc length] <= 0) {
         caseProveInfo.event_desc = [CaseProveInfo generateEventDescForCase:self.caseID];
     }
-
     [[AppDelegate App] saveContext];
 }
-
 - (IBAction)reFormEvetDesc:(UIButton *)sender {
     self.textevent_desc.text = [self generateOtherEventDescForCase];
 }
-
 - (NSString *)generateOtherEventDescForCase{
     [self pageSaveInfo];
     NSString *event_desc;
@@ -121,7 +116,6 @@ static NSString * const xmlName = @"ProveInfoTable";
     return event_desc;
     //    self.textevent_desc.text = [CaseProveInfo generateEventDescForCase:self.caseID];
 }
-
 /*add by lxm
  *2013.05.02
  */
@@ -156,7 +150,7 @@ static NSString * const xmlName = @"ProveInfoTable";
     self.textend_date_time.text = [dateFormatter stringFromDate:self.caseProveInfo.end_date_time];
     
     //勘验场所
-    self.caseProveInfo.remark = [self.caseProveInfo.remark stringByReplacingOccurrencesOfString:@"米"withString:@"m"];
+//    self.caseProveInfo.remark = [self.caseProveInfo.remark stringByReplacingOccurrencesOfString:@"米"withString:@"m"];
     self.textprover_place.text = self.caseProveInfo.remark;
     
     
@@ -224,12 +218,12 @@ static NSString * const xmlName = @"ProveInfoTable";
 //    }
     
     //当事人代表  单位职务
-    self.textparty.text = [self.caseProveInfo.organizer length] > 0 ? self.caseProveInfo.organizer : @"";
-    self.textparty_org_duty.text = [self.caseProveInfo.organizer_org_duty length] > 0? self.caseProveInfo.organizer_org_duty : @"";
+    self.textparty.text = [self.caseProveInfo.organizer length] > 0 ? self.caseProveInfo.organizer : @" 无";
+    self.textparty_org_duty.text = [self.caseProveInfo.organizer_org_duty length] > 0? self.caseProveInfo.organizer_org_duty : @"无";
     
     //被邀请人 单位职务
-    self.textinvitee.text = [self.caseProveInfo.invitee length] > 0? self.caseProveInfo.invitee : @"";
-    self.textInvitee_org_duty.text = [self.caseProveInfo.invitee_org_duty length] > 0 ? self.caseProveInfo.invitee_org_duty : @"";
+    self.textinvitee.text = [self.caseProveInfo.invitee length] > 0? self.caseProveInfo.invitee : @"无";
+    self.textInvitee_org_duty.text = [self.caseProveInfo.invitee_org_duty length] > 0 ? self.caseProveInfo.invitee_org_duty : @"无";
     
     //记录人 单位职务
     self.textrecorder.text = self.caseProveInfo.recorder;
@@ -240,7 +234,7 @@ static NSString * const xmlName = @"ProveInfoTable";
     
     
     //勘验情况及结果
-    self.textevent_desc.text = [self generateOtherEventDescForCase];
+    self.textevent_desc.text = self.caseProveInfo.event_desc;
 }
 
 //保存数据
@@ -324,7 +318,7 @@ static NSString * const xmlName = @"ProveInfoTable";
     
     //    NSLog(@"%@",self.textprover_place.text);
     NSString * place = self.textprover_place.text;
-    NSRange range = [self.textprover_place.text rangeOfString:@"m"];
+    NSRange range = [self.textprover_place.text rangeOfString:@"米"];
     if (range.location  != NSNotFound) {
         place = [self.textprover_place.text substringToIndex:range.location+1];
     }
@@ -337,20 +331,20 @@ static NSString * const xmlName = @"ProveInfoTable";
     for (NSInteger i = 0; i < [(NSArray *)caseDeformation count]; i++) {
         //        NSArray * array =  [(NSArray *)caseDeformation objectAtIndex:0];
         CaseDeformation * mation = [(NSArray *)caseDeformation objectAtIndex:i];
-        NSString *roadSizeString=[mation.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        if ([roadSizeString isEmpty]) {
-            roadSizeString=@"";
-        }
+//        NSString *roadSizeString=[mation.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//        if ([roadSizeString isEmpty]) {
+//            roadSizeString=@"";
+//        }
         Totalprice = Totalprice + [mation.total_price integerValue];
         NSString * price = [NSString stringWithFormat:@"%ld", [mation.price integerValue]];
         NSString * quantity = [NSString stringWithFormat:@"%ld",[mation.quantity integerValue]];
         NSString * total_price = [NSString stringWithFormat:@"%ld", [mation.total_price integerValue]];
         if (mation.roadasset_name) {
             if (i == [(NSArray *)caseDeformation count]-1) {
-                Deformation = [[[[[Deformation stringByAppendingString:mation.roadasset_name] stringByAppendingString:roadSizeString] stringByAppendingString:quantity] stringByAppendingString:mation.unit] stringByAppendingString:@"。"];
+                Deformation = [[[[Deformation stringByAppendingString:mation.roadasset_name]  stringByAppendingString:quantity] stringByAppendingString:mation.unit] stringByAppendingString:@"。"];
                 break;
             }
-            Deformation = [[[[[Deformation stringByAppendingString:mation.roadasset_name] stringByAppendingString:roadSizeString] stringByAppendingString:quantity] stringByAppendingString:mation.unit] stringByAppendingString:@"、"];
+            Deformation = [[[[Deformation stringByAppendingString:mation.roadasset_name] stringByAppendingString:quantity] stringByAppendingString:mation.unit] stringByAppendingString:@"、"];
         }
     }
     if([(NSArray *)caseDeformation count] == 0){
@@ -499,12 +493,24 @@ static NSString * const xmlName = @"ProveInfoTable";
     }
 }
 - (NSString * )textProver_duty_nsstring:(NSString *)duty{
-    NSArray *array = [duty componentsSeparatedByString: @"西部沿海"];
+    NSArray *array = [duty componentsSeparatedByString: @"平兴高速公路路政"];
     if ([array count] >= 2) {
-        NSString * prover_duty = [NSString stringWithFormat:@"西部沿海%@",array[1]];
-        prover_duty = [[[[prover_duty stringByReplacingOccurrencesOfString:@"一中队" withString:@""] stringByReplacingOccurrencesOfString:@"二中队" withString:@""] stringByReplacingOccurrencesOfString:@"" withString:@"三中队"]stringByReplacingOccurrencesOfString:@"四中队" withString:@""];
+        NSString * prover_duty = [NSString stringWithFormat:@"广东省公路事务中心平兴高速公路路政大队%@",array[1]];
+        prover_duty = [[[[prover_duty stringByReplacingOccurrencesOfString:@"一中队" withString:@""] stringByReplacingOccurrencesOfString:@"二中队" withString:@""] stringByReplacingOccurrencesOfString:@"三中队" withString:@""]stringByReplacingOccurrencesOfString:@"四中队" withString:@""];
+        if ([prover_duty containsString:@"大队大队"]) {
+            prover_duty = [prover_duty stringByReplacingOccurrencesOfString:@"大队大队" withString:@"大队"];
+        }
         return prover_duty;
     }
-    return duty;
+    return @"广东省公路事务中心平兴高速公路路政大队路政管理员";
 }
+
+- (void)deleteCurrentDoc{
+    if (![self.caseID isEmpty] && self.caseProveInfo){
+        [[[AppDelegate App] managedObjectContext] deleteObject:self.caseProveInfo];
+        [[AppDelegate App] saveContext];
+        self.caseProveInfo = nil;
+    }
+}
+
 @end

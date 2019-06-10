@@ -30,14 +30,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
-- (void)viewDidUnload
-{
+- (void)viewDidUnload{
     [self setTxtServer:nil];
     [self setTxtFile:nil];
-
 }
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -69,9 +66,9 @@
     }
     [AppDelegate App].serverAddress=self.txtServer.text;
     [AppDelegate App].fileAddress=self.txtFile.text;
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)btnDismiss:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

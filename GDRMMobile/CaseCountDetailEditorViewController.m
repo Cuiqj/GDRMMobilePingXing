@@ -36,7 +36,8 @@
 
 
 - (IBAction)btnDismiss:(UIBarButtonItem *)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (IBAction)btnComfirm:(UIBarButtonItem *)sender {

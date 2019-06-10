@@ -39,6 +39,7 @@
     [tempArray removeObject:@""];
     return [NSArray arrayWithArray:tempArray];
 }
+
 + (NSArray *)sysTypeArrayForCodeName:(NSString *)codeName{
 
 //    NSManagedObjectContext *context=[[AppDelegate App] managedObjectContext];

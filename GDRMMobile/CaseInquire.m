@@ -122,4 +122,24 @@
     CaseProveInfo * proveinfo = [CaseProveInfo proveInfoForCase:self.proveinfo_id];
     return proveinfo.remark;
 }
+//- (NSString *)inquirer_name{
+//    CaseProveInfo * proveinfo = [CaseProveInfo proveInfoForCase:self.proveinfo_id];
+//    return [proveinfo prover1];
+//}
+//- (NSString *)recorder_name{
+//    CaseProveInfo * proveinfo = [CaseProveInfo proveInfoForCase:self.proveinfo_id];
+//    return proveinfo.recorder;
+//}
+
+- (NSString *) inquirer_name_num{
+    if(self.inquirer_name.length>0)
+        return [UserInfo exelawIDForUserName:self.inquirer_name];
+    return nil;
+}
+- (NSString *) recorder_name_num{
+    if(self.recorder_name.length>0)
+        return [UserInfo exelawIDForUserName:self.recorder_name];
+    return nil;
+}
+
 @end

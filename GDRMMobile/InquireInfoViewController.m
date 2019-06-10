@@ -303,10 +303,11 @@ Boolean isSelectMuban;
         NSString *currentUserName = [[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
         NSArray *inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
         self.textFieldInquirer.text = currentUserName;
-        if (inspectorArray != nil && [inspectorArray count] > 0) {
+        if (inspectorArray != nil && [inspectorArray count] > 1) {
+            self.textFieldRecorder.text = [inspectorArray objectAtIndex:1];
+        }else if(inspectorArray != nil && [inspectorArray count] > 0){
             self.textFieldRecorder.text = [inspectorArray objectAtIndex:0];
         }
-        
     }
     inquireSaved=YES;
 }
@@ -360,6 +361,8 @@ Boolean isSelectMuban;
         } else {
             self.textLocality.text = caseInquire.locality;
         }
+//         调试时测试模版
+        self.inquireTextView.text = [self generateCommonInquireText];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setLocale:[NSLocale currentLocale]];
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
@@ -383,7 +386,9 @@ Boolean isSelectMuban;
         NSString *currentUserName = [[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
         NSArray *inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
         self.textFieldInquirer.text = currentUserName;
-        if (inspectorArray != nil && [inspectorArray count] > 0) {
+        if (inspectorArray != nil && [inspectorArray count] > 1) {
+            self.textFieldRecorder.text = [inspectorArray objectAtIndex:1];
+        }else if (inspectorArray != nil && [inspectorArray count] > 0) {
             self.textFieldRecorder.text = [inspectorArray objectAtIndex:0];
         }
         
@@ -433,7 +438,9 @@ Boolean isSelectMuban;
         NSString *currentUserName = [[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
         NSArray *inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
         self.textFieldInquirer.text = currentUserName;
-        if (inspectorArray != nil && [inspectorArray count] > 0) {
+        if (inspectorArray != nil && [inspectorArray count] > 1) {
+            self.textFieldRecorder.text = [inspectorArray objectAtIndex:1];
+        }else if (inspectorArray != nil && [inspectorArray count] > 0) {
             self.textFieldRecorder.text = [inspectorArray objectAtIndex:0];
         }
     }
@@ -775,12 +782,12 @@ Boolean isSelectMuban;
     NSArray *deformArray=[context executeFetchRequest:fetchRequest error:nil];
     if (deformArray.count>0) {
         for (CaseDeformation *deform in deformArray) {
-            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            if ([roadSizeString isEmpty]) {
-                roadSizeString=@"";
-            } else {
-                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
-            }
+//            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            if ([roadSizeString isEmpty]) {
+//                roadSizeString=@"";
+//            } else {
+//                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
+//            }
             NSString *remarkString=[deform.remark stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if ([remarkString isEmpty]) {
                 remarkString=@"";
@@ -790,7 +797,8 @@ Boolean isSelectMuban;
             NSString *quantity=[[NSString alloc] initWithFormat:@"%ld",deform.quantity.integerValue];
 //            NSCharacterSet *zeroSet=[NSCharacterSet characterSetWithCharactersInString:@".0"];
 //            quantity=[quantity stringByTrimmingTrailingCharactersInSet:zeroSet];
-            deformString=[deformString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
+//            deformString=[deformString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
+            deformString=[deformString stringByAppendingFormat:@"、%@%@%@%@",deform.roadasset_name,quantity,deform.unit,remarkString];
         }
         NSCharacterSet *charSet=[NSCharacterSet characterSetWithCharactersInString:@"、"];
         deformString=[deformString stringByTrimmingCharactersInSet:charSet];
@@ -975,11 +983,21 @@ Boolean isSelectMuban;
 -(NSString*) paraseMuBan :(NSString*) text{
     NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
     //机构
-    NSString *organizationName = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
+    NSString * organizationName = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
     CaseProveInfo *proveInfo = [CaseProveInfo proveInfoForCase:self.caseID];
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"MatchLaw" ofType:@"plist"];
     NSDictionary *matchLaws = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
     
+    NSString * currentUserName = [[UserInfo userInfoForUserID:currentUserID] valueForKey:@"username"];
+    NSArray *inspectorArray = [[NSUserDefaults standardUserDefaults] objectForKey:INSPECTORARRAYKEY];
+    NSString * inspectorlast;
+    if ([inspectorArray count]>=2) {
+        if ([inspectorArray[1] length]>0) {
+            inspectorlast = [NSString stringWithFormat:@"%@、%@",currentUserName,inspectorArray[1]];
+        }
+    }else{
+        inspectorlast = currentUserName;
+    }
     NSString *payReason = @"";
     //违反法律
     NSString *breakStr = @"";
@@ -988,7 +1006,6 @@ Boolean isSelectMuban;
     //依据文书
     NSString *payStr = @"";
     if (matchLaws) {
-        
         NSDictionary *matchInfo = [[matchLaws objectForKey:@"case_desc_match_law"] objectForKey:proveInfo.case_desc_id];
         if (matchInfo) {
             if ([matchInfo objectForKey:@"breakLaw"]) {
@@ -1001,16 +1018,44 @@ Boolean isSelectMuban;
                 payStr = [(NSArray *)[matchInfo objectForKey:@"payLaw"] componentsJoinedByString:@"、"];
             }
         }
-        
         payReason = [NSString stringWithFormat:@"你违反了%@规定，根据%@规定，我们依法向你收取路产赔偿，赔偿标准为广东省交通厅、财政厅和物价局联合颁发的%@文件的规定，请问你有无异议？",breakStr, matchStr, payStr];
         
     }
     //当事人
     Citizen *citizen = [Citizen citizenByCaseID:self.caseID];
     CaseInfo *caseinfo = [CaseInfo caseInfoForID:self.caseID];
-    
+    NSString * anyou;
+    BOOL anyoubool = [proveInfo.case_desc_id containsString:@"970"] && [proveInfo.case_desc_id containsString:@"973"];
+    if([proveInfo.case_desc_id containsString:@"971"] || anyoubool){
+        anyou = @"公路路产损坏，污染";
+    }else if([proveInfo.case_desc_id containsString:@"970"] && ![proveInfo.case_desc_id containsString:@"973"]){
+        anyou = @"公路路产损坏";
+    }else if([proveInfo.case_desc_id containsString:@"973"] && ![proveInfo.case_desc_id containsString:@"970"]){
+        anyou = @"公路路产污染";
+    }else{
+        anyou = @"此次";
+    }
+    NSString * carowner;
+    if ([citizen.carowner isEqualToString:@"当事人"]) {
+        carowner = @"车主是我本人，当时是我驾驶该车辆的。";
+    }else{
+        carowner = [NSString stringWithFormat:@"我不是车主本人，车主是%@，当时是我驾驶该车辆的。",citizen.carowner];
+    }
+    text = [text stringByReplacingOccurrencesOfString:@"#执法人员#" withString:[NSString stringWithFormat:@"%@",inspectorlast]];
     text = [text stringByReplacingOccurrencesOfString:@"#车辆所在地#" withString:citizen.automobile_address];
-    text = [text stringByReplacingOccurrencesOfString:@"#损坏路产情况#" withString:self.getDeformationInfo];
+    if (self.getDeformationInfo.length>0) {
+        text = [text stringByReplacingOccurrencesOfString:@"#损坏路产情况#" withString:self.getDeformationInfo];
+    }else{
+        text = [text stringByReplacingOccurrencesOfString:@"#损坏路产情况#" withString:@"无路产损坏"];
+    }
+    text = [text stringByReplacingOccurrencesOfString:@"#案由#" withString:anyou ];
+    text = [text stringByReplacingOccurrencesOfString:@"#当事人联系电话#" withString:citizen.tel_number];
+    text = [text stringByReplacingOccurrencesOfString:@"#肇事车主及是否本人#" withString:carowner ];
+    organizationName = [organizationName stringByReplacingOccurrencesOfString:@"一中队" withString:@"大队"];
+    organizationName = [organizationName stringByReplacingOccurrencesOfString:@"二中队" withString:@"大队"];
+    organizationName = [organizationName stringByReplacingOccurrencesOfString:@"三中队" withString:@"大队"];
+    organizationName = [organizationName stringByReplacingOccurrencesOfString:@"四中队" withString:@"大队"];
+    
     text = [text stringByReplacingOccurrencesOfString:@"#机构#" withString:organizationName];
     text = [text stringByReplacingOccurrencesOfString:@"#案件基本情况描述#" withString:[CaseProveInfo generateEventDescForInquire:self.caseID] ];
     text = [text stringByReplacingOccurrencesOfString:@"#伤亡情况#" withString:[CaseProveInfo generateWoundDesc:self.caseID] ];
@@ -1034,12 +1079,17 @@ Boolean isSelectMuban;
     }else{
      text = [text stringByReplacingOccurrencesOfString:@"#当事人性质#" withString:@"个人行为"];
     }
-    text = [text stringByReplacingOccurrencesOfString:@"一中队" withString:@""];
-    text = [text stringByReplacingOccurrencesOfString:@"二中队" withString:@""];
-    text = [text stringByReplacingOccurrencesOfString:@"三中队" withString:@""];
-    text = [text stringByReplacingOccurrencesOfString:@"四中队" withString:@""];
+    
+    
+//    for (int i = 0; i<50; i++) {
+        if ([text containsString:@"。\n"]) {
+            text = [text stringByReplacingOccurrencesOfString:@"。\n" withString:@"｡\n"];
+        }
+        if ([text containsString:@"？\n"]) {
+            text = [text stringByReplacingOccurrencesOfString:@"？\n" withString:@"?\n"];
+        }
+//    }
     return text;
-
 }
 
 -(NSString*)getDeformationInfo{
@@ -1090,12 +1140,12 @@ Boolean isSelectMuban;
     NSArray *deformArray=[context executeFetchRequest:fetchRequest error:nil];
     if (deformArray.count>0) {
         for (CaseDeformation *deform in deformArray) {
-            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            if ([roadSizeString isEmpty]) {
-                roadSizeString=@"";
-            } else {
-                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
-            }
+//            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            if ([roadSizeString isEmpty]) {
+//                roadSizeString=@"";
+//            } else {
+//                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
+//            }
             NSString *remarkString=[deform.remark stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if ([remarkString isEmpty]) {
                 remarkString=@"";
@@ -1106,7 +1156,8 @@ Boolean isSelectMuban;
 //            NSCharacterSet *zeroSet=[NSCharacterSet characterSetWithCharactersInString:@".0"];
 //            quantity=[quantity stringByTrimmingTrailingCharactersInSet:zeroSet];
             if ([deform.roadasset_name length]>0) {
-                deformString=[deformString stringByAppendingFormat:@"、%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit];
+//                deformString=[deformString stringByAppendingFormat:@"、%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit];
+                deformString=[deformString stringByAppendingFormat:@"、%@%@%@",deform.roadasset_name,quantity,deform.unit];
             }
         }
         NSCharacterSet *charSet=[NSCharacterSet characterSetWithCharactersInString:@"、"];
@@ -1163,13 +1214,12 @@ Boolean isSelectMuban;
     text = [NSString stringWithFormat:@"%@问：%@\n",text,[CaseProveInfo generateDefaultPayReason:self.caseID] ];
     text = [NSString stringWithFormat:@"%@%@",text,@"答：无异议。\n问：你还有什么补充的吗？\n答：没有。" ];
  
-    //text =  [[Systype sysTypeArrayForCodeName:@"询问笔录模板"] objectAtIndex:0];
+    //text =  [[Systype sysTypeArrayForCodeNarecorder_namee:@"询问笔录模板"] objectAtIndex:0];
    */
     NSString* text = @"";
     text = [Systype sysTypeForCodeNameAndTypeValue:@"询问笔录模板" withType_value:self.textMuban.text];
+    text = @"问：你好，我们是广东省公路事务中心#机构#的执法人员#执法人员#，这是我们的执法证件。现在依法向你询问刚才这起交通事故造成#案由#案件的一些情况，请你如实回答所问问题。执法人员与你直接有利害关系的，你可以申请回避。\n答：好的。\n问：请问你叫什么名字？联系电话是多少？\n答：我叫#当事人#，我的联系电话是#当事人联系电话#。\n问：请问你是肇事车的车主吗？当时是你本人驾驶车辆的吗？\n答：#肇事车主及是否本人#\n问：请问你是什么时间在什么地点驾驶什么车辆因什么原因发生这起交通事故损坏路产的?\n答：#案件基本情况描述#\n问：此次事故中有没造成人员伤亡？\n答：#伤亡情况#\n问：经勘验，本次事故造成路产损坏清单如下：#损坏路产情况#，根据《中华人民共和国公路法》第八十五条第一款、《广东省公路条例》第二十三条并依照广东省《损坏公路路产赔偿标准》（粤交路〔1998〕38号、〔1999〕263号）的规定，你损坏公路路产，应照价赔偿路产损失，你有无异议？\n答：无异议。\n问：请问你还有什么要陈述或申辩的？\n答：没有了。\n问：这是我们制作的询问笔录，请你仔细核对笔录内容，如果你认为笔录不全或者有错误，可以要求补正。如果没有异议，请你在此处写明“以上笔录无误”，并请写清你的姓名和时间。\n答：好的。";
 //    text = [NSString stringWithFormat:@"问：我们是#机构#的路政员，现向你问起这事故的有关情况，你的证词将作为法律依据，请你如实回答。\n答：好的。\n问：你叫什么名字，在哪里工作？\n答：我叫#当事人#，在#车辆所在地#工作。\n问：你是什么时间，在什么地点，因何原因造成这起事故的？\n答：#案件基本情况描述#\n问：事故现场经我们勘验检查，损坏公路路产有：#损坏路产情况\n#。你是否承认？\n答：我承认。\n问：你是否还有什么需要陈述或申辩的？\n答：没有。"];
-    
-    
     text= [self paraseMuBan:text];
            return text;
 }

@@ -5,9 +5,9 @@
 	<key>Server Settings</key>
 	<dict>
 		<key>server address</key>
-		<string>http://124.172.189.177:81/irmsData_xbyh/</string>
+		<string>http://124.172.189.177:81/irmsData_pxgs/</string>
 		<key>file address</key>
-		<string>http://124.172.189.177:81/irmsData_xbyh/</string>
+		<string>http://128.6.40.14:81/pxgs</string>
 	</dict>
 	<key>FileToTableMapping</key>
 	<dict>
@@ -53,9 +53,9 @@
 		<key>projectname</key>
 		<string>yunwu</string>
 		<key>payname</key>
-		<string>西部沿海赔字</string>
+		<string>平兴赔字</string>
 		<key>cityname</key>
-		<string>西部沿海</string>
+		<string>平兴</string>
 	</dict>
 </dict>
 </plist>

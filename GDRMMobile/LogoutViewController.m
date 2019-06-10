@@ -46,4 +46,9 @@
 - (IBAction)btnLogout:(UIButton *)sender {
     [self.delegate logOut];
 }
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.preferredContentSize = CGSizeMake(168, 130);
+}
 @end

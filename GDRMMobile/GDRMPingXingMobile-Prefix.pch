@@ -53,14 +53,18 @@
 #define ProcessIDDefault @"105"
 #define ProcessNameDefault @"路政赔偿补偿案件一般程序"
 
+#define Date_version_yyyy @"yyyy年M月d日HH时mm分"
+#define Date_version_yyyy_small @"yyyy年M月d日"
+#define Date_version_m @"M月d日HH时mm分"
+#define Date_version_m_small @"M月d日"
+#define Date_version_h @"HH时mm分"
 
 
 #define VERSION_NAME @"平兴路政"
-#define VERSION_TIME @"2019年03月07号"
+#define VERSION_TIME @"2019年05月22日"
 
 //用来检测最新版本
-#define VERSION_NUMBER @2018112701
-//#define VERSION_NUMBER @2018000000
+//#define VERSION_NUMBER @2019040801
 //https://www.example.com/image.512x512.png
 /*
  *add by lxm

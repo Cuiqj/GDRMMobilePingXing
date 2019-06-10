@@ -9,157 +9,171 @@
         <Lines>
             <defaultLineWidth>0.2</defaultLineWidth>
             <!--上线-->
-            <line x1="20" y1="44" x2="194" y2="44" />
+            <line x1="25" y1="47" x2="193" y2="47" />
             <!--下线-->
-<!--            <line x1="20" y1="272" x2="194" y2="272" />-->
+            <line x1="25" y1="209.5" x2="193" y2="209.5" />
             <!--左边框线-->
-            <line x1="20" y1="44" x2="20" y2="235" />
+            <line x1="25" y1="47" x2="25" y2="209.5" />
             <!--右边框线-->
-            <line x1="194" y1="44" x2="194" y2="235" />
+            <line x1="193" y1="47" x2="193" y2="209.5" />
             <!--案由上线-->
-            <line x1="20" y1="54" x2="194" y2="54" />
+            <line x1="25" y1="59" x2="193" y2="59" />
             <!--送达单位上线-->
-            <line x1="20" y1="64" x2="194" y2="64" />
+            <line x1="25" y1="71" x2="193" y2="71" />
             <!--送达地点上线-->
-            <line x1="20" y1="74" x2="194" y2="74" />
-            <!--送达文件上线-->
-            <line x1="20" y1="84" x2="194" y2="84" />
+            <line x1="25" y1="83" x2="193" y2="83" />
+            <!--送达文书名称上线-->
+            <line x1="25" y1="95" x2="193" y2="95" />
             <!--横线1-->
-            <line x1="20" y1="96" x2="194" y2="96" />
+            <line x1="25" y1="107" x2="193" y2="107" />
             <!--横线2-->
-            <line x1="20" y1="106" x2="194" y2="106" />
+            <line x1="25" y1="119" x2="193" y2="119" />
             <!--横线3-->
-            <line x1="20" y1="116" x2="194" y2="116" />
+            <line x1="25" y1="131" x2="193" y2="131" />
+            <!--横线4-->
+            <line x1="25" y1="143" x2="193" y2="143" />
             <!--备注上线-->
-            <line x1="20" y1="126" x2="194" y2="126" />
-            <!--注上线-->
-            <line x1="20" y1="235" x2="194" y2="235" />
+            <line x1="25" y1="155" x2="193" y2="155" />
             <!--竖线1-->
-            <line x1="77" y1="84" x2="77" y2="126" />
+            <line x1="67.5" y1="95" x2="67.5" y2="155" />
             <!--竖线2-->
-            <line x1="116" y1="84" x2="116" y2="126" />
+            <line x1="105" y1="95" x2="105" y2="155" />
             <!--竖线3-->
-            <line x1="154" y1="84" x2="154" y2="126" />
+            <line x1="139" y1="95" x2="139" y2="155" />
             
-            
-             <line x1="69" y1="22" x2="79" y2="22" />
-             
+            <!--配（补）偿   在补上面  画的横线-->
+<!--            <line x1="69" y1="22" x2="79" y2="22" />-->
         </Lines>
-        <Texts>
-        	<defaultFontSize>12</defaultFontSize>
-        	<!--公路赔（补）偿案件管理文书送达回证-->
+        <Title>
             <Text>
                 <text>公路赔（补）偿案件管理文书送达回证</text>
-                <fontSize>22</fontSize>
-                <origin x="39" y="21" />
+                <fontSize>17</fontSize>
+                <origin x="59" y="80.5" />
                 <size width="500" height="6" />
             </Text>
-            <!--案号（-->
+        </Title>
+        <Texts>
+<!--            <defaultFontSize>12</defaultFontSize>-->
             <Text>
-                <text>案号（</text>
-                <fontSize>12</fontSize>
-                <origin x="118" y="38" />
+                <text>案号:（</text>
+                <fontSize>13</fontSize>
+                <origin x="111" y="43" />
                 <size width="100" height="6" />
             </Text>
             <!--字第-->
             <Text>
                 <text>）年（</text>
-                <fontSize>12</fontSize>
-                <origin x="148" y="38" />
+                <fontSize>13</fontSize>
+                <origin x="141" y="43" />
                 <size width="100" height="6" />
             </Text>
             <!--号-->
             <Text>
                 <text>）号</text>
-                <fontSize>12</fontSize>
-                <origin x="177" y="38" />
+                <fontSize>13</fontSize>
+                <origin x="172" y="43" />
                 <size width="100" height="6" />
             </Text>
             <!--受送达人： -->
             <Text>
             	<text>受送达人：</text>
-                <fontSize>12</fontSize>
-            	<origin x="21" y="48.5" />
+                <fontSize>13</fontSize>
+            	<origin x="27" y="52" />
                 <size width="100" height="6" />
             </Text>
             <!--案由： -->
             <Text>
             	<text>案由：</text>
-                <fontSize>12</fontSize>
-            	<origin x="21" y="58.5" />
+                <fontSize>13</fontSize>
+            	<origin x="27" y="64" />
                 <size width="100" height="6" />
             </Text>
             <!-- 送达单位-->
             <Text>
             	<text>送达单位：</text>
-                <fontSize>12</fontSize>
-            	<origin x="21" y="67.5" />
+                <fontSize>13</fontSize>
+            	<origin x="27" y="76" />
                 <size width="100" height="6" />
             </Text>
             <!--送达地点： -->
             <Text>
             	<text>送达地点：</text>
-                <fontSize>12</fontSize>
-            	<origin x="21" y="76.5" />
+                <fontSize>13</fontSize>
+            	<origin x="27" y="88" />
                 <size width="100" height="6" />
             </Text>
             <!-- 送达文件名称-->
             <Text>
-            	<text>送达文件名称</text>
-                <fontSize>12</fontSize>
-            	<origin x="36" y="89" />
+            	<text>送达文书名称</text>
+                <fontSize>13</fontSize>
+            	<origin x="31" y="100" />
                 <size width="100" height="6" />
             </Text>
             <!-- 送达人-->
             <Text>
             	<text>送达人</text>
-                <fontSize>12</fontSize>
-            	<origin x="88" y="89" />
+                <fontSize>13</fontSize>
+            	<origin x="78" y="100" />
                 <size width="100" height="6" />
             </Text>
             <!--签收日期 -->
             <Text>
             	<text>收到日期</text>
-                <fontSize>12</fontSize>
-            	<origin x="125" y="89" />
+                <fontSize>13</fontSize>
+            	<origin x="112.5" y="100" />
                 <size width="100" height="6" />
             </Text>
             <!--收件人签章 -->
             <Text>
             	<text>收件人签章</text>
-                <fontSize>12</fontSize>
-            	<origin x="161" y="89" />
+                <fontSize>13</fontSize>
+            	<origin x="153" y="100" />
                 <size width="100" height="6" />
             </Text>
             <!--备注 -->
             <Text>
             	<text>备注：</text>
-                <fontSize>12</fontSize>
-            	<origin x="21" y="132" />
+                <fontSize>13</fontSize>
+            	<origin x="27" y="158" />
                 <size width="100" height="6" />
             </Text>
             <!--注： -->
             <Text>
-            	<text>注：1、如送达人不在场的，可交其同住的成年家属，并在备注栏内写明与送达人关系；</text>
-            	<origin x="21" y="246" />
+            	<text>注：1、如送达人不在场的，可交其同住的成年家属，并在备注</text>
+                <fontSize>13</fontSize>
+            	<origin x="35" y="214" />
+                <size width="500" height="6" />
+            </Text>
+            <Text>
+                <text>栏内写明与送达人关系；</text>
+                <fontSize>13</fontSize>
+                <origin x="44" y="223" />
                 <size width="500" height="6" />
             </Text>
             <!-- 2、-->
             <Text>
-            	<text>   2、受送达人已指定代收人的，交代收人签收；</text>
-            	<origin x="29" y="251" />
+            	<text>2、受送达人已指定代收人的，交代收人签收；</text>
+                <fontSize>13</fontSize>
+            	<origin x="44" y="232" />
                 <size width="500" height="6" />
             </Text>
             <!--3、 -->
             <Text>
-            	<text>   3、受送达人拒绝收的，应邀有关组织代表或其他人到场，在备注中拒事由及有关</text>
-            	<origin x="29" y="256" />
+            	<text>3、受送达人拒绝收的，应邀有关基层组织代表或其他人到场，</text>
+                <fontSize>13</fontSize>
+            	<origin x="44" y="240" />
                 <size width="500" height="6" />
             </Text>
-            <!-- -->
             <Text>
-            	<text>情况，并将文书留置，视为已送达。</text>
-            	<origin x="21" y="261" />
+                <text>在备注中写明拒收事由及有关情况，并将文书留置，视为</text>
+                <fontSize>13</fontSize>
+                <origin x="44" y="249" />
+                <size width="500" height="6" />
+            </Text>
+            <Text>
+            	<text>已送达。</text>
+                <fontSize>13</fontSize>
+            	<origin x="44" y="258" />
                 <size width="500" height="6" />
             </Text>
         </Texts>
@@ -169,7 +183,8 @@
         <DefaultFontSize>19</DefaultFontSize>
         <!--案号-->
         <UITextField>
-            <origin x="135" y="36" />
+            <fontSize>13</fontSize>
+            <origin x="131" y="41" />
             <size width = "18" height = "6" />
             <content>
                 <data>
@@ -181,21 +196,23 @@
             </content>
         </UITextField>
         <!--第（）号-->
-<!--        <UITextField>-->
-<!--            <origin x="166.5" y="36" />-->
-<!--            <size width = "12" height = "6" />-->
-<!--            <content>-->
-<!--                <data>-->
-<!--                    <!--字段名-->
-<!--                    <attributeName>full_case_mark3</attributeName>-->
-<!--                    <!--数据表名-->
-<!--                    <entityName>CaseInfo</entityName>-->
-<!--                </data>-->
-<!--            </content>-->
-<!--        </UITextField>-->
+        <UITextField>
+            <fontSize>13</fontSize>
+            <origin x="159" y="41" />
+            <size width = "12" height = "6" />
+            <content>
+                <data>
+                    <!--字段名-->
+                    <attributeName>full_case_mark3</attributeName>
+                    <!--数据表名-->
+                    <entityName>CaseInfo</entityName>
+                </data>
+            </content>
+        </UITextField>
         <!--受送达人-->
         <UITextField>
-            <origin x="53" y="46" />
+            <fontSize>13</fontSize>
+            <origin x="48" y="50" />
             <size width = "160" height = "6" />
             <content>
                 <data>
@@ -206,7 +223,8 @@
         </UITextField>
         <!--案由-->
         <UITextField>
-            <origin x="40" y="56" />
+            <fontSize>13</fontSize>
+            <origin x="39" y="62" />
             <size width = "150" height = "6" />
             <content>
                 <data>
@@ -219,7 +237,8 @@
         </UITextField>
         <!--送达单位-->
         <UITextField>
-            <origin x="52" y="65.5" />
+            <fontSize>13</fontSize>
+            <origin x="49" y="74" />
             <size width = "140" height = "6" />
             <content>
                 <data>
@@ -232,7 +251,9 @@
         </UITextField>
         <!--送达地点-->
         <UITextField>
-            <origin x="52" y="76" />
+            <fontSize>13</fontSize>
+            
+            <origin x="49" y="86" />
             <size width = "140" height = "6" />
             <content>
                 <data>
@@ -251,10 +272,12 @@
                 </data>
             </content>
             <table>
-                <origin x="23" y="101" />
+                <origin x="25" y="107" />
                 <row>
                     <cell>
-                        <size width = "40" height = "9" />
+                        <fontSize>12</fontSize>
+                        <alignment>Center</alignment>
+                        <size width = "42" height = "12" />
                         <data>
                             <attributeName>service_file</attributeName>
                         </data>
@@ -264,9 +287,9 @@
         </UITableView>
         <!--备注-->
         <UITextView>
-            <fontSize>12</fontSize>
-            <origin x="22" y="138" />
-            <size width="170" height="200" />
+            <fontSize>13</fontSize>
+            <origin x="39" y="157" />
+            <size width="153" height="52" />
             <content>
                 <data>
                     <attributeName>remark</attributeName>

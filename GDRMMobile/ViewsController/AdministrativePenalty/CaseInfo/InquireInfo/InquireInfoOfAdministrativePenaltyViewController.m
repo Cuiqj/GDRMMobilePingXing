@@ -745,12 +745,12 @@ Boolean isSelectMuban;
     NSArray *deformArray=[context executeFetchRequest:fetchRequest error:nil];
     if (deformArray.count>0) {
         for (CaseDeformation *deform in deformArray) {
-            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            if ([roadSizeString isEmpty]) {
-                roadSizeString=@"";
-            } else {
-                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
-            }
+//            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            if ([roadSizeString isEmpty]) {
+//                roadSizeString=@"";
+//            } else {
+//                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
+//            }
             NSString *remarkString=[deform.remark stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if ([remarkString isEmpty]) {
                 remarkString=@"";
@@ -760,7 +760,8 @@ Boolean isSelectMuban;
            NSString *quantity=[[NSString alloc] initWithFormat:@"%ld",deform.quantity.integerValue];
 //            NSCharacterSet *zeroSet=[NSCharacterSet characterSetWithCharactersInString:@".0"];
 //            quantity=[quantity stringByTrimmingTrailingCharactersInSet:zeroSet];
-            deformString=[deformString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
+//            deformString=[deformString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
+             deformString=[deformString stringByAppendingFormat:@"、%@%@%@%@",deform.roadasset_name,quantity,deform.unit,remarkString];
         }
         NSCharacterSet *charSet=[NSCharacterSet characterSetWithCharactersInString:@"、"];
         deformString=[deformString stringByTrimmingCharactersInSet:charSet];

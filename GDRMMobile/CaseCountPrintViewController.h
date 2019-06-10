@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelAutoPattern;
 @property (weak, nonatomic) IBOutlet UILabel *labelAutoNumber;
 @property (weak, nonatomic) IBOutlet UITableView *tableCaseCountDetail;
-@property (weak, nonatomic) IBOutlet UITextField *textBigNumber;
-@property (weak, nonatomic) IBOutlet UILabel *labelPayReal;
+@property (weak, nonatomic) IBOutlet UITextField *textBigNumber;    //大写 金额
+@property (weak, nonatomic) IBOutlet UILabel *labelPayReal;         //小写 金额
 @property (weak, nonatomic) IBOutlet UITextView *textRemark;
 @end

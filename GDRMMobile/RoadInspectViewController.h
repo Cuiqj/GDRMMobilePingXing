@@ -57,7 +57,7 @@ typedef enum {
 
 
 @property (weak, nonatomic) IBOutlet UILabel *inspectionRecordlabel;  //实际巡查路线
-@property (weak, nonatomic) IBOutlet UITextField *inspectionRecordtext;  //路线
+@property (weak, nonatomic) IBOutlet UITextField * inspectionRecordtext;  //路线
 - (IBAction)inspectionRecordtextButtonClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *inspectionRecordtextButton;    //生成
 @property (weak, nonatomic) IBOutlet UITextField *roadsegmentText;          //路段

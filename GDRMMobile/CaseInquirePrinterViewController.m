@@ -11,6 +11,8 @@
 #import "Citizen.h"
 #import "CaseInfo.h"
 
+#import "UserPickerViewController.h"
+
 static NSString * const xmlName = @"InquireTable";
 //static NSString * const secondPageXmlName = @"InquireTable2_new"; //该文件改用来作为第二页 | xushiwen | 2013.7.30
 static NSString * const secondPageXmlName = @"InquireTable2GZX"; //该文件改用来作为第二页 | xushiwen | 2013.7.30
@@ -25,12 +27,15 @@ enum kPageInfo {
 @end
 
 @implementation CaseInquirePrinterViewController
+NSInteger currentTag;
 @synthesize caseID=_caseID;
 
 - (void)viewDidLoad
 {
     [super setCaseID:self.caseID];
     [self LoadPaperSettings:xmlName];
+    self.textinquirer_name.tag = 888;
+    self.textrecorder_name.tag = 889;
     CGRect viewFrame = CGRectMake(0.0, 0.0, VIEW_FRAME_WIDTH, VIEW_FRAME_HEIGHT);
     self.view.frame = viewFrame;
     if (![self.caseID isEmpty]) {
@@ -42,6 +47,7 @@ enum kPageInfo {
             [self pageLoadInfo];
         }
     }
+    
     [super viewDidLoad];
 }
 
@@ -57,7 +63,7 @@ enum kPageInfo {
     self.caseInquire.phone = self.textphone.text;
     self.caseInquire.address=self.textaddress.text ;
     self.caseInquire.locality=self.textlocality.text ;
-//    self.caseInquire.recorder_name = self.textrecorder_name.text;
+    self.caseInquire.recorder_name = self.textrecorder_name.text;
     citizen.postalcode = self.textpostalcode.text;
     self.caseInquire.postalcode = self.textpostalcode.text;
     self.caseInquire.inquiry_note = self.textinquiry_note.text;
@@ -72,7 +78,7 @@ enum kPageInfo {
     self.textdate_inquired.text =[dateFormatter stringFromDate:self.caseInquire.date_inquired];
     self.textlocality.text = self.caseInquire.locality;
     self.textinquirer_name.text = self.caseInquire.inquirer_name;
-    
+    self.textrecorder_name.text = self.caseInquire.recorder_name;
     self.textanswerer_name.text = self.caseInquire.answerer_name;
     self.textsex.text = self.caseInquire.sex;
     self.textage.text = (self.caseInquire.age.integerValue==0)?@"":[NSString stringWithFormat:@"%d",self.caseInquire.age.integerValue];
@@ -106,7 +112,7 @@ enum kPageInfo {
         CGRect pdfRect=CGRectMake(0.0, 0.0, paperWidth, paperHeight);
         UIGraphicsBeginPDFContextToFile(formatFilePath, CGRectZero, nil);
         NSArray *pages = [self pagesSplitted];
-        NSMutableDictionary *dataInfo = [self getDataInfo];
+        NSMutableDictionary * dataInfo = [self getDataInfo];
         if ([pages count] < 2) {
             
             dataInfo[@"PageNumberInfo"][@"pageCount"][@"value"] = @([pages count]);
@@ -314,8 +320,16 @@ enum kPageInfo {
                               attribValue,@"value",
                               @(attribType),@"valueType",nil];
         [caseInquireDataInfo setObject:data forKey:attribName];
-
     }
+    NSDictionary * dicddata1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                               [self.caseInquire inquirer_name_num],@"value",
+                               @(NSStringAttributeType),@"valueType",nil];
+    NSDictionary * dicddata2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                               [self.caseInquire recorder_name_num],@"value",
+                               @(NSStringAttributeType),@"valueType",nil];
+//    [caseInquireDataInfo setObject: forKey:@"inquirer_name_num"];
+    [caseInquireDataInfo setObject:dicddata1 forKey:@"inquirer_name_num"];
+    [caseInquireDataInfo setObject:dicddata2 forKey:@"recorder_name_num"];
     
     //将CaseInfo的属性名、属性值、属性描述装入dataInfo
     CaseInfo *relativeCaseInfo = [CaseInfo caseInfoForID:self.caseID];
@@ -347,5 +361,41 @@ enum kPageInfo {
     
     return dataInfo;
 }
+- (void)deleteCurrentDoc{
+    if (![self.caseID isEmpty] && self.caseInquire){
+        [[[AppDelegate App] managedObjectContext] deleteObject:self.caseInquire];
+        [[AppDelegate App] saveContext];
+        self.caseInquire = nil;
+    }
+}
 
+- (IBAction)SelectUser:(id)sender {
+    UITextField * field = (UITextField *)sender;
+    currentTag = field.tag;
+    if ([self.pickerPopover isPopoverVisible]) {
+        [self.pickerPopover dismissPopoverAnimated:YES];
+    } else {
+        UserPickerViewController *acPicker=[[UserPickerViewController alloc] init];
+        acPicker.delegate = self;
+        self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:acPicker];
+        [self.pickerPopover setPopoverContentSize:CGSizeMake(140, 200)];
+        UITextField * textfield = (UITextField *)sender;
+        [self.pickerPopover presentPopoverFromRect:textfield.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
+        acPicker.pickerPopover=self.pickerPopover;
+    }
+}
+
+- (void)setUser:(NSString *)name andUserID:(NSString *)userID{
+    if (currentTag == 888) {
+        self.textinquirer_name.text = name;
+        if (self.caseInquire){
+            self.caseInquire.inquirer_name = name;
+        }
+    }else if (currentTag == 889){
+        self.textrecorder_name.text = name;
+        if (self.caseInquire){
+            self.caseInquire.recorder_name = name;
+        }
+    }
+}
 @end

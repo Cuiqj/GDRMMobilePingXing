@@ -41,7 +41,7 @@
 #import "InitInspectionPath.h"
 #import "InitInspectionRecord.h"
 
-#define DOWNLOADCOUNT 31
+#define DOWNLOADCOUNT 27
 #define DOWNLOADFINISHNOTI @"DownLoadWorkFinished"
 
 #define WAITFORPARSER   self.stillParsing = 2;\

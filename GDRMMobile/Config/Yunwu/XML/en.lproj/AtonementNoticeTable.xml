@@ -465,13 +465,13 @@
                 </data>
             </content>
         </UITextField>
-        <!--本单位认为, 当事人-->
+        <!--本单位认为, 当事人损坏路产的事实清楚，应依法承担民事责任，赔偿路产损失-->
         <UITextView>
-            <fontSize>12</fontSize>
-            <origin x="23" y="159" />
-            <size width="158" height="22" />
-            <leftOffSet>45</leftOffSet>
-            <lineHeight>22</lineHeight>
+            <fontSize>11</fontSize>
+            <origin x="24" y="161.5" />
+            <size width="161" height="25" />
+            <leftOffSet>43</leftOffSet>
+            <lineHeight>25</lineHeight>
             <content>
                 <data>
                     <attributeName>pay_reason</attributeName>

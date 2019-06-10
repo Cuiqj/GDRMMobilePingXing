@@ -98,9 +98,11 @@ InspectionCheckState inspectionState;
     } else {
         [self loadInspectionInfo:NO];
     }
+//    [self viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
+//    [self viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -580,23 +582,31 @@ InspectionCheckState inspectionState;
     [self reloadRecordData:NO];
 }
 
+//生成实际巡查路线     生成实际巡查线路
 - (NSString *)InspectionPathStationRoadline{
     NSString * roadline = @"";
-    NSString* station = @"";
     if ([self.data count] >0) {
         InspectionPath * temp = (InspectionPath * )self.data[0];
-        roadline = [self selectStationforNSString:temp.stationname];
-        station = temp.stationname;
+        NSString * firststation = temp.stationname;
+        NSInteger j=1;
+        NSString * xianlu =@"";
         for (NSInteger i = 0; i<[self.data count]; i++){
             InspectionPath * path  = [self.data objectAtIndex:i];
-            NSLog(@"%@",path.stationname);
-            if(![path.stationname isEqualToString:station]){
+            if(![path.stationname isEqualToString:xianlu] || [path.stationname isEqual:firststation]){
                 if ([path.stationname containsString:@"服务区"]) {
                     continue;
                 }
-                roadline = [NSString stringWithFormat:@"%@-%@",roadline,[self selectStationforNSString:path.stationname]];
-                station = path.stationname;
-                NSLog(@"传值数据%@",station);
+                if ([path.stationname isEqual:firststation] && ![xianlu isEqual:@""] && ![xianlu hasSuffix:@"趟)"]) {
+                    xianlu = [NSString stringWithFormat:@"%@(第%ld趟)",path.stationname,j];
+                    j+=1;
+                }else{
+                    xianlu= path.stationname;
+                }
+                if (i==0) {
+                    roadline = xianlu;
+                }else{
+                    roadline = [NSString stringWithFormat:@"%@-%@",roadline,[self selectStationforNSString:xianlu]];
+                }
             }
         }
         return roadline;
@@ -765,12 +775,12 @@ InspectionCheckState inspectionState;
         NSString *deformsString=@"";
         float   all = 0;
         for (CaseDeformation *deform in deformArray) {
-            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            if ([roadSizeString isEmpty]) {
-                roadSizeString=@"";
-            } else {
-                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
-            }
+//            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            if ([roadSizeString isEmpty]) {
+//                roadSizeString=@"";
+//            } else {
+//                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
+//            }
             NSString *remarkString=[deform.remark stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if ([remarkString isEmpty]) {
                 remarkString=@"";
@@ -781,7 +791,8 @@ InspectionCheckState inspectionState;
 //            NSCharacterSet *zeroSet=[NSCharacterSet characterSetWithCharactersInString:@".0"];
             all += deform.total_price.floatValue;
 //            quantity=[quantity stringByTrimmingTrailingCharactersInSet:zeroSet];
-            deformsString=[deformsString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
+//            deformsString=[deformsString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
+            deformsString=[deformsString stringByAppendingFormat:@"、%@%@%@%@",deform.roadasset_name,quantity,deform.unit,remarkString];
         }
         NSCharacterSet *charSet=[NSCharacterSet characterSetWithCharactersInString:@"、"];
         deformsString=[deformsString stringByTrimmingCharactersInSet:charSet];
@@ -940,12 +951,12 @@ InspectionCheckState inspectionState;
         NSString *deformsString=@"";
         float   all = 0;
         for (CaseDeformation *deform in deformArray) {
-            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            if ([roadSizeString isEmpty]) {
-                roadSizeString=@"";
-            } else {
-                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
-            }
+//            NSString *roadSizeString=[deform.rasset_size stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            if ([roadSizeString isEmpty]) {
+//                roadSizeString=@"";
+//            } else {
+//                roadSizeString=[NSString stringWithFormat:@"（%@）",roadSizeString];
+//            }
             NSString *remarkString=[deform.remark stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if ([remarkString isEmpty]) {
                 remarkString=@"";
@@ -956,7 +967,8 @@ InspectionCheckState inspectionState;
 //            NSCharacterSet *zeroSet=[NSCharacterSet characterSetWithCharactersInString:@".0"];
             all += deform.total_price.floatValue;
 //            quantity=[quantity stringByTrimmingTrailingCharactersInSet:zeroSet];
-            deformsString=[deformsString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
+//            deformsString=[deformsString stringByAppendingFormat:@"、%@%@%@%@%@",deform.roadasset_name,roadSizeString,quantity,deform.unit,remarkString];
+            deformsString=[deformsString stringByAppendingFormat:@"、%@%@%@%@",deform.roadasset_name,quantity,deform.unit,remarkString];
         }
         NSCharacterSet *charSet=[NSCharacterSet characterSetWithCharactersInString:@"、"];
         deformsString=[deformsString stringByTrimmingCharactersInSet:charSet];
@@ -1048,7 +1060,7 @@ InspectionCheckState inspectionState;
     UITextField * textfield = (UITextField *)sender;
     RoadSegmentPickerViewController *icPicker=[[RoadSegmentPickerViewController alloc] initWithStyle:UITableViewStylePlain];
     icPicker.tableView.frame    = CGRectMake(0, 0, 200, 250);
-    icPicker.pickerState        = 0;
+    icPicker.pickerState        = kRoadSegment;
     icPicker.delegate           = self;
     self.pickerPopover=[[UIPopoverController alloc] initWithContentViewController:icPicker];
     [self.pickerPopover setPopoverContentSize:CGSizeMake(200, 250)];

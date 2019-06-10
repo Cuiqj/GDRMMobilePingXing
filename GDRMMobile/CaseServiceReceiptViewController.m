@@ -14,6 +14,7 @@
 #import "CaseServiceFiles.h"
 #import "OrgInfo.h"
 #import "UserInfo.h"
+#import "Systype.h"
 
 static NSString * const xmlName = @"ServiceReceiptTable";
 @interface CaseServiceReceiptViewController ()
@@ -31,6 +32,7 @@ static NSString * const xmlName = @"ServiceReceiptTable";
     self.view.frame = viewFrame;
     if (![self.caseID isEmpty]) {
         self.caseServiceReceipt = [CaseServiceReceipt caseServiceReceiptForCase:self.caseID];
+        NSLog(@"%@",self.caseServiceReceipt);
         if (self.caseServiceReceipt == nil) {
             self.caseServiceReceipt = [CaseServiceReceipt newCaseServiceReceiptForCase:self.caseID];
             [self generateDefaultInfo:self.caseServiceReceipt];
@@ -106,7 +108,11 @@ static NSString * const xmlName = @"ServiceReceiptTable";
     Citizen *citizen = [Citizen citizenForCitizenName:nil nexus:@"当事人" case:self.caseID];
     caseServiceReceipt.incepter_name=citizen.party;
     caseServiceReceipt.isuploaded = (@NO);
-    caseServiceReceipt.service_position = caseInfo.full_happen_place;
+//    caseServiceReceipt.service_position = [[Systype typeValueForCodeName:@"送达地点"] objectAtIndex:0];
+//    if(caseServiceReceipt.service_position.length ==0){
+        caseServiceReceipt.service_position = @"广东省公路事务中心平兴高速路政大队一中队办公室";
+//    }
+//    caseServiceReceipt.service_position = caseInfo.full_happen_place;
     NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
     caseServiceReceipt.service_company = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
     

@@ -23,7 +23,7 @@
     switch (self.pickerState) {
         case kRoadSegment:
             // self.data=[RoadSegment allRoadSegments];
-            self.data= [ RoadSegment allRoadSegmentsForCaseView];
+            self.data= [RoadSegment allRoadSegmentsForCaseView];
             break;
         case kRoadSide:
             self.data=[Systype typeValueForCodeName:@"方向"];
@@ -41,38 +41,31 @@
             break;
     }
 }
-- (void)viewDidLoad
-{
-    
+- (void)viewDidLoad{
     [super viewDidLoad];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload{
     [self setData:nil];
     [self setPickerPopover:nil];
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.data.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell==nil) {
@@ -102,7 +95,11 @@
             }else if (![[self.data objectAtIndex:indexPath.row] valueForKey:@"name"]){
                 [self.delegate setRoadSegment:[[self.data objectAtIndex:indexPath.row] valueForKey:@"myid"] roadName:[[self.data objectAtIndex:indexPath.row] valueForKey:@"place_prefix1"]];
             }else{
-                [self.delegate setRoadSegment:[[self.data objectAtIndex:indexPath.row] valueForKey:@"myid"] roadName:[NSString stringWithFormat:@"%@%@",[[self.data objectAtIndex:indexPath.row] valueForKey:@"place_prefix1"],[[self.data objectAtIndex:indexPath.row] valueForKey:@"name"]]];
+                if([[[self.data objectAtIndex:indexPath.row] valueForKey:@"place_prefix1"] isEqual:[[self.data objectAtIndex:indexPath.row] valueForKey:@"name"]]){
+                    [self.delegate setRoadSegment:[[self.data objectAtIndex:indexPath.row] valueForKey:@"myid"] roadName:[NSString stringWithFormat:@"%@",[[self.data objectAtIndex:indexPath.row] valueForKey:@"name"]]];
+                }else{
+                    [self.delegate setRoadSegment:[[self.data objectAtIndex:indexPath.row] valueForKey:@"myid"] roadName:[NSString stringWithFormat:@"%@%@",[[self.data objectAtIndex:indexPath.row] valueForKey:@"place_prefix1"],[[self.data objectAtIndex:indexPath.row] valueForKey:@"name"]]];
+                }
             }
             break;
         case kRoadPlace:

@@ -128,9 +128,9 @@
             InitFileCode *iFileCode = [[InitFileCode alloc] init];
             [iFileCode downLoadFileCode:orgID];
             WAITFORPARSER
-            InitBridge  *iBridge = [[InitBridge alloc] init];
-            [iBridge downLoadBridge:orgID];
-            WAITFORPARSER
+//            InitBridge  *iBridge = [[InitBridge alloc] init];
+//            [iBridge downLoadBridge:orgID];
+//            WAITFORPARSER
             InitMaintainPlan  *iMaintianPlan = [[InitMaintainPlan alloc] init];
             [iMaintianPlan downMaintainPlan:orgID];
             WAITFORPARSER
@@ -143,15 +143,15 @@
             InitServiceCheckItems *iservicesCheckItems=[[InitServiceCheckItems alloc]init];
             [iservicesCheckItems downLoadServiceCheckItems:orgID];
             WAITFORPARSER
-            InitServiceOrg *iservicesOrg=[[InitServiceOrg alloc]init];
-            [iservicesOrg downLoadServiceOrg:orgID];
-            WAITFORPARSER
+//            InitServiceOrg *iservicesOrg=[[InitServiceOrg alloc]init];
+//            [iservicesOrg downLoadServiceOrg:orgID];
+//            WAITFORPARSER
             InitCarCheckItems *iCarCheckItems=[[InitCarCheckItems alloc]init];
             [iCarCheckItems downLoadCarCheckItems:orgID];
             WAITFORPARSER
-            InitRoadasset_checkitem *iRoadasset_checkitem=[[InitRoadasset_checkitem alloc]init];
-            [iRoadasset_checkitem downLoadRoadasset_checkitem:orgID];
-            WAITFORPARSER
+//            InitRoadasset_checkitem *iRoadasset_checkitem=[[InitRoadasset_checkitem alloc]init];
+//            [iRoadasset_checkitem downLoadRoadasset_checkitem:orgID];
+//            WAITFORPARSER
             
             //31
 //            InitInspection * insPectionData = [[InitInspection alloc] init];
@@ -163,12 +163,12 @@
 //            InitInspectionRecord * insPectionRecordData = [[InitInspectionRecord alloc] init];
 //            [insPectionRecordData downloadInspectionRecordforOrgID:orgID];
 //            WAITFORPARSER
-            InitBridgeCheckItem *iInitBridgeCheckItem=[[InitBridgeCheckItem alloc]init];
-            [iInitBridgeCheckItem downLoadBridgeCheckItem:orgID];
-            WAITFORPARSER
+//            InitBridgeCheckItem *iInitBridgeCheckItem=[[InitBridgeCheckItem alloc]init];
+//            [iInitBridgeCheckItem downLoadBridgeCheckItem:orgID];
+//            WAITFORPARSER
 //            InitCaseInfo * caseinfoitem = [[InitCaseInfo alloc] init];
 //            [caseinfoitem downLoadcaseinfofortable:@"CaseInfo" withorgID:orgID withtypeID:nil];
-            WAITFORPARSER
+//            WAITFORPARSER
 //            InitCaseInquire * inquireData = [[InitCaseInquire alloc] init];
 //            [inquireData downloadCaseInquireforOrgID:orgID];
 //            WAITFORPARSER

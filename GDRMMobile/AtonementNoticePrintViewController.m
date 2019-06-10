@@ -48,6 +48,8 @@ static NSString * xmlName = @"AtonementNoticeTable";
 @synthesize caseID            = _caseID;
 @synthesize notice            = _notice;
 
+
+//"驾驶"&录入!E13&录入!E14&"行至G35济广高速（平兴）"&录入!B8&"处，在公路"&录入!B7&"由于"&录入!B13&"造成交通事故，"&录入!B22&"，"&录入!B28&"。"&"经与当事人现场勘查，损坏路产:详细项目参阅《损坏公路设施索赔清单》。 "
 - (void)viewDidLoad
 {
     [super setCaseID:self.caseID];
@@ -236,15 +238,20 @@ static NSString * xmlName = @"AtonementNoticeTable";
 }
 
 - (NSString *)CaseDesc{
-    NSString * str = [CaseProveInfo generateEventDescForNotices:self.caseID];
+    NSString * strAndPeopeleCar = [CaseProveInfo generateEventDescForNotices:self.caseID];
+    NSString * str = [strAndPeopeleCar componentsSeparatedByString:@"人员伤亡和车辆损坏"][0];
+    NSString * peoplecar = [strAndPeopeleCar componentsSeparatedByString:@"人员伤亡和车辆损坏"][1];
     NSArray *temp=[str componentsSeparatedByString:@"处时"];
     NSArray *temp1=[str componentsSeparatedByString:@"之间时"];
     NSString * case_desc;
+    
     if([temp count]>1){
-        case_desc = [[temp objectAtIndex:0] stringByAppendingString:@"处时发生交通事故，经现场勘查，损坏公路路产，详见《公路赔（补）偿清单》。"];
+        NSString * casereason = [(NSString *)temp[1] componentsSeparatedByString:@"原因"][0];
+        case_desc = [NSString stringWithFormat:@"%@处%@发生交通事故，%@,经与当事人现场勘查，损坏路产，详细项目参阅《损坏公路设施索赔清单》。",[temp objectAtIndex:0],casereason,peoplecar];
+//        case_desc = [[temp objectAtIndex:0] stringByAppendingString:@"处时发生交通事故，%@经现场勘查，损坏公路路产，详见《公路赔（补）偿清单》。",peoplecar];
     }else if([temp1 count]>1){
-        case_desc = [[temp1 objectAtIndex:0] stringByAppendingString:@"之间时发生交通事故，经现场勘查，损坏公路路产，详见《公路赔（补）偿清单》。"];
-        
+        NSString * casereason = [(NSString *)temp1[1] componentsSeparatedByString:@"原因"][0];
+        case_desc = [NSString stringWithFormat:@"%@之间时%@发生交通事故，%@,经与当事人现场勘查，损坏路产，详细项目参阅《损坏公路设施索赔清单》。",[temp1 objectAtIndex:0],casereason, peoplecar];
     }else{
         return str;
     }
@@ -255,7 +262,7 @@ static NSString * xmlName = @"AtonementNoticeTable";
     CaseProveInfo *proveInfo = [CaseProveInfo proveInfoForCase:self.caseID];
     if ([proveInfo.event_desc isEmpty] || proveInfo.event_desc == nil) {
         //proveInfo.event_desc = [CaseProveInfo generateEventDescForCase:self.caseID];
-        proveInfo.event_desc     = [CaseProveInfo generateEventDescForNotices:self.caseID];
+        proveInfo.event_desc     = proveInfo.event_desc = [[CaseProveInfo generateEventDescForNotices:self.caseID] componentsSeparatedByString:@"人员伤亡和车辆损坏"][0];
     }
     NSDateFormatter *codeFormatter = [[NSDateFormatter alloc] init];
     [codeFormatter setDateFormat:@"yyyyMM'0'dd"];
@@ -272,8 +279,8 @@ static NSString * xmlName = @"AtonementNoticeTable";
         notice.case_desc = [array objectAtIndex:1];
     }
     notice.citizen_name       = proveInfo.citizen_name;
-    //notice.witness = @"现场照片、勘验检查笔录、询问笔录、现场勘验图";
-    notice.witness            = @"勘验笔录，证人证词和现场拍摄的照片等材料";
+    notice.witness = @"现场照片、现场勘查图、勘验检查笔录、询问笔录";
+//    notice.witness            = @"勘验笔录，证人证词和现场拍摄的照片等材料";
     notice.check_organization = [[Systype typeValueForCodeName:@"复核单位"] objectAtIndex:0];
     NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
     notice.organization_id    = [[OrgInfo orgInfoForOrgID:[UserInfo userInfoForUserID:currentUserID].organization_id] valueForKey:@"orgname"];
@@ -335,8 +342,10 @@ static NSString * xmlName = @"AtonementNoticeTable";
     }
     NSArray * tmp = [payReason componentsSeparatedByString:@"违法事实清楚，"];
     payReason = [[tmp objectAtIndex:0] stringByAppendingString:@"违法事实清楚，"];
-    payReason =[NSString stringWithFormat:@"%@依据法律条文《中华人民共和国公路法》第五十二条、第八十五条第一款和《广东省公路条例》第二十三条第一款，并依照《损坏公路路产赔补偿标准》（粤交路[1998]38号、粤交路[1999]263号）",payReason];
-    notice.pay_reason     =  @"《中华人民共和国公路法》第五十二条、第八十五条第一款和《广东省公路条例》第二十三条第一款，并依照《损坏公路路产赔补偿标准》（粤交路[1998]38号、粤交路[1999]263号）";
+    payReason =[NSString stringWithFormat:@"%@依据法律条文《中华人民共和国公路法》第五十二条、第八十五条第一款和《广东省公路条例》第二十三条第一款，并依照《损坏公路路产赔补偿标准》（粤交路）",payReason];
+    
+//    notice.pay_reason     =  @"《中华人民共和国公路法》第五十二条、第八十五条第一款和《广东省公路条例》第二十三条第一款，并依照《损坏公路路产赔补偿标准》（粤交路[1998]38号、粤交路[1999]263号";
+    notice.pay_reason     =  @"《中华人民共和国公路法》第八十五条第一款，《广东省公路条例》第二十三条，并依照广东省《损坏公路路产赔偿标准》([1998]38号、粤交路[1999]263号";
     NSArray *deformations = [CaseDeformation deformationsForCase:self.caseID forCitizen:notice.citizen_name];
     double summary=[[deformations valueForKeyPath:@"@sum.total_price.doubleValue"] doubleValue];
     NSNumber *sumNum      = @(summary);
@@ -423,12 +432,20 @@ static NSString * xmlName = @"AtonementNoticeTable";
         
         CaseProveInfo *proveInfo = [CaseProveInfo proveInfoForCase:self.caseID];
         [self drawDateTable:xmlName withDataModel:proveInfo];
-        [self drawStaticTable1:xmlName];
+//        [self drawStaticTable1:xmlName];
         UIGraphicsEndPDFContext();
         return [NSURL fileURLWithPath:formatFilePath];
     } else {
         return nil;
     }
 }
+- (void)deleteCurrentDoc{
+    if (![self.caseID isEmpty] && self.notice){
+        [[[AppDelegate App] managedObjectContext] deleteObject:self.notice];
+        [[AppDelegate App] saveContext];
+        self.notice = nil;
+    }
+}
+
 
 @end

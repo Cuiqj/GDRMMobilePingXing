@@ -53,12 +53,10 @@
 }
 
 #pragma mark - View lifecycle
-
-
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
+    [self.updateDocFormatBtn setHidden:YES];
+    [self.uibuttonResetForm setHidden:YES];
     
     self.versionName.text = VERSION_NAME;
     self.versionTime.text = VERSION_TIME;
@@ -181,7 +179,6 @@
             NSData *data =[NSData dataWithContentsOfURL:url];
             if(data ==nil){
                 succed=@"fuck";
-                
                 if([failDocNames isEqualToString:@""]){
                     failDocNames =[NSString  stringWithFormat:@"%@%@",failDocNames,docXMlName ];
                 }else{
@@ -231,8 +228,7 @@
     osVC.modalPresentationStyle = UIModalPresentationFormSheet;
     osVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     osVC.delegate = self;
-    [self presentModalViewController:osVC animated:YES];
-    
+    [self presentViewController:osVC animated:YES completion:nil];
 }
 
 - (void)downLoadFinished{
@@ -330,7 +326,7 @@
     NSString *currentBulidVersion = infoDic[@"CFBundleVersion"];
     
     //蒲公英的apikey，appkey
-    NSDictionary *paramDic = @{@"_api_key":@"d98734ffcbcb99a86ff217e63c46ecfe",@"appKey":@"dd4602f1ce8a180cea581cc31e6c51ad"};
+    NSDictionary *paramDic = @{@"_api_key":@"d98734ffcbcb99a86ff217e63c46ecfe",@"appKey":@"9b47a4da64b4a516c40b457e10b5c652"};
     [self loadUpdateWithDic:paramDic success:^(id response) {
         NSLog(@"更新信息");
         if ([currentBulidVersion integerValue] < [response[@"data"][@"buildVersionNo"]integerValue]) {

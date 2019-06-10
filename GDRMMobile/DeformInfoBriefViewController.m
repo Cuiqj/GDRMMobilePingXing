@@ -240,10 +240,19 @@
 
 //添加路产损坏记录
 -(void)addDeformationForRoadAsset:(RoadAssetPrice *)aRoadAsset andQuantity:(double)quantity withRemark:(NSString *)aRemark withDegree:(NSString *)aDegree{
+    if([self.deformList count] >=12){
+        __weak typeof(self)weakself = self;
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"提示" message:@"一次只能添加12种路产"  preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            return ;
+        }];
+        [ac addAction:cancelAction];
+        [weakself presentViewController:ac animated:YES completion:nil];
+        return;
+    }
     if (![self.caseID isEmpty]) {
         CaseInfo *caseinfo = [ CaseInfo caseInfoForID:self.caseID];
         //if(caseinfo.case_type_id isEqualToString:@"22"){}
-        
         if (self.citizenList.count>0||[caseinfo.case_type_id isEqualToString:@"20"]) {
             NSString *rowTitle=[self.citizenPickerView cellForRowAtIndexPath:[self.citizenPickerView indexPathForSelectedRow]].textLabel.text;
             if (self.citizenList.count==1) {
@@ -260,14 +269,15 @@
             }
             newDeformation.price=aRoadAsset.price;
             newDeformation.quantity=[NSNumber numberWithDouble:quantity];
-            newDeformation.rasset_size=aRoadAsset.spec;
+            newDeformation.rasset_size = aRoadAsset.spec;
             newDeformation.unit=aRoadAsset.unit_name;
             newDeformation.remark=aRemark;
             newDeformation.destory_degree=aDegree;
-            newDeformation.roadasset_name=aRoadAsset.name;
+            newDeformation.roadasset_name= [NSString stringWithFormat:@"%@%@",aRoadAsset.name,aRoadAsset.spec];
             newDeformation.total_price=[NSNumber numberWithDouble:aRoadAsset.price.doubleValue*quantity];
             [[AppDelegate App] saveContext];
             //在TableView添加行
+           
             [self.deformList addObject:newDeformation];
             [self.deformTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:self.deformList.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
             

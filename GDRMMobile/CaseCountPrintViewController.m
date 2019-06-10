@@ -82,8 +82,19 @@ static NSString * xmlName = @"CaseCountTable";
     self.caseCount.citizen_name = self.labelParty.text;
     self.caseCount.sum = [NSNumber numberWithDouble:[[NSString stringWithString:self.labelPayReal.text] doubleValue]];
     self.caseCount.chinese_sum = [[NSNumber numberWithDouble:[self.caseCount.sum doubleValue]] numberConvertToChineseCapitalNumberString];
+//    NSMutableArray * nsmuarray = [[NSMutableArray alloc] init];
+//    for (int i = 0 ;i<self.data.count ;i++) {
+//        CaseDeformation * casedeformation = self.data[i];
+//        if (casedeformation.rasset_size.length >0) {
+//            if ([casedeformation.roadasset_name hasSuffix:casedeformation.rasset_size]) {
+//
+//            }else{
+//                casedeformation.roadasset_name = [NSString stringWithFormat:@"%@%@",casedeformation.roadasset_name,casedeformation.rasset_size];
+//            }
+//        }
+//        [nsmuarray addObject:casedeformation];
+//    }
     self.caseCount.case_count_list = [NSArray arrayWithArray:self.data];
-    
     [[AppDelegate App] saveContext];
 }
 
@@ -184,9 +195,16 @@ static NSString * xmlName = @"CaseCountTable";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"CaseCountDetailCell";
     CaseCountDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    CaseDeformation *caseDeformation = [self.data objectAtIndex:indexPath.row];
+    CaseDeformation * caseDeformation = [self.data objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.labelAssetName.text = caseDeformation.roadasset_name;
+//    if (caseDeformation.rasset_size.length >0) {
+//        if ([caseDeformation.roadasset_name hasSuffix:caseDeformation.rasset_size]){
+//
+//        }else{
+//            cell.labelAssetName.text = [NSString stringWithFormat:@"%@%@",caseDeformation.roadasset_name,caseDeformation.rasset_size];
+//        }
+//    }
     //cell.labelAssetSize.text = caseDeformation.rasset_size;
     
     if ([caseDeformation.unit rangeOfString:@"米"].location != NSNotFound) {
@@ -247,14 +265,14 @@ static NSString * xmlName = @"CaseCountTable";
 }
 
 - (void)deleteCurrentDoc{
-//    if (![self.caseID isEmpty] && self.caseCount){
-//        [[[AppDelegate App] managedObjectContext] deleteObject:self.caseCount];
-//        for (CaseDeformation *ccd in self.data) {
-//            [[[AppDelegate App] managedObjectContext] deleteObject:ccd];
-//        }
-//        [[AppDelegate App] saveContext];
-//        self.caseCount = nil;
-//        [self.data removeAllObjects];
-//    }
+    if (![self.caseID isEmpty] && self.caseCount){
+        [[[AppDelegate App] managedObjectContext] deleteObject:self.caseCount];
+        for (CaseDeformation *ccd in self.data) {
+            [[[AppDelegate App] managedObjectContext] deleteObject:ccd];
+        }
+        [[AppDelegate App] saveContext];
+        self.caseCount = nil;
+        [self.data removeAllObjects];
+    }
 }
 @end

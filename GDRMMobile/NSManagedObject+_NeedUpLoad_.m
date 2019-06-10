@@ -256,6 +256,8 @@
 }
 
 -(NSString *)dataXMLStringForCasePhoto{
+//    var/mobile/Containers/Data/Application/AB8FACB5-A251-428A-AEC9-A50D71964319/Documents/CasePhoto/190409171707304
+//    var/mobile/Containers/Data/Application/AB8FACB5-A251-428A-AEC9-A50D71964319/Documents/InspectionConstruction/190409171707304
     NSString *casePhotoStr = @"<id>%@</id>"
                                     "<parent_id>%@</parent_id>"
                                     "<photo_name>%@</photo_name>"
@@ -267,9 +269,18 @@
     NSArray *pathArray=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentPath=[pathArray objectAtIndex:0];
     NSString *photoPath=[NSString stringWithFormat:@"InspectionConstruction/%@",photo.proveinfo_id];
+    if (photo.proveinfo_id.length>0) {
+        
+    }else{
+        photoPath=[NSString stringWithFormat:@"InspectionConstruction/%@",photo.project_id];
+    }
     photoPath=[documentPath stringByAppendingPathComponent:photoPath];     
         
     UIImage *image = [UIImage imageWithContentsOfFile:[photoPath stringByAppendingPathComponent:photo.photo_name]];
+    if(!image){
+        photoPath = [photoPath stringByReplacingOccurrencesOfString:@"InspectionConstruction" withString:@"CasePhoto"];
+        image = [UIImage imageWithContentsOfFile:[photoPath stringByAppendingPathComponent:photo.photo_name]];
+    }
     NSData *data = UIImageJPEGRepresentation(image,1.0);
     NSString *stringImage = [NSString base64forData:data];
     casePhotoStr = [NSString stringWithFormat:casePhotoStr,photo.myid?photo.myid:@"",photo.proveinfo_id?photo.proveinfo_id:photo.project_id,photo.photo_name?photo.photo_name:@"",stringImage?stringImage:@"",photo.remark?photo.remark:@""];

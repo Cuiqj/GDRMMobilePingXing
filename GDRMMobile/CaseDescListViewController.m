@@ -32,7 +32,7 @@
     if([self.poptype isEqualToNumber:[NSNumber numberWithInt:2]]){
         self.data=self.carLooksArray;
     }else{
-    self.data=[self.delegate getCaseDescArrayDelegate];
+        self.data = [self.delegate getCaseDescArrayDelegate];
     }
 }
 -(NSArray *)carLooksArray{

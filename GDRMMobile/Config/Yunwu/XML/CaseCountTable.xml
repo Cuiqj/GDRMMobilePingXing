@@ -7,364 +7,231 @@
     <StaticTable>
         <Lines>
             <defaultLineWidth>0.2</defaultLineWidth>
-            <!--上线-->
-            <line x1="15" y1="44" x2="185" y2="44"/>
-            <!--单位  当事人  联系电话  肇事车号-->
-            <line x1="15" y1="55.3" x2="185" y2="55.3"/>
-            <!--时间  年 月 日 时 分 地点  -->
-            <line x1="15" y1="66" x2="185" y2="66"/>
-            <!--路产赔-->
-            <line x1="15" y1="77" x2="185" y2="77"/>
-            <!--编号  名称-->
-            <line x1="15" y1="86.5" x2="185" y2="86.5"/>
-            <!--1-->
-            <line x1="15" y1="96.5" x2="185" y2="96.5"/>
-            <!--2-->
-            <line x1="15" y1="106.5" x2="185" y2="106.5"/>
-            <!--3-->
-            <line x1="15" y1="116.5" x2="185" y2="116.5"/>
-            <!--4-->
-            <line x1="15" y1="126.5" x2="185" y2="126.5"/>
-            <!--5-->
-            <line x1="15" y1="136.5" x2="185" y2="136.5"/>
-            <!--6-->
-            <line x1="15" y1="146.5" x2="185" y2="146.5"/>
-            <!--7-->
-            <line x1="15" y1="156.5" x2="185" y2="156.5"/>
-            <!--8-->
-            <line x1="15" y1="166.5" x2="185" y2="166.5"/>
-            <!--9-->
-            <line x1="15" y1="176.5" x2="185" y2="176.5"/>
-            <!--10-->
-            <line x1="15" y1="186.5" x2="185" y2="186.5"/>
-            <!--11-->
-            <line x1="15" y1="196.5" x2="185" y2="196。5"/>
-            <!--12-->
-            <line x1="15" y1="206.5" x2="185" y2="206.5"/>
-            <!--13-->
-            <line x1="15" y1="216.5" x2="185" y2="216.5"/>
-            <!--14-->
-            <line x1="15" y1="226.5" x2="185" y2="226.5"/>
-            <!--15-->
-            <line x1="15" y1="236.5" x2="185" y2="236.5"/>
-            <!--底线-->
-            <line x1="15" y1="246.5" x2="185" y2="246.5"/>
-            
-            <!--左边框线-->
-            <line x1="15" y1="44" x2="15" y2="246.5"/>
-            <!--单位  时间-->
-            <line x1="30" y1="44" x2="30" y2="66"/>
-            <!--填写单位-->
-            <line x1="63" y1="44" x2="63" y2="55.3"/>
-            <!--当事人-->
-            <line x1="76" y1="44" x2="76" y2="55.3"/>
-            <!--填写当事人-->
-            <line x1="97" y1="44" x2="97" y2="55.3"/>
-            <!--联系电话-->
-            <line x1="122" y1="44" x2="122" y2="55.3"/>
-            <!--填写联系电话-->
-            <line x1="145" y1="44" x2="145" y2="55.3"/>
-            <!--肇事车号-->
-            <line x1="166" y1="44" x2="166" y2="55.3"/>
-            <!--年 月 日 时 分-->
-            <line x1="103.5" y1="55.3" x2="103.5" y2="66"/>
-            <!--地点-->
-            <line x1="126" y1="55.3" x2="126" y2="66"/>
-            <!--7列项目竖直线      名称左线-->
-            <line x1="30" y1="77" x2="30" y2="236.5"/>
-            <!--规格左线-->
-            <line x1="65" y1="77" x2="65" y2="246.5"/>
-            <!--单位左线-->
-            <line x1="83" y1="77" x2="83" y2="236.5"/>
-            <!--数量左线-->
-            <line x1="95" y1="77" x2="95" y2="236.5"/>
-            <!--单价左线-->
-            <line x1="110.5" y1="77" x2="110.5" y2="236.5"/>
-            <!--小计左线-->
-            <line x1="131" y1="77" x2="131" y2="236.5"/>
-            <!--备注左线-->
-            <line x1="153" y1="77" x2="153" y2="236.5"/>
-            <!--右边框线-->
-            <line x1="185" y1="44" x2="185" y2="246.5"/>
+<!--                        <line x1="15" y1="20" x2="195" y2="20"/>-->
+<!--                        <line x1="15" y1="30" x2="195" y2="30"/>-->
+<!--                        <line x1="15" y1="50" x2="195" y2="50"/>-->
+<!--                        <line x1="15" y1="70" x2="195" y2="70"/>-->
+<!--                        <line x1="15" y1="90" x2="195" y2="90"/>-->
+<!--                        <line x1="15" y1="110" x2="195" y2="110"/>-->
+<!--                        <line x1="15" y1="130" x2="195" y2="130"/>-->
+<!--                        <line x1="15" y1="150" x2="195" y2="150"/>-->
+<!--                        <line x1="15" y1="170" x2="195" y2="170"/>-->
+<!--                        <line x1="15" y1="190" x2="195" y2="190"/>-->
+<!--                        <line x1="15" y1="210" x2="195" y2="210"/>-->
+<!--                        <line x1="15" y1="230" x2="195" y2="230"/>-->
+<!--                        <line x1="15" y1="250" x2="195" y2="250"/>-->
+<!--                        <line x1="15" y1="270" x2="195" y2="270"/>-->
+<!--                        <line x1="15" y1="280" x2="195" y2="280"/>-->
+<!--                        <line x1="15" y1="260" x2="195" y2="260"/>-->
+<!--                        <line x1="15" y1="30" x2="15" y2="280"/>-->
+<!--                        <line x1="30" y1="30" x2="30" y2="280"/>-->
+<!--                        <line x1="50" y1="30" x2="50" y2="280"/>-->
+<!--                        <line x1="70" y1="30" x2="70" y2="280"/>-->
+<!--                        <line x1="90" y1="30" x2="90" y2="280"/>-->
+<!--                        <line x1="110" y1="30" x2="110" y2="280"/>-->
+<!--                        <line x1="130" y1="30" x2="130" y2="280"/>-->
+<!--                        <line x1="150" y1="30" x2="150" y2="280"/>-->
+<!--                        <line x1="170" y1="30" x2="170" y2="280"/>-->
+<!--                        <line x1="180" y1="30" x2="180" y2="280"/>-->
+<!--                        <line x1="195" y1="30" x2="195" y2="280"/>-->
+                        <!--       上下左右           -->
+                        <line x1="17" y1="42" x2="183" y2="42"/>
+                        <line x1="17" y1="230" x2="183" y2="230"/>
+                        <line x1="17" y1="42" x2="17" y2="230"/>
+                        <line x1="183" y1="42" x2="183" y2="230"/>
+                        <!--  当事人   时间    地点   右线     -->
+                        <line x1="33" y1="42" x2="33" y2="190"/>
+                        <!--    联系地址   左右线      -->
+                        <line x1="53" y1="42" x2="53" y2="54"/>
+                        <line x1="76" y1="42" x2="76" y2="54"/>
+                        <!--    联系电话   左右线    及单价和小计左线  -->
+                        <line x1="136" y1="42" x2="136" y2="63.5"/>
+                        <line x1="155" y1="42" x2="155" y2="63.5"/>
+                        <line x1="136" y1="73" x2="136" y2="181"/>
+                        <line x1="155" y1="73" x2="155" y2="181"/>
+                        <!--    当事人 联系地址 下线    -->
+                        <line x1="17" y1="54" x2="183" y2="54"/>
+                        <!--  车型  左右线    及单位和数量左线   -->
+                        <line x1="105" y1="54" x2="105" y2="63.5"/>
+                        <line x1="118" y1="54" x2="118" y2="63.5"/>
+                        <line x1="105" y1="73" x2="105" y2="181"/>
+                        <line x1="118" y1="73" x2="118" y2="181"/>
+                        
+                        <!--    时间 车型  车号   下线    -->
+                        <line x1="17" y1="63.5" x2="183" y2="63.5"/>
+                        <!--    地点  下线    -->
+                        <line x1="17" y1="73" x2="183" y2="73"/>
+                        <!--    项目 单位 数量 单价（元） 小计（元） 下线    -->
+                        <line x1="33" y1="82" x2="183" y2="82"/>
+                        <!--    合计  上下线    -->
+                        <line x1="17" y1="181" x2="183" y2="181"/>
+                        <line x1="17" y1="190" x2="183" y2="190"/>
+                   
         </Lines>
         <Texts>
             <defaultFontSize>16</defaultFontSize>
             <!--标题:-->
             <Text>
-                <text>公 路 赔 （补）偿 清 单</text>
-                <fontSize>22</fontSize>
-                <origin x="68" y="35"/>
+                <text>广东省公路事务中心平兴高速公路路政大队</text>
+                <fontSize>18</fontSize>
+                <origin x="42" y="34"/>
                 <size width="500" height="6"/>
             </Text>
-<!--            <Text>-->
-<!--                <text>案 号（</text>-->
-<!--                <origin x="128" y="45"/>-->
-<!--                <size width="100" height="6"/>-->
-<!--            </Text>-->
-<!--            <Text>-->
-<!--                <text>）字第（</text>-->
-<!--                <origin x="153" y="45"/>-->
-<!--                <size width="100" height="6"/>-->
-<!--            </Text>-->
-<!--            <Text>-->
-<!--                <text>）号</text>-->
-<!--                <origin x="180" y="45"/>-->
-<!--                <size width="100" height="6"/>-->
-<!--            </Text>-->
             <Text>
-                <text>单位</text>
-                <origin x="17" y="58.5"/>
-                <size width="100" height="6"/>
+                <text>损坏公路设施索赔清单</text>
+                <fontSize>18</fontSize>
+                <origin x="70" y="41"/>
+                <size width="500" height="6"/>
             </Text>
-<!--            <Text>-->
-<!--                <text>逃逸事故</text>-->
-<!--                <origin x="42" y="54.7"/>-->
-<!--                <size width="100" height="6"/>-->
-<!--            </Text>-->
             <Text>
                 <text>当事人</text>
-                <origin x="62" y="58.5"/>
+                <origin x="18" y="56.5"/>
+                <size width="100" height="6"/>
+            </Text>
+            <Text>
+                <text>联系地址</text>
+                <origin x="55" y="56.5"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
                 <text>联系电话</text>
-                <origin x="99" y="58.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>肇事车号</text>
-                <origin x="147" y="58.5"/>
+                <origin x="136" y="56.5"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
                 <text>时间</text>
-                <origin x="17" y="69"/>
+                <origin x="20" y="67"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>年</text>
-                <origin x="46" y="69"/>
+                <text>车型</text>
+                <origin x="106.5" y="67"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>月</text>
-                <origin x="58" y="69"/>
+                <text>车号</text>
+                <origin x="141" y="67"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>日</text>
-                <origin x="70" y="69"/>
+                <text>地点</text>
+                <origin x="20" y="76.5"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>时</text>
-                <origin x="83" y="69"/>
+                <text>项目</text>
+                <origin x="65" y="86"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>分</text>
-                <origin x="97" y="69"/>
+                <text>单位</text>
+                <origin x="106.5" y="86"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>地  点</text>
-                <origin x="107" y="69"/>
+                <text>数量</text>
+                <origin x="122" y="86"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>K</text>
-                <origin x="127" y="69"/>
+                <text>单价(元）</text>
+                <origin x="136.5" y="86"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>+</text>
-                <origin x="138" y="69"/>
+                <text>小计(元）</text>
+                <origin x="160" y="86"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>M（</text>
-                <origin x="153" y="69"/>
+                <text>损</text>
+                <origin x="22" y="112"/>
+                <size width="12" height="6"/>
+            </Text>
+            <Text>
+                <text>坏</text>
+                <origin x="22" y="118"/>
+                <size width="12" height="6"/>
+            </Text>
+            <Text>
+                <text>公</text>
+                <origin x="22" y="124"/>
+                <size width="12" height="6"/>
+            </Text>
+            <Text>
+                <text>路</text>
+                <origin x="22" y="130"/>
+                <size width="12" height="6"/>
+            </Text>
+            <Text>
+                <text>设</text>
+                <origin x="22" y="136"/>
+                <size width="12" height="6"/>
+            </Text>
+            <Text>
+                <text>施</text>
+                <origin x="22" y="142"/>
+                <size width="12" height="6"/>
+            </Text>
+            <Text>
+                <text>情</text>
+                <origin x="22" y="148"/>
+                <size width="12" height="6"/>
+            </Text>
+            <Text>
+                <text>况</text>
+                <origin x="22" y="154"/>
+                <size width="12" height="6"/>
+            </Text>
+            <Text>
+                <text>合计</text>
+                <origin x="20" y="193.5"/>
+                <size width="30" height="6"/>
+            </Text>
+            <Text>
+                <fontSize>11.5</fontSize>
+                <text>1、赔补偿标准按广东省交通厅、财政厅、物价局文件粵交路[1998]38号、粵交路[1999]263</text>
+                <origin x="18" y="201.5"/>
+                <size width="700" height="6"/>
+            </Text>
+            <Text>
+                <fontSize>11.5</fontSize>
+                <text>号文执行，当事人有权要求路政员出示上述文件。</text>
+                <origin x="18" y="209.5"/>
+                <size width="700" height="6"/>
+            </Text>
+            <Text>
+                <fontSize>11.5</fontSize>
+                <text>2、受理地点、受理时间、银行缴款帐号见右。</text>
+                <origin x="18" y="217.5"/>
+                <size width="700" height="6"/>
+            </Text>
+            <Text>
+                <fontSize>11.5</fontSize>
+                <text>3、联系电话:</text>
+                <origin x="18" y="225.5"/>
+                <size width="700" height="6"/>
+            </Text>
+            <Text>
+                <fontSize>11.5</fontSize>
+                <text>4、在交警结案前，应先办结路产索赔手续。</text>
+                <origin x="18" y="233.5"/>
+                <size width="700" height="6"/>
+            </Text>
+            <Text>
+                <text>当事人签名(按印):</text>
+                <origin x="18.5" y="252"/>
+                <size width="130" height="6"/>
+            </Text>
+            
+            <Text>
+                <text>经办人:</text>
+                <origin x="108" y="251"/>
                 <size width="100" height="6"/>
             </Text>
             <Text>
-                <text>侧）</text>
-                <origin x="171" y="69"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>损  坏  路  产  项  目</text>
-                <fontSize>19</fontSize>
-                <origin x="62.5" y="80"/>
-                <size width="300" height="6"/>
-            </Text>
-            <Text>
-                <text>编号</text>
-                <origin x="17" y="90"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>名      称</text>
-                <origin x="35" y="90"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>规 格</text>
-                <origin x="68" y="90"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>单 位</text>
-                <origin x="83.5" y="90"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>数 量</text>
-                <origin x="97" y="90"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>单价</text>
-                <origin x="115" y="90"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>小计（元）</text>
-                <origin x="132" y="90"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>备   注</text>
-                <origin x="161" y="90"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>合计（大写）</text>
-                <origin x="28.5" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>万</text>
-                <origin x="79" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>仟</text>
-                <origin x="89" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>佰</text>
-                <origin x="99" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>拾</text>
-                <origin x="109" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>元</text>
-                <origin x="120" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>角</text>
-                <origin x="130" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>分整</text>
-                <origin x="140.5" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>小写</text>
-                <origin x="153" y="248.5"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>经办人（签名）：</text>
-                <origin x="16" y="258.5"/>
-                <size width="100" height="6"/>
-            </Text>
-<!--            <Text>-->
-<!--                <text>索赔单位（公单）：</text>-->
-<!--                <origin x="114" y="271"/>-->
-<!--                <size width="110" height="6"/>-->
-<!--            </Text>-->
-            <Text>
-                <text>1</text>
-                <origin x="21" y="98"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>2</text>
-                <origin x="21" y="108"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>3</text>
-                <origin x="21" y="118"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>4</text>
-                <origin x="21" y="128"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>5</text>
-                <origin x="21" y="138"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>6</text>
-                <origin x="21" y="148"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>7</text>
-                <origin x="21" y="158"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>8</text>
-                <origin x="21" y="168"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>9</text>
-                <origin x="21" y="178"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>10</text>
-                <origin x="20" y="188"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>11</text>
-                <origin x="20" y="198"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>12</text>
-                <origin x="20" y="208"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>13</text>
-                <origin x="20" y="218"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>14</text>
-                <origin x="20" y="228"/>
-                <size width="100" height="6"/>
-            </Text>
-            <Text>
-                <text>15</text>
-                <origin x="20" y="238"/>
+                <text>(盖章)</text>
+                <origin x="110" y="258"/>
                 <size width="100" height="6"/>
             </Text>
         </Texts>
@@ -393,130 +260,89 @@
 <!--                </data>-->
 <!--            </content>-->
 <!--        </UITextField>-->
-        <!--单位    已写死 逃逸事故    42   54.7-->
-      <UITextField> <!--  contentVerticalAlignment = UIControlContentVerticalAlignmentCenter>-->
-            <origin x="32" y="53.5"/>
-            <size width="40" height="10"/>
-<!--            contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;-->
-            <content>
-                <data>
-                    <attributeName>org_name</attributeName>
-                    <entityName></entityName>
-                </data>
-            </content>
-        </UITextField>
-        <!--            <Text>-->
-        <!--                <text>逃逸事故</text>-->
-        <!--                <origin x="42" y="54.7"/>-->
-        <!--                <size width="100" height="6"/>-->
-        <!--            </Text>-->
-<!--        <UITextField>-->
-<!--            <origin x="38" y="53"/>-->
-<!--            <size width="30" height="10"/>-->
-<!--            <content>-->
-<!--                <data>-->
-<!--                    <text>逃逸事故</text>-->
-<!--                </data>-->
-<!--            </content>-->
-<!--        </UITextField>-->
-
         <!--当事人-->
         <UITextField>
-            <origin x="77" y="53.5"/>
-            <size width="75" height="10"/>
+            <origin x="33" y="53"/>
+            <size width="20" height="10"/>
             <content>
                 <data>
                     <attributeName>party</attributeName>
                 </data>
             </content>
         </UITextField>
+        <!--联系地址-->
+        <UITextField>
+            <origin x="77" y="53"/>
+            <size width="58" height="10"/>
+            <content>
+                <data>
+                    <attributeName>address</attributeName>
+                </data>
+            </content>
+        </UITextField>
         <!--联络电话-->
         <UITextField>
             <fontSize>10</fontSize>
-            <origin x="122" y="53.5"/>
-            <size width="74" height="10"/>
+            <origin x="156" y="53"/>
+            <size width="25" height="10"/>
             <content>
                 <data>
                     <attributeName>tel_number</attributeName>
                 </data>
             </content>
         </UITextField>
+        <!--时间-->
+        <UITextField>
+            <origin x="38" y="65"/>
+            <size width="70" height="6"/>
+            <content>
+                <data>
+                    <attributeName>happen_date</attributeName>
+                    <mode>yyyy年MM月dd日HH时mm分</mode>
+                </data>
+            </content>
+        </UITextField>
+        <!--车型-->
+        <UITextField>
+            <origin x="118" y="63"/>
+            <size width="18" height="10"/>
+            <content>
+                <data>
+                    <attributeName>automobile_pattern</attributeName>
+                </data>
+            </content>
+        </UITextField>
         <!--车号-->
         <UITextField>
-            <origin x="165.5" y="53.5"/>
-            <size width="30" height="10"/>
+            <origin x="156" y="65"/>
+            <size width="25" height="6"/>
             <content>
                 <data>
                     <attributeName>automobile_number</attributeName>
                 </data>
             </content>
         </UITextField>
-        <!--时间-->
-        <!--年-->
+        <!--地点      事故发生地点-->
         <UITextField>
-            <origin x="34" y="66"/>
-            <size width="18" height="6"/>
+            <origin x="35" y="74"/>
+            <size width="145" height="6"/>
             <content>
                 <data>
-                    <attributeName>happen_date</attributeName>
-                    <mode>yyyy</mode>
+                    <attributeName>full_happen_place</attributeName>
                 </data>
             </content>
         </UITextField>
-        <!--月-->
-        <UITextField>
-            <origin x="52" y="66"/>
-            <size width="8" height="6"/>
-            <content>
-                <data>
-                    <attributeName>happen_date</attributeName>
-                    <mode>MM</mode>
-                </data>
-            </content>
-        </UITextField>
-        <!--日-->
-        <UITextField>
-            <origin x="64" y="66"/>
-            <size width="8" height="6"/>
-            <content>
-                <data>
-                    <attributeName>happen_date</attributeName>
-                    <mode>dd</mode>
-                </data>
-            </content>
-        </UITextField>
-        <!--小时-->
-        <UITextField>
-            <origin x="77" y="66"/>
-            <size width="8" height="6"/>
-            <content>
-                <data>
-                    <attributeName>happen_date</attributeName>
-                    <mode>HH</mode>
-                </data>
-            </content>
-        </UITextField>
-        <!--分-->
-        <UITextField>
-            <origin x="90" y="66"/>
-            <size width="7" height="6"/>
-            <content>
-                <data>
-                    <attributeName>happen_date</attributeName>
-                    <mode>mm</mode>
-                </data>
-            </content>
-        </UITextField>
-                <UITextField>
-                    <fontSize>10</fontSize>
-                    <origin x="111.5" y="60.1"/>
-                    <size width="18" height="10"/>
-                    <content>
-                        <data>
-                            <attributeName>roadnameAndPlace</attributeName>
-                        </data>
-                    </content>
-                </UITextField>
+        
+<!--        <UITextField>-->
+<!--            <fontSize>10</fontSize>-->
+<!--            <origin x="111.5" y="60.1"/>-->
+<!--            <size width="18" height="10"/>-->
+<!--            <content>-->
+<!--                <data>-->
+<!--                    <attributeName>roadnameAndPlace</attributeName>-->
+<!--                </data>-->
+<!--            </content>-->
+<!--        </UITextField>-->
 <!--               <UITextField>-->
 <!--                    <fontSize>8.6</fontSize>-->
 <!--                    <origin x="117" y="65"/>-->
@@ -528,48 +354,39 @@
 <!--                    </content>-->
 <!--               </UITextField><!--roadnameAndPlace-->
 <!--后来分为两个，现在又改回去了roadName。 side_short -->
-        <UITextField>
-            <origin x="110" y="63.5"/>
-            <size width="120" height="6"/>
-            <fontSize>10</fontSize>
-            <content>
-                <data>
-<!--                    <attributeName>roadnameAndPlace</attributeName>-->
-<!--                    <entityName>CaseInfo</entityName>-->
-                </data>
-            </content>
-        </UITextField>
-        <UITextField>
-            <origin x="130" y="66"/>
-            <size width="20" height="6"/>
-            <content>
-                <data>
-                    <attributeName>station_start_km</attributeName>
-                </data>
-            </content>
-        </UITextField>
-        <UITextField>
-            <origin x="143" y="66"/>
-            <size width="20" height="6"/>
-            <content>
-                <data>
-                    <attributeName>station_start_m</attributeName>
-                </data>
-            </content>
-        </UITextField>
-        <UITextField>
-            <origin x="155" y="63"/>
-            <size width="18" height="12"/>
-            <fontSize>12</fontSize>
-            <alignment>center</alignment>
-            <content>
-                <data>
-                    <attributeName>count_place</attributeName>
-                </data>
-            </content>
-        </UITextField>
+<!--        <UITextField>-->
+<!--            <origin x="130" y="66"/>-->
+<!--            <size width="20" height="6"/>-->
+<!--            <content>-->
+<!--                <data>-->
+<!--                    <attributeName>station_start_km</attributeName>-->
+<!--                </data>-->
+<!--            </content>-->
+<!--        </UITextField>-->
+<!--        <UITextField>-->
+<!--            <origin x="143" y="66"/>-->
+<!--            <size width="20" height="6"/>-->
+<!--            <content>-->
+<!--                <data>-->
+<!--                    <attributeName>station_start_m</attributeName>-->
+<!--                </data>-->
+<!--            </content>-->
+<!--        </UITextField>-->
+<!--        <UITextField>-->
+<!--            <origin x="155" y="63"/>-->
+<!--            <size width="18" height="12"/>-->
+<!--            <fontSize>12</fontSize>-->
+<!--            <alignment>center</alignment>-->
+<!--            <content>-->
+<!--                <data>-->
+<!--                    <attributeName>count_place</attributeName>-->
+<!--                </data>-->
+<!--            </content>-->
+<!--        </UITextField>-->
         <!--损坏情况-->
         <UITableView>
+            <origin x="34" y="92.5"/>
+            <size width="148" height="96"/>
             <content>
                 <data>
                     <!--字段名-->
@@ -577,33 +394,37 @@
                 </data>
             </content>
             <table>
-                <origin x="30" y="97.5"/>
+                <origin x="34" y="92.5"/>
+<!--                <origin x="34" y="92"/>-->
                 <row>
                     <!--项目-->
                     <cell>
-                        <size width="35" height="10"/>
+                        <size width="70" height="8"/>
                         <data>
                             <attributeName>roadasset_name</attributeName>
                         </data>
                     </cell>
-                    <!--规格-->
-                    <cell>
-                        <size width="21" height="10"/>
-                        <data>
-                            <attributeName>rasset_size</attributeName>
-                        </data>
-                    </cell>
+<!--                    <!--规格-->-->
+<!--                    <cell>-->
+<!--                        <size width="21" height="10"/>-->
+<!--                        <data>-->
+<!--                            <attributeName>rasset_size</attributeName>-->
+<!--                        </data>-->
+<!--                    </cell>-->
                     <!--单位-->
                     <cell>
-                        <size width="15" height="10"/>
+                        <alignment>center</alignment>
+                        <size width="13" height="8"/>
                         <data>
                             <attributeName>unit</attributeName>
                         </data>
                     </cell>
                     <!--数量-->
                     <cell>
-                        <size width="10" height="10"/>
+                        <alignment>center</alignment>
+                        <size width="18" height="8"/>
                         <data>
+                            
                             <attributeName>quantity</attributeName>
                             <formatorName>#.##</formatorName>
                         </data>
@@ -611,150 +432,69 @@
                     
                     <!--单价-->
                     <cell>
-                        <size width="20" height="10"/>
+                        <alignment>right</alignment>
+                        <size width="18.5" height="8"/>
                         <data>
                             <attributeName>price</attributeName>
                         </data>
                     </cell>
                     <!--额定金额-->
                     <cell>
-                        <size width="21.5" height="10"/>
+                        <alignment>right</alignment>
+                        <size width="28" height="8"/>
                         <data>
                             <attributeName>total_price</attributeName>
                         </data>
                     </cell>
-                    <!--备注-->
-                    <cell>
-                        <size width="31" height="10"/>
-                        <data>
-                            <attributeName>remark</attributeName>
-                        </data>
-                    </cell>
+<!--                    <!--备注-->-->
+<!--                    <cell>-->
+<!--                        <size width="31" height="10"/>-->
+<!--                        <data>-->
+<!--                            <attributeName>remark</attributeName>-->
+<!--                        </data>-->
+<!--                    </cell>-->
                 </row>
             </table>
         </UITableView>
-        <!--合计-->
-        <!--万-->
         <UITextField>
-            <origin x="65" y="246"/>
-            <size width="100" height="6"/>
+            <origin x="33" y="191.5"/>
+            <size width="103" height="6"/>
+            <alignment>center</alignment>
             <content>
                 <data>
-                    <attributeName>sembol</attributeName>
-                    <entityName/>
+                    <attributeName>chinese_sum</attributeName>
                 </data>
             </content>
         </UITextField>
         <UITextField>
-            <origin x="70" y="246"/>
-            <size width="100" height="6"/>
+            <origin x="142" y="191.5"/>
+            <size width="40" height="6"/>
             <content>
                 <data>
-                    <attributeName>chinese_sum_w</attributeName>
-                    <entityName/>
+                    <attributeName>chinese_sumforsumnum</attributeName>
                 </data>
             </content>
         </UITextField>
-        <!-- 仟 -->
+        <!-- 交款地点       -->
         <UITextField>
-            <origin x="83" y="246"/>
-            <size width="100" height="6"/>
+            <origin x="50" y="221"/>
+            <size width="132" height="6"/>
             <content>
                 <data>
-                    <attributeName>chinese_sum_q</attributeName>
-                    <entityName/>
+                    <attributeName>Paythemoneyadress</attributeName>
                 </data>
             </content>
         </UITextField>
-        <!--佰-->
+        <!-- 交款电话       -->
         <UITextField>
-            <origin x="93" y="246"/>
-            <size width="100" height="5"/>
+            <origin x="50" y="226.5"/>
+            <size width="132" height="6"/>
             <content>
                 <data>
-                    <attributeName>chinese_sum_b</attributeName>
-                    <entityName/>
+                    <attributeName>paythemoneytelphone</attributeName>
                 </data>
             </content>
         </UITextField>
-        <!--拾-->
-        <UITextField>
-            <origin x="103" y="246"/>
-            <size width="100" height="5"/>
-            <content>
-                <data>
-                    <attributeName>chinese_sum_s</attributeName>
-                    <entityName/>
-                </data>
-            </content>
-        </UITextField>
-        <!--元-->
-        <UITextField>
-            <origin x="114" y="246"/>
-            <size width="100" height="5"/>
-            <content>
-                <data>
-                    <attributeName>chinese_sum_y</attributeName>
-                    <entityName/>
-                </data>
-            </content>
-        </UITextField>
-        <!--角-->
-        <UITextField>
-            <origin x="124" y="246"/>
-            <size width="100" height="5"/>
-            <content>
-                <data>
-                    <attributeName>chinese_sum_j</attributeName>
-                    <entityName/>
-                </data>
-            </content>
-        </UITextField>
-        <!--分-->
-        <UITextField>
-            <origin x="134" y="246"/>
-            <size width="100" height="5"/>
-            <content>
-                <data>
-                    <attributeName>chinese_sum_f</attributeName>
-                    <entityName/>
-                </data>
-            </content>
-        </UITextField>
-        <!--小写-->
-        <UITextField>
-            <origin x="162" y="246"/>
-            <size width="100" height="5"/>
-            <content>
-                <data>
-                    <attributeName>sembol</attributeName>
-                    <entityName/>
-                </data>
-            </content>
-        </UITextField>
-        <UITextField>
-            <origin x="165.5" y="246"/>
-            <size width="100" height="5"/>
-            <content>
-                <data>
-                    <attributeName>sum</attributeName>
-                    <entityName/>
-                </data>
-            </content>
-        </UITextField>
-        <!--符号-->
-        <UITextField>
-            <origin x="155" y="246"/>
-            <size width="100" height="5"/>
-            <fontSize>10</fontSize>
-            <content>
-                <data>
-                    <attributeName>count_symbol</attributeName>
-                    <entityName/>
-                </data>
-            </content>
-        </UITextField>
-        
     </DataTable>
     
 </CaseCountTable>

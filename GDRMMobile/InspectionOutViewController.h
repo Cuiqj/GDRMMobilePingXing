@@ -4,7 +4,7 @@
 //
 //  Created by yu hongwu on 12-9-13.
 //
-//
+//巡查交班
 
 #import <UIKit/UIKit.h>
 #import "CheckItemDetails.h"
@@ -32,7 +32,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableCheckItems;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerCheckItemDetails;
 @property (weak, nonatomic) IBOutlet UITextField *textDetail;
-@property (weak, nonatomic) IBOutlet UITextView *textDeliver;
+@property (weak, nonatomic) IBOutlet UITextView *textDeliver;   //交班内容
+@property (weak, nonatomic) IBOutlet UITextView *textremark;    //当班处理情况
+
 @property (weak, nonatomic) IBOutlet UITextField *textEndDate;
 @property (weak, nonatomic) IBOutlet UITextField *textMile;
 @property (weak, nonatomic) IBOutlet UITextField *textroad;

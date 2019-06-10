@@ -9,7 +9,10 @@
 #import "CasePrintViewController.h"
 #import "CaseInquire.h"
 
-@interface CaseInquirePrinterViewController : CasePrintViewController
+@interface CaseInquirePrinterViewController : CasePrintViewController 
+
+
+@property (nonatomic,strong) UIPopoverController *pickerPopover;
 
 //add by lxm 2013.05.10
 @property(nonatomic,weak)IBOutlet UITextField *textdate_inquired;
@@ -28,4 +31,9 @@
 @property(nonatomic,weak)IBOutlet UITextField *textpostalcode;
 
 @property(nonatomic,weak)IBOutlet UITextView *textinquiry_note;
+
+
+- (IBAction)SelectUser:(id)sender;
+
+
 @end

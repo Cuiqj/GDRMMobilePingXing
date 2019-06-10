@@ -29,6 +29,7 @@
 @synthesize pickerCheckItemDetails;
 @synthesize textDetail;
 @synthesize textDeliver;
+@synthesize textremark;
 @synthesize textEndDate;
 @synthesize textMile;
 @synthesize pickerPopover;
@@ -71,6 +72,7 @@
 - (void)viewDidUnload
 {
     [self setTextDeliver:nil];
+    [self setTextremark:nil];
     [self setTextEndDate:nil];
     [self setTextMile:nil];
     [self setItemArray:nil];
@@ -184,6 +186,7 @@
             inspection.inspection_milimetres=@(self.textMile.text.floatValue);
             inspection.isdeliver=@(YES);
             inspection.delivertext = self.textDeliver.text;
+            inspection.remark = self.textremark.text;
             NSString *description=@"";
             NSArray *recordArray=[InspectionRecord recordsForInspection:inspectionID andisdowndata:NO];
             for (int i  = 0; i<recordArray.count; i++) {

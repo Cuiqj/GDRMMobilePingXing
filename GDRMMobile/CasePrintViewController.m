@@ -491,12 +491,11 @@ typedef enum {
                                     [contentString drawMultiLineTextInRect:rect withFont:font horizontalAlignment:alignment leftOffSet:leftOffset lineHeight:lineHeight];           
                                 }
                             }
-                        
                     }else if ([[TBXML elementName:uitextfield] isEqualToString:@"UITableView"]){
                             [self drawUITableVIew:uitextfield WithData:data];
                     }else if ([[TBXML elementName:uitextfield] isEqualToString:@"UIImgView"]){
                             TBXMLElement *originInXML=[TBXML childElementNamed:@"origin" parentElement:uitextfield];
-                            if (originInXML) {
+                            if (originInXML){
                                 CGFloat x=([[TBXML valueOfAttributeNamed:@"x" forElement:originInXML] floatValue])*MMTOPIX * SCALEFACTOR;
                                 CGFloat y=([[TBXML valueOfAttributeNamed:@"y" forElement:originInXML] floatValue])*MMTOPIX * SCALEFACTOR;
                                 TBXMLElement *sizeInXML = [TBXML childElementNamed:@"size" parentElement:uitextfield];
@@ -1961,7 +1960,7 @@ typedef enum {
     return returnString;
 }
 
-- (void) drawUITableVIew:(TBXMLElement *)xml WithData:(NSManagedObject *) data{
+- (void) drawUITableVIew:(TBXMLElement *)xml WithData:(NSManagedObject *)data{
     if (xml) {
         NSArray *dataArray = nil;
         //获取数据列表
@@ -2005,7 +2004,7 @@ typedef enum {
                             CGFloat cellH=[[TBXML valueOfAttributeNamed:@"height" forElement:cellSizeInXML] floatValue]*MMTOPIX * SCALEFACTOR;
                             TBXMLElement *cellFontSizeInXML=[TBXML childElementNamed:@"fontSize" parentElement:cellInXML];
                             if (cellFontSizeInXML) {
-                                fontSize=[[TBXML textForElement:cellFontSizeInXML] floatValue];
+                                fontSize= [[TBXML textForElement:cellFontSizeInXML] floatValue];
                             }
                             UITextAlignment cellAlignment = UITextAlignmentLeft;
                             TBXMLElement *cellAlignmentInXML = [TBXML childElementNamed:@"alignment" parentElement:cellInXML];
@@ -2029,8 +2028,8 @@ typedef enum {
                             if (dataInXML) {
                                 contentString = [contentString stringByAppendingString:[self formedStringFromData:one XMLElement:dataInXML]];
                             }
-                            //[contentString alignWithVerticalCenterDrawInRect:rect withFont:font horizontalAlignment:cellAlignment];
-                            [contentString drawStringFitIntoRect:rect withBasicFont:font];
+                            [contentString alignWithVerticalCenterDrawInRect:rect withFont:font horizontalAlignment:cellAlignment];
+//                            [contentString drawStringFitIntoRect:rect withBasicFont:font];
                             if (rowH < cellH) {
                                 rowH = cellH;
                             }

@@ -13,7 +13,7 @@
 #import "DataDownLoad.h"
 #import "DataUpLoad.h"
 
-@interface  DataSyncController : UIViewController
+@interface  DataSyncController : UIViewController <OrgSetDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *uibuttonInit;
 @property (weak, nonatomic) IBOutlet UIButton *uibuttonReset;
 @property (weak, nonatomic) IBOutlet UIButton *uibuttonUpload;

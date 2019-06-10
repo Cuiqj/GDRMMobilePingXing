@@ -1607,9 +1607,9 @@ BOOL _wasKeyboardManagerEnabled;
     if ([self.caseInfo.station_end integerValue] == 0 && [self.caseInfo.station_start integerValue] == 0) {
         stationString = @"";
     } else if(station_start.integerValue == 0 || station_start.integerValue == station_end.integerValue){
-        stationString=[NSString stringWithFormat:@"K%@+%@米",self.textStationStartKM.text,self.textStationStartM.text];
+        stationString=[NSString stringWithFormat:@"K%@+%03d米",self.textStationStartKM.text,self.textStationStartM.text.intValue];
     } else{
-        stationString=[NSString stringWithFormat:@"K%@+%@米至K%@+%@米",self.textStationStartKM.text,self.textStationStartM.text,self.textStationEndKM.text,self.textStationEndM.text ];
+        stationString=[NSString stringWithFormat:@"K%@+%03d米至K%@+%03d米",self.textStationStartKM.text,self.textStationStartM.text.intValue,self.textStationEndKM.text,self.textStationEndM.text.intValue ];
     }
     //以前的勘验场所描述
     //caseProveInfo.remark = [NSString stringWithFormat:@"%@%@%@",self.textRoadSegment.text,self.textSide.text,self.textPlace.text];

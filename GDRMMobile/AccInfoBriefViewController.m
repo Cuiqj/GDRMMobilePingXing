@@ -190,9 +190,9 @@ typedef enum {
         acPicker.delegate   = self;
         acPicker.caseID     = self.caseID;
         _pickerPopover=[[UIPopoverController alloc] initWithContentViewController:acPicker];
-        if (iIndex==0) {
-            [_pickerPopover setPopoverContentSize:CGSizeMake(200, 176)];
-        }
+//        if (iIndex==0) {
+            [_pickerPopover setPopoverContentSize:CGSizeMake(200, 200)];
+//        }
         [_pickerPopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionLeft animated:YES];
         acPicker.pickerPopover = _pickerPopover;
     }

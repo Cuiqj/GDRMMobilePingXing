@@ -83,6 +83,7 @@
     return @"《中华人民共和国公路法》第五十二条、第八十五条第一款和《广东省公路条例》第二十三条第一款，并依照《损坏公路路产赔补偿标准》（粤交路[1998]38号、粤交路[1999]263号）";
 }
 -(NSString*)pay_mode2{
+    return self.pay_mode;
     NSString *s1 = [[self.pay_mode stringByReplacingOccurrencesOfString:@"元" withString:@""]  stringByReplacingOccurrencesOfString:@"元整" withString:@""];
     return [[s1 stringByReplacingOccurrencesOfString:@"整" withString:@""]  stringByReplacingOccurrencesOfString:@"元整" withString:@""];
 }

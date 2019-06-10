@@ -26,4 +26,9 @@
 -(NSString *) chinese_sum_j;
 -(NSString *) chinese_sum_f;
 -(NSString *) sembol;
+
+-(NSString *) chinese_sumforsumnum;
+
+-(NSString *) Paythemoneyadress;
+-(NSString *) paythemoneytelphone;
 @end

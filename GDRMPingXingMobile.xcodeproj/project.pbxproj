@@ -334,13 +334,14 @@
 		840628F61FC7B7AB0062FA6E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 840628F51FC7B7AB0062FA6E /* libz.tbd */; };
 		840A40381FD97D2C0012BCBB /* ALinNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A40351FD97D2C0012BCBB /* ALinNetworkTool.m */; };
 		840A40391FD97D2C0012BCBB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A40371FD97D2C0012BCBB /* Reachability.m */; };
-		840A40921FDA726C0012BCBB /* (null) in Sources */ = {isa = PBXBuildFile; };
+		840A40921FDA726C0012BCBB /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		840C17802046947900010DF4 /* Times+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 840C177D2046947900010DF4 /* Times+CoreDataClass.m */; };
 		840C17812046947900010DF4 /* Times+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 840C177F2046947900010DF4 /* Times+CoreDataProperties.m */; };
 		840D872F1FA96ABE009F38EF /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 840D872E1FA96ABE009F38EF /* mapapi.bundle */; };
 		840D87331FA96C35009F38EF /* InspectInMapViewCOntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 840D87321FA96C35009F38EF /* InspectInMapViewCOntroller.m */; };
 		841132F52119AE97007E9180 /* AdminstrativePenaltyConstructionTable.xml in Resources */ = {isa = PBXBuildFile; fileRef = 841132F42119AE97007E9180 /* AdminstrativePenaltyConstructionTable.xml */; };
 		842B398220C7CA3700984830 /* SelectTypeResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B398120C7CA3700984830 /* SelectTypeResultController.m */; };
+		842E7657224C9FC000A0DD10 /* Inspection_Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 842E7656224C9FC000A0DD10 /* Inspection_Main.m */; };
 		843A515C200C90EF00279362 /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843A515B200C90EF00279362 /* AipOcrSdk.framework */; };
 		84441020211423A800505843 /* AdminisInquireTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444101F211423A800505843 /* AdminisInquireTableViewController.m */; };
 		8444102621144C5300505843 /* AdminstrativePenaltyConstructionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444102521144C5300505843 /* AdminstrativePenaltyConstructionTableViewController.m */; };
@@ -1049,6 +1050,8 @@
 		841132F42119AE97007E9180 /* AdminstrativePenaltyConstructionTable.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdminstrativePenaltyConstructionTable.xml; sourceTree = "<group>"; };
 		842B398020C7CA3700984830 /* SelectTypeResultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectTypeResultController.h; sourceTree = "<group>"; };
 		842B398120C7CA3700984830 /* SelectTypeResultController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectTypeResultController.m; sourceTree = "<group>"; };
+		842E7655224C9FC000A0DD10 /* Inspection_Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inspection_Main.h; sourceTree = "<group>"; };
+		842E7656224C9FC000A0DD10 /* Inspection_Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inspection_Main.m; sourceTree = "<group>"; };
 		843A515B200C90EF00279362 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AipOcrSdk.framework; path = "../../Library/Developer/Xcode/DerivedData/GDRMMobile-ccubgkldojoojqegcfvsqeccobth/Build/Products/Debug-iphonesimulator/AipOcrSdk.framework"; sourceTree = "<group>"; };
 		8444101D211422DF00505843 /* AdminisInquireTable.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdminisInquireTable.xml; sourceTree = "<group>"; };
 		8444101E211423A800505843 /* AdminisInquireTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdminisInquireTableViewController.h; sourceTree = "<group>"; };
@@ -2121,6 +2124,8 @@
 				336AC1101F171267001BFF0B /* Roadasset_checkitem.m */,
 				336AC10C1F171267001BFF0B /* RoadAsset_Check_Main.h */,
 				336AC10D1F171267001BFF0B /* RoadAsset_Check_Main.m */,
+				842E7655224C9FC000A0DD10 /* Inspection_Main.h */,
+				842E7656224C9FC000A0DD10 /* Inspection_Main.m */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -3306,7 +3311,7 @@
 				33559ECB19A59276002AB681 /* AttachmentCell.m in Sources */,
 				336AC1171F1712D5001BFF0B /* InitRoadasset_checkitem.m in Sources */,
 				335DE5EF1E67B81800DF7A45 /* InsuranceNotice.m in Sources */,
-				840A40921FDA726C0012BCBB /* (null) in Sources */,
+				840A40921FDA726C0012BCBB /* BuildFile in Sources */,
 				33F6FCAA19BEAEE70098D458 /* InspectionConstructionPDFViewController.m in Sources */,
 				8477DB7C1FD68EFA00CC8241 /* UIImage+XLExtension.m in Sources */,
 				84602C2921BF8E0F00B9BFED /* InitCaseMap.m in Sources */,
@@ -3320,6 +3325,7 @@
 				330158EC1A37F35700F641C5 /* PaintBriefOfAdministrativePenaltyViewController.m in Sources */,
 				336F28641E272BA000A09EEF /* RectificationNotice.m in Sources */,
 				330159031A37F4E300F641C5 /* InquireInfoBriefOfAdministrativePenaltyViewController.m in Sources */,
+				842E7657224C9FC000A0DD10 /* Inspection_Main.m in Sources */,
 				330159041A37F4E300F641C5 /* InquireInfoOfAdministrativePenaltyViewController.m in Sources */,
 				33DFDAA01F0E15DD00C94067 /* ListMutiSelectViewController.m in Sources */,
 				33B2DEAD1CD83AE000DAF01E /* MMRadialProgressView.m in Sources */,
@@ -3568,11 +3574,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = adam.GDRMPingXingMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0394c848-5fb0-46e5-bed6-49c8cd757aeb";
+				PROVISIONING_PROFILE = "e21fe26b-e7f9-49d5-a4f4-2955a8fbfeda";
 				"PROVISIONING_PROFILE[sdk=*]" = "1a4bf500-5fa2-4790-be03-386eef533c56";
 				PROVISIONING_PROFILE_SPECIFIER = AllProjectCanUsedevelopment;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -3620,11 +3627,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = adam.GDRMPingXingMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8bdf704f-d428-4cfe-ba34-5b1834d9f2f7";
+				PROVISIONING_PROFILE = "1e4bcdad-67f9-47dd-ad10-8630e81de952";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1a4bf500-5fa2-4790-be03-386eef533c56";
 				PROVISIONING_PROFILE_SPECIFIER = AllProjectCanDistribution;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

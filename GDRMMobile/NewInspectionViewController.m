@@ -34,30 +34,41 @@
 
 - (void)viewDidLoad{
     NSArray * inspectionArray=[Inspection inspectionForID:@""];
+    for (id obji in inspectionArray) {
+        NSLog(@"%@",obji);
+    }
     if (inspectionArray.count>0) {
         self.textViewDeliverText.text=[[inspectionArray lastObject] valueForKey:@"delivertext"];
         NSString * preInspectionID=[[inspectionArray lastObject] valueForKey:@"myid"];
         NSArray *outCheckArray=[InspectionOutCheck outChecksForInspection:preInspectionID];
         NSMutableArray *tempMutableArray=[[NSMutableArray alloc] initWithCapacity:outCheckArray.count];
-        for (InspectionOutCheck *outCheck in outCheckArray) {
+        for (InspectionOutCheck * outCheck in outCheckArray) {
+            NSLog(@"%@ ------%@------%@------%@\n",outCheck.checkresult,outCheck.checktext,outCheck.inspectionid,outCheck.remark);
+        }
+        for (InspectionOutCheck * outCheck in outCheckArray) {
             TempCheckItem *tempItem=[[TempCheckItem alloc] init];
             tempItem.checkText=outCheck.checktext;
             tempItem.remarkText=outCheck.remark;
             tempItem.checkResult=outCheck.checkresult;
             [tempMutableArray addObject:tempItem];
+            NSLog(@"%@--%@--%@\n",outCheck.remark,outCheck.checktext,outCheck.checkresult);
         }
+        
         /*NSArray *checkItems=[CheckItems allCheckItemsForType:1];
          *modify by lxm
          *？type=2 type=1 区别
          */
         NSArray *checkItems=[CheckItems allCheckItemsForType:2];
         for (int i=0; i<checkItems.count; i++) {
-            TempCheckItem *tempItem;
-            if (tempMutableArray.count>=checkItems.count) {
-                 tempItem=[tempMutableArray objectAtIndex:i];
-            }else{
-                break;
-            }
+//            TempCheckItem *tempItem;
+//            NSLog(@"%@--%@--%@\n",tempItem.remarkText,tempItem.checkText,tempItem.checkResult);
+//            if (tempMutableArray.count>=checkItems.count) {
+//                 tempItem=[tempMutableArray objectAtIndex:i];
+//            }else{
+//                break;
+//            }      换成下面一句
+            TempCheckItem *tempItem=[tempMutableArray objectAtIndex:i];
+
             CheckItems * checkItem=[checkItems objectAtIndex:i];
             tempItem.itemID= checkItem.myid;
         }

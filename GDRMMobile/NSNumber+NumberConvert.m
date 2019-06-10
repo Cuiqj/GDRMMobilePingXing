@@ -74,6 +74,7 @@
         if ((![lastChar isEqualToString:@"分"]) && (![lastChar isEqualToString:@"角"])) {
             chineseCapitalNumberString=[chineseCapitalNumberString stringByAppendingString:@"整"];
         }
+        chineseCapitalNumberString=[chineseCapitalNumberString stringByReplacingOccurrencesOfString:@"元" withString:@"圆"];
     }
     return chineseCapitalNumberString;    
 }

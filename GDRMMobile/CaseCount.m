@@ -8,7 +8,7 @@
 
 #import "CaseCount.h"
 #import "NSNumber+NumberConvert.h"
-
+#import "Systype.h"
 
 @implementation CaseCount
 
@@ -136,4 +136,31 @@
 -(NSString *) sembol{
     return @"￥";
 }
+
+-(NSString *)chinese_sumforsumnum{
+    return [NSString stringWithFormat:@"(￥%.2f元)",self.sum.doubleValue];
+}
+
+-(NSString *) Paythemoneyadress{
+    NSArray * array = [Systype typeValueForCodeName:@"索赔清单联系地址"];
+    if (array.count>1) {
+        return [NSString stringWithFormat:@"%@ %@",array[0],array[1]];
+    }else if(array.count ==1){
+        return [[Systype typeValueForCodeName:@"索赔清单联系地址"] objectAtIndex:0];
+    }
+    return nil;
+}
+
+-(NSString *) paythemoneytelphone{
+    NSArray * array = [Systype typeValueForCodeName:@"索赔清单联系电话"];
+    if (array.count>1) {
+        return [NSString stringWithFormat:@"%@            %@",array[0],array[1]];
+    }else if(array.count ==1){
+        return [[Systype typeValueForCodeName:@"索赔清单联系电话"] objectAtIndex:0];
+    }
+    return nil;
+}
+
 @end
+
+

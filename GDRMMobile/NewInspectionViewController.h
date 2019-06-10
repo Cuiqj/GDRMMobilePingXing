@@ -4,7 +4,7 @@
 //
 //  Created by yu hongwu on 12-9-5.
 //
-//
+//出行前检查
 
 #import <UIKit/UIKit.h>
 #import "CheckItemDetails.h"

@@ -381,13 +381,16 @@ static NSString * const xmlName = @"AdministrativePenaltyProveInfoTable";
 
 - (NSString *)TextpeoverDutyNsstringName:(NSString *)name{
     NSString * duty = [UserInfo orgAndDutyForUserName:name];
-    NSArray *array = [duty componentsSeparatedByString: @"西部沿海"];
+    NSArray *array = [duty componentsSeparatedByString: @"平兴高速公路路政"];
     if ([array count] >= 2) {
-        NSString * prover_duty = [NSString stringWithFormat:@"西部沿海%@",array[1]];
-        prover_duty = [[[[prover_duty stringByReplacingOccurrencesOfString:@"一中队" withString:@""] stringByReplacingOccurrencesOfString:@"二中队" withString:@""] stringByReplacingOccurrencesOfString:@"" withString:@"三中队"]stringByReplacingOccurrencesOfString:@"四中队" withString:@""];
+        NSString * prover_duty = [NSString stringWithFormat:@"广东省公路事务中心平兴高速公路路政大队%@",array[1]];
+        prover_duty = [[[[prover_duty stringByReplacingOccurrencesOfString:@"一中队" withString:@""] stringByReplacingOccurrencesOfString:@"二中队" withString:@""] stringByReplacingOccurrencesOfString:@"三中队" withString:@""]stringByReplacingOccurrencesOfString:@"四中队" withString:@""];
+        if ([prover_duty containsString:@"大队大队"]) {
+            prover_duty = [prover_duty stringByReplacingOccurrencesOfString:@"大队大队" withString:@"大队"];
+        }
         return prover_duty;
     }
-    return duty;
+    return @"广东省公路事务中心平兴高速公路路政大队路政管理员";
 }
 
 @end

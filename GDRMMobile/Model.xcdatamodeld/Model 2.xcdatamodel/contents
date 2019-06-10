@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1618" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="AtonementNotice" representedClassName="AtonementNotice" syncable="YES">
         <attribute name="case_desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="caseinfo_id" optional="YES" attributeType="String" syncable="YES"/>
@@ -433,7 +433,7 @@
         <attribute name="yjr" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="yjsj" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="yjsx" optional="YES" attributeType="String" defaultValueString="无" syncable="YES"/>
-        <attribute name="yjzb" optional="YES" attributeType="String" defaultValueString="巡查设备齐全完好" syncable="YES"/>
+        <attribute name="yjzb" optional="YES" attributeType="String" defaultValueString="巡查设备齐全完好。" syncable="YES"/>
     </entity>
     <entity name="InspectionCheck" representedClassName="InspectionCheck" syncable="YES">
         <attribute name="checkresult" optional="YES" attributeType="String" syncable="YES"/>
