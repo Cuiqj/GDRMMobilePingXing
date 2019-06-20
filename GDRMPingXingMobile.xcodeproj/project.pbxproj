@@ -334,7 +334,7 @@
 		840628F61FC7B7AB0062FA6E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 840628F51FC7B7AB0062FA6E /* libz.tbd */; };
 		840A40381FD97D2C0012BCBB /* ALinNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A40351FD97D2C0012BCBB /* ALinNetworkTool.m */; };
 		840A40391FD97D2C0012BCBB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 840A40371FD97D2C0012BCBB /* Reachability.m */; };
-		840A40921FDA726C0012BCBB /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		840A40921FDA726C0012BCBB /* (null) in Sources */ = {isa = PBXBuildFile; };
 		840C17802046947900010DF4 /* Times+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 840C177D2046947900010DF4 /* Times+CoreDataClass.m */; };
 		840C17812046947900010DF4 /* Times+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 840C177F2046947900010DF4 /* Times+CoreDataProperties.m */; };
 		840D872F1FA96ABE009F38EF /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 840D872E1FA96ABE009F38EF /* mapapi.bundle */; };
@@ -3311,7 +3311,7 @@
 				33559ECB19A59276002AB681 /* AttachmentCell.m in Sources */,
 				336AC1171F1712D5001BFF0B /* InitRoadasset_checkitem.m in Sources */,
 				335DE5EF1E67B81800DF7A45 /* InsuranceNotice.m in Sources */,
-				840A40921FDA726C0012BCBB /* BuildFile in Sources */,
+				840A40921FDA726C0012BCBB /* (null) in Sources */,
 				33F6FCAA19BEAEE70098D458 /* InspectionConstructionPDFViewController.m in Sources */,
 				8477DB7C1FD68EFA00CC8241 /* UIImage+XLExtension.m in Sources */,
 				84602C2921BF8E0F00B9BFED /* InitCaseMap.m in Sources */,

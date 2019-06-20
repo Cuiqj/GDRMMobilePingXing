@@ -61,7 +61,7 @@
 
 
 #define VERSION_NAME @"平兴路政"
-#define VERSION_TIME @"2019年05月22日"
+#define VERSION_TIME @"2019年06月10日"
 
 //用来检测最新版本
 //#define VERSION_NUMBER @2019040801
