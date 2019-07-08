@@ -56,8 +56,10 @@ typedef enum {
 @property (nonatomic,assign) InpectionState state;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *inspectionRecordlabel;  //实际巡查路线
+@property (weak, nonatomic) IBOutlet UILabel *inspectionRecordlabel;  //实际巡查路线 的开头
 @property (weak, nonatomic) IBOutlet UITextField * inspectionRecordtext;  //路线
+@property (weak, nonatomic) IBOutlet UILabel *roadlinelable;//实际巡查路线根据站点确定
+
 - (IBAction)inspectionRecordtextButtonClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *inspectionRecordtextButton;    //生成
 @property (weak, nonatomic) IBOutlet UITextField *roadsegmentText;          //路段
@@ -69,6 +71,11 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *Previouscaserightbarbutton;
 - (IBAction)btnAddNew:(id)sender;
 - (IBAction)btnToFujian:(id)sender;
+
+//本班详细巡查信息汇总
+- (IBAction)DetailedMessageClick:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *DetailedMessageButton;
+
 
 - (void) createRecodeByCaseID:(NSString *)inspectRecordID;
 - (void) createRecodeByShiGongCheckID:(NSString *)shiGongCheckID;

@@ -30,9 +30,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    
     [self loadInquireInfoForCase:self.caseID andAnswererName:@""];
-
 }
 
 
@@ -45,8 +43,7 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
 	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 

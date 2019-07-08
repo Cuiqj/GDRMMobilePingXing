@@ -7,7 +7,7 @@
 //
 
 #import "TrafficRemark.h"
-
+#import "EveryShiftViewController.h"
 #import "RoadInspectViewController.h"
 #import "InspectionPath.h"
 #import "Global.h"
@@ -35,7 +35,7 @@
 @property (nonatomic,retain) NSString * infpectionpath_id;
 
 @property (nonatomic,retain) NSString * inspectionrecordroadsegement;
-@property (nonatomic,retain) UILabel * label;
+//@property (nonatomic,retain) UILabel * label;
 
 //判断当前显示的巡查是否是正在进行的巡查
 @property (nonatomic,assign) BOOL isCurrentInspection;
@@ -83,8 +83,6 @@ InspectionCheckState inspectionState;
     // Do any additional setup after loading the view.
     
 //    self.inspectionRecordtext.enabled = NO;
-    self.label = [[UILabel alloc] initWithFrame:self.inspectionRecordtext.frame];
-    [self.pathView addSubview:self.label];
     [self.inspectionRecordtext setHidden:YES];
 }
 
@@ -296,7 +294,7 @@ InspectionCheckState inspectionState;
         self.data=[[InspectionPath pathsForInspection:self.inspectionID andisdowndata:isdowndata] mutableCopy];
         [self.pathView setHidden:NO];
         [self.view bringSubviewToFront:self.pathView];
-        self.label.text = [self InspectionPathStationRoadline];
+        self.roadlinelable.text = [self InspectionPathStationRoadline];
     }
     [self.tableRecordList reloadData];
 //    self.inspectionRecordtext.text = [self InspectionPathStationRoadline];
@@ -551,6 +549,7 @@ InspectionCheckState inspectionState;
                             rect.size.width = 72;
                             [self.uiButtonDeliver setFrame:rect];
                             [sender setTitle:@"交班" forState:UIControlStateNormal];
+                            [self.DetailedMessageButton setHidden:NO];
                             [self.uiButtonAddNew setAlpha:1.0];
                             [self.uiButtonSave setAlpha:1.0];
                         }
@@ -585,35 +584,25 @@ InspectionCheckState inspectionState;
 //生成实际巡查路线     生成实际巡查线路
 - (NSString *)InspectionPathStationRoadline{
     NSString * roadline = @"";
+    NSString * station = @"";
     if ([self.data count] >0) {
         InspectionPath * temp = (InspectionPath * )self.data[0];
-        NSString * firststation = temp.stationname;
-        NSInteger j=1;
-        NSString * xianlu =@"";
-        for (NSInteger i = 0; i<[self.data count]; i++){
+        roadline = [self selectStationforNSString:temp.stationname];
+        station = temp.stationname;
+        for (NSInteger i = 1; i<[self.data count]; i++){
             InspectionPath * path  = [self.data objectAtIndex:i];
-            if(![path.stationname isEqualToString:xianlu] || [path.stationname isEqual:firststation]){
-                if ([path.stationname containsString:@"服务区"]) {
+            if(![path.stationname isEqualToString:station]){
+                if ([path.stationname containsString:@"服务区"] ||[path.stationname isEqualToString:@"镇海湾大桥"] || [path.stationname containsString:@"连接线"]) {
                     continue;
                 }
-                if ([path.stationname isEqual:firststation] && ![xianlu isEqual:@""] && ![xianlu hasSuffix:@"趟)"]) {
-                    xianlu = [NSString stringWithFormat:@"%@(第%ld趟)",path.stationname,j];
-                    j+=1;
-                }else{
-                    xianlu= path.stationname;
-                }
-                if (i==0) {
-                    roadline = xianlu;
-                }else{
-                    roadline = [NSString stringWithFormat:@"%@-%@",roadline,[self selectStationforNSString:xianlu]];
-                }
+                roadline = [NSString stringWithFormat:@"%@-%@",roadline,[self selectStationforNSString:path.stationname]];
+                station = path.stationname;
+                //                NSLog(@"传值数据%@",station);
             }
         }
         return roadline;
     }
     return nil;
-    
-    
 }
 
 -(NSString *)selectStationforNSString:(NSString *)station{
@@ -704,6 +693,7 @@ InspectionCheckState inspectionState;
                         rect.size.width = 126;
                         [self.uiButtonDeliver setFrame:rect];
                         [self.uiButtonDeliver setTitle:@"返回当前巡查" forState:UIControlStateNormal];
+                        [self.DetailedMessageButton setHidden:YES];
                         [self.uiButtonAddNew setAlpha:0.0];
                         [self.uiButtonSave setAlpha:0.0];
                     }
@@ -734,6 +724,13 @@ InspectionCheckState inspectionState;
     return NO;
 }
 
+
+- (IBAction)DetailedMessageClick:(id)sender {
+    UIStoryboard *mainstoryboard=[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    EveryShiftViewController * everyshift = [mainstoryboard instantiateViewControllerWithIdentifier:@"everyshift"];
+    everyshift.InspectionID = self.inspectionID;
+    [self.navigationController pushViewController:everyshift animated:YES];
+}
 
 - (void) createRecodeByCaseID:(NSString *)caseID{
     if ([caseID isEmpty]) {
@@ -1037,7 +1034,7 @@ InspectionCheckState inspectionState;
         [alert show];
         return;
     }
-    if(self.roadsegmentText.text.length && self.label.text.length){
+    if(self.roadsegmentText.text.length && self.roadlinelable.text.length){
         InspectionRecord * inspectionRecord =[InspectionRecord newDataObjectWithEntityName:@"InspectionRecord"];
 //        inspectionRecord.myid           = trafficRecord.myid;
         inspectionRecord.roadsegment_id = @"0";
@@ -1050,7 +1047,7 @@ InspectionCheckState inspectionState;
         inspectionRecord.start_time = [dateformatter dateFromString:self.textCheckTime.text];
 //        inspectionRecord.station        = trafficRecord.station;
         //    [Remark createTrafficwithRemark:trafficRecord];
-        NSString * remark = [NSString stringWithFormat:@"本次实际巡查路线:%@ %@",self.roadsegmentText.text,self.label.text];
+        NSString * remark = [NSString stringWithFormat:@"本次实际巡查路线:%@ %@",self.roadsegmentText.text,self.roadlinelable.text];
         inspectionRecord.remark = remark;
         [[AppDelegate App] saveContext];
         [self reloadRecordData:NO];

@@ -49,4 +49,7 @@
 
 //给每个班次添加时间
 +(NSDate *)inspectionfortime_endsettingtimeyjsj:(NSDate *)time_end andtime_start:(NSDate *)time_start andclasse:(NSString *)classe;
+
++(Inspection *)oneDatainspectionForID:(NSString *)ID;
+
 @end

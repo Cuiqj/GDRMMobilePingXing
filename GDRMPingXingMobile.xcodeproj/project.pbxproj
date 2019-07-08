@@ -340,8 +340,9 @@
 		840D872F1FA96ABE009F38EF /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 840D872E1FA96ABE009F38EF /* mapapi.bundle */; };
 		840D87331FA96C35009F38EF /* InspectInMapViewCOntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 840D87321FA96C35009F38EF /* InspectInMapViewCOntroller.m */; };
 		841132F52119AE97007E9180 /* AdminstrativePenaltyConstructionTable.xml in Resources */ = {isa = PBXBuildFile; fileRef = 841132F42119AE97007E9180 /* AdminstrativePenaltyConstructionTable.xml */; };
+		84256FF122CAFBF70002239D /* EveryShiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84256FF022CAFBF70002239D /* EveryShiftViewController.m */; };
 		842B398220C7CA3700984830 /* SelectTypeResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B398120C7CA3700984830 /* SelectTypeResultController.m */; };
-		842E7657224C9FC000A0DD10 /* Inspection_Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 842E7656224C9FC000A0DD10 /* Inspection_Main.m */; };
+		842E7657224C9FC000A0DD10 /* old_Inspection_Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 842E7656224C9FC000A0DD10 /* old_Inspection_Main.m */; };
 		843A515C200C90EF00279362 /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843A515B200C90EF00279362 /* AipOcrSdk.framework */; };
 		84441020211423A800505843 /* AdminisInquireTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444101F211423A800505843 /* AdminisInquireTableViewController.m */; };
 		8444102621144C5300505843 /* AdminstrativePenaltyConstructionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444102521144C5300505843 /* AdminstrativePenaltyConstructionTableViewController.m */; };
@@ -391,6 +392,7 @@
 		8491AF3D1FFDFB31002C020C /* ZLYNinInspectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491AF3B1FFDFB31002C020C /* ZLYNinInspectVC.m */; };
 		8491AF3E1FFDFB31002C020C /* ZLYNinInspectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8491AF3C1FFDFB31002C020C /* ZLYNinInspectVC.xib */; };
 		84A74CC91E8BE1AE00EC02EF /* AlertViewWithProgressbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A74CC81E8BE1AE00EC02EF /* AlertViewWithProgressbar.m */; };
+		84A93DFE22C9B012005DB47C /* Inspection_Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A93DFD22C9B012005DB47C /* Inspection_Main.m */; };
 		84ACBD1121BA1814009B2181 /* InitCaseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACBD1021BA1814009B2181 /* InitCaseInfo.m */; };
 		84ACBD1921BA61E6009B2181 /* CaseinfoDownListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ACBD1821BA61E6009B2181 /* CaseinfoDownListViewController.m */; };
 		84B459662021AB2200FAEAF6 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B459442021AB2200FAEAF6 /* IQNSArray+Sort.m */; };
@@ -1048,10 +1050,12 @@
 		840D87311FA96C35009F38EF /* InspectInMapViewCOntroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectInMapViewCOntroller.h; sourceTree = "<group>"; };
 		840D87321FA96C35009F38EF /* InspectInMapViewCOntroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectInMapViewCOntroller.m; sourceTree = "<group>"; };
 		841132F42119AE97007E9180 /* AdminstrativePenaltyConstructionTable.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdminstrativePenaltyConstructionTable.xml; sourceTree = "<group>"; };
+		84256FEF22CAFBF70002239D /* EveryShiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryShiftViewController.h; sourceTree = "<group>"; };
+		84256FF022CAFBF70002239D /* EveryShiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryShiftViewController.m; sourceTree = "<group>"; };
 		842B398020C7CA3700984830 /* SelectTypeResultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectTypeResultController.h; sourceTree = "<group>"; };
 		842B398120C7CA3700984830 /* SelectTypeResultController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectTypeResultController.m; sourceTree = "<group>"; };
-		842E7655224C9FC000A0DD10 /* Inspection_Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inspection_Main.h; sourceTree = "<group>"; };
-		842E7656224C9FC000A0DD10 /* Inspection_Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inspection_Main.m; sourceTree = "<group>"; };
+		842E7655224C9FC000A0DD10 /* old_Inspection_Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = old_Inspection_Main.h; sourceTree = "<group>"; };
+		842E7656224C9FC000A0DD10 /* old_Inspection_Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = old_Inspection_Main.m; sourceTree = "<group>"; };
 		843A515B200C90EF00279362 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AipOcrSdk.framework; path = "../../Library/Developer/Xcode/DerivedData/GDRMMobile-ccubgkldojoojqegcfvsqeccobth/Build/Products/Debug-iphonesimulator/AipOcrSdk.framework"; sourceTree = "<group>"; };
 		8444101D211422DF00505843 /* AdminisInquireTable.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdminisInquireTable.xml; sourceTree = "<group>"; };
 		8444101E211423A800505843 /* AdminisInquireTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdminisInquireTableViewController.h; sourceTree = "<group>"; };
@@ -1130,6 +1134,8 @@
 		8491AF3C1FFDFB31002C020C /* ZLYNinInspectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZLYNinInspectVC.xib; sourceTree = "<group>"; };
 		84A74CC71E8BE1AE00EC02EF /* AlertViewWithProgressbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewWithProgressbar.h; sourceTree = "<group>"; };
 		84A74CC81E8BE1AE00EC02EF /* AlertViewWithProgressbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewWithProgressbar.m; sourceTree = "<group>"; };
+		84A93DFC22C9B012005DB47C /* Inspection_Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inspection_Main.h; sourceTree = "<group>"; };
+		84A93DFD22C9B012005DB47C /* Inspection_Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inspection_Main.m; sourceTree = "<group>"; };
 		84ACBD0F21BA1814009B2181 /* InitCaseInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitCaseInfo.h; sourceTree = "<group>"; };
 		84ACBD1021BA1814009B2181 /* InitCaseInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitCaseInfo.m; sourceTree = "<group>"; };
 		84ACBD1721BA61E6009B2181 /* CaseinfoDownListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseinfoDownListViewController.h; sourceTree = "<group>"; };
@@ -1440,7 +1446,6 @@
 		33693F3019A1EA1B004D0ABC /* InspectionConstruction */ = {
 			isa = PBXGroup;
 			children = (
-				331E21AF1E286971004E78C2 /* ShiGongCheckViewController.m */,
 				33693F3119A1EA46004D0ABC /* InspectionConstructionViewController.h */,
 				33693F3219A1EA46004D0ABC /* InspectionConstructionViewController.m */,
 				3342557E19A48DB80092832D /* InspectionConstructionCell.h */,
@@ -1449,11 +1454,14 @@
 				33626BE619A58554003B64EF /* AttachmentViewController.m */,
 				33559EC919A59276002AB681 /* AttachmentCell.h */,
 				33559ECA19A59276002AB681 /* AttachmentCell.m */,
+				84256FEF22CAFBF70002239D /* EveryShiftViewController.h */,
+				84256FF022CAFBF70002239D /* EveryShiftViewController.m */,
 				33F6FCA819BEAEE70098D458 /* InspectionConstructionPDFViewController.h */,
 				33F6FCA919BEAEE70098D458 /* InspectionConstructionPDFViewController.m */,
 				33A2B6C41E07EA63005A14F7 /* UnderBridgeCheckViewController.h */,
 				33A2B6C51E07EA7D005A14F7 /* UnderBridgeCheckViewController.m */,
 				331E21AE1E286938004E78C2 /* ShiGongCheckViewController.h */,
+				331E21AF1E286971004E78C2 /* ShiGongCheckViewController.m */,
 				3394F2F21E2F568B00DAE10F /* MaintainPlanPickerViewController.h */,
 				3394F2F31E2F569D00DAE10F /* MaintainPlanPickerViewController.m */,
 			);
@@ -2124,8 +2132,10 @@
 				336AC1101F171267001BFF0B /* Roadasset_checkitem.m */,
 				336AC10C1F171267001BFF0B /* RoadAsset_Check_Main.h */,
 				336AC10D1F171267001BFF0B /* RoadAsset_Check_Main.m */,
-				842E7655224C9FC000A0DD10 /* Inspection_Main.h */,
-				842E7656224C9FC000A0DD10 /* Inspection_Main.m */,
+				84A93DFC22C9B012005DB47C /* Inspection_Main.h */,
+				84A93DFD22C9B012005DB47C /* Inspection_Main.m */,
+				842E7655224C9FC000A0DD10 /* old_Inspection_Main.h */,
+				842E7656224C9FC000A0DD10 /* old_Inspection_Main.m */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -2787,7 +2797,8 @@
 				TargetAttributes = {
 					338BEA251EA9E5D8003361BA = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 97S66GFTED;
+						DevelopmentTeam = VV73LY6CDQ;
+						ProvisioningStyle = Manual;
 						TestTargetID = 33A5274514F4E3E6009BC91E;
 					};
 					33A5274514F4E3E6009BC91E = {
@@ -3166,6 +3177,7 @@
 				3352EA4715EB3E1700B0624D /* CasePhoto.m in Sources */,
 				3352EA4F15EB544F00B0624D /* PhotoImageView.m in Sources */,
 				33B2DEAC1CD83AE000DAF01E /* MMProgressHUDWindow.m in Sources */,
+				84A93DFE22C9B012005DB47C /* Inspection_Main.m in Sources */,
 				336A4EA215F4A80C007C6827 /* InspectionRecordCell.m in Sources */,
 				3399393C15F6E7C5003124EF /* AccInfoBriefViewController.m in Sources */,
 				33C0B34515F72D0B00ADC00C /* NewInspectionViewController.m in Sources */,
@@ -3200,6 +3212,7 @@
 				33D8BC9D1623FE4D00C04B81 /* InitData.m in Sources */,
 				33B2DEA71CD83AE000DAF01E /* MMProgressHUD+Animations.m in Sources */,
 				84B4598E2021BAB200FAEAF6 /* BrgAndCavCheckViewController.m in Sources */,
+				84256FF122CAFBF70002239D /* EveryShiftViewController.m in Sources */,
 				337918531650DD0300500483 /* DataDownLoad.m in Sources */,
 				336AC1141F171268001BFF0B /* RoadAsset_Check_detail.m in Sources */,
 				33A6B15D16523D7400E6DF90 /* AGAlertViewWithProgressbar.m in Sources */,
@@ -3325,7 +3338,7 @@
 				330158EC1A37F35700F641C5 /* PaintBriefOfAdministrativePenaltyViewController.m in Sources */,
 				336F28641E272BA000A09EEF /* RectificationNotice.m in Sources */,
 				330159031A37F4E300F641C5 /* InquireInfoBriefOfAdministrativePenaltyViewController.m in Sources */,
-				842E7657224C9FC000A0DD10 /* Inspection_Main.m in Sources */,
+				842E7657224C9FC000A0DD10 /* old_Inspection_Main.m in Sources */,
 				330159041A37F4E300F641C5 /* InquireInfoOfAdministrativePenaltyViewController.m in Sources */,
 				33DFDAA01F0E15DD00C94067 /* ListMutiSelectViewController.m in Sources */,
 				33B2DEAD1CD83AE000DAF01E /* MMRadialProgressView.m in Sources */,
@@ -3388,7 +3401,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VV73LY6CDQ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -3413,6 +3428,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDRMPingXingMobile.app/GDRMPingXingMobile";
 			};
 			name = Debug;
@@ -3435,8 +3451,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 27NSK65R5P;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3456,6 +3474,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDRMPingXingMobile.app/GDRMPingXingMobile";
 			};
 			name = Release;
@@ -3578,7 +3597,7 @@
 				"PROVISIONING_PROFILE[sdk=*]" = "1a4bf500-5fa2-4790-be03-386eef533c56";
 				PROVISIONING_PROFILE_SPECIFIER = AllProjectCanUsedevelopment;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3631,7 +3650,7 @@
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1a4bf500-5fa2-4790-be03-386eef533c56";
 				PROVISIONING_PROFILE_SPECIFIER = AllProjectCanDistribution;
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};

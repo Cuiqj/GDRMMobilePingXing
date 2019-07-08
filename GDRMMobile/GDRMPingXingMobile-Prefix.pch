@@ -61,11 +61,11 @@
 
 
 #define VERSION_NAME @"平兴路政"
-#define VERSION_TIME @"2019年06月10日"
+#define VERSION_TIME @"2019年07月08日"
 
 //用来检测最新版本
 //#define VERSION_NUMBER @2019040801
-//https://www.example.com/image.512x512.png
+
 /*
  *add by lxm
  */
