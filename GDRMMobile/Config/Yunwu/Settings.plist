@@ -5,7 +5,7 @@
 	<key>Server Settings</key>
 	<dict>
 		<key>server address</key>
-		<string>http://124.172.189.177:81/irmsData_pxgs/</string>
+		<string>http://128.6.40.14:81/pxgs</string>
 		<key>file address</key>
 		<string>http://128.6.40.14:81/pxgs</string>
 	</dict>

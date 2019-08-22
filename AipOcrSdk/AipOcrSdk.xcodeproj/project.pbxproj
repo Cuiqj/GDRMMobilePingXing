@@ -35,7 +35,6 @@
 		57B2753D1E5C0D30002F1DDC /* AipGeneralVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B275271E5C0D30002F1DDC /* AipGeneralVC.m */; };
 		57D78F7B1EE92EE0003127D5 /* AipNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 57D78F791EE92EE0003127D5 /* AipNavigationController.h */; };
 		57D78F7C1EE92EE0003127D5 /* AipNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D78F7A1EE92EE0003127D5 /* AipNavigationController.m */; };
-		846DB7B721A3A1AE00B290DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846DB7B621A3A1AE00B290DC /* SystemConfiguration.framework */; };
 		FF06C2D01F14D60900586FD2 /* AipBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF06C2CF1F14D60900586FD2 /* AipBase.framework */; };
 		FF06C2D21F14D61800586FD2 /* IdcardQuality.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF06C2D11F14D61800586FD2 /* IdcardQuality.framework */; };
 		FFDAF43D1E49C9EF00AB65B7 /* AipOcrSdk.h in Headers */ = {isa = PBXBuildFile; fileRef = FFDAF43B1E49C9EF00AB65B7 /* AipOcrSdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,7 +116,6 @@
 		57B275641E5C0E0E002F1DDC /* AipOcrSdk.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AipOcrSdk.storyboard; sourceTree = "<group>"; };
 		57D78F791EE92EE0003127D5 /* AipNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AipNavigationController.h; sourceTree = "<group>"; };
 		57D78F7A1EE92EE0003127D5 /* AipNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AipNavigationController.m; sourceTree = "<group>"; };
-		846DB7B621A3A1AE00B290DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FF06C2CF1F14D60900586FD2 /* AipBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AipBase.framework; sourceTree = "<group>"; };
 		FF06C2D11F14D61800586FD2 /* IdcardQuality.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IdcardQuality.framework; sourceTree = "<group>"; };
 		FFDAF4381E49C9EF00AB65B7 /* AipOcrSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AipOcrSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,7 +128,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846DB7B721A3A1AE00B290DC /* SystemConfiguration.framework in Frameworks */,
 				FF06C2D21F14D61800586FD2 /* IdcardQuality.framework in Frameworks */,
 				FF06C2D01F14D60900586FD2 /* AipBase.framework in Frameworks */,
 				574115B61EE7EE9A009FDD80 /* CoreMotion.framework in Frameworks */,
@@ -251,7 +248,6 @@
 		FF877BE91E5699A300A62EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				846DB7B621A3A1AE00B290DC /* SystemConfiguration.framework */,
 				FF06C2D11F14D61800586FD2 /* IdcardQuality.framework */,
 				FF06C2CF1F14D60900586FD2 /* AipBase.framework */,
 				574115B51EE7EE9A009FDD80 /* CoreMotion.framework */,
@@ -349,8 +345,7 @@
 				TargetAttributes = {
 					FFDAF4371E49C9EF00AB65B7 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 27NSK65R5P;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -539,10 +534,9 @@
 					armv7s,
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Junwen Pu (5PAY9VJ89B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Junwen Pu (5PAY9VJ89B)";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 27NSK65R5P;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -573,9 +567,8 @@
 				);
 				CODE_SIGN_IDENTITY = "iPhone Developer: Junwen Pu (5PAY9VJ89B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 27NSK65R5P;
+				DEVELOPMENT_TEAM = VV73LY6CDQ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

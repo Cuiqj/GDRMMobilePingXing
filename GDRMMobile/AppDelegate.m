@@ -270,7 +270,12 @@
         NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
     }
     NSDictionary *temp=[settings objectForKey:@"Server Settings"];
-    self.serverAddress     = [temp objectForKey:@"server address"];
+     #ifdef DEBUG
+    //    测试地址
+    self.serverAddress = @"http://124.172.189.177:81/irmsData_pxgs";
+     #else
+        self.serverAddress     = [temp objectForKey:@"server address"];
+     #endif
     self.fileAddress       = [temp objectForKey:@"file address"];
     self.projectDictionary = [settings objectForKey:@"Projectname"];
     /*

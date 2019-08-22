@@ -182,14 +182,21 @@
             inspection.time_end=[formatter dateFromString:self.textEndDate.text];
             if (!inspection.yjsj) {
                 //设置 交接班 时间 08:00 16:00 00:00
-                inspection.yjsj = [Inspection inspectionfortime_endsettingtimeyjsj:inspection.time_end andtime_start:inspection.time_start andclasse:inspection.classe];
-                inspection.time_end = inspection.yjsj;
-                //如果是机动班或其他班不改变 巡查开始时间
-                if ([inspection.classe isEqualToString:@"早班"] || [inspection.classe isEqualToString:@"中班"] || [inspection.classe isEqualToString:@"晚班"]){
-                    inspection.time_start =[NSDate dateWithTimeInterval:-8*60*60 sinceDate:inspection.time_end];
-                }else{
-                    
-                }
+//                inspection.yjsj = [Inspection inspectionfortime_endsettingtimeyjsj:inspection.time_end andtime_start:inspection.time_start andclasse:inspection.classe];
+                inspection.yjsj = inspection.time_end;
+//                //如果是机动班或其他班不改变 巡查开始时间
+//                if ([inspection.classe isEqualToString:@"早班"] || [inspection.classe isEqualToString:@"中班"] || [inspection.classe isEqualToString:@"晚班"]){
+//                    inspection.time_start =[NSDate dateWithTimeInterval:-8*60*60 sinceDate:inspection.time_end];
+//                }else{
+//
+//                }
+                //将开始和结束时间改为记录中的时间
+                NSArray * recorddata = [InspectionRecord recordsForInspection:inspectionID andisdowndata:NO];
+                InspectionRecord * startrecord = recorddata[0];
+                InspectionRecord * endrecord = recorddata[[recorddata count]-1];
+                inspection.time_start = startrecord.start_time;
+                inspection.time_end = endrecord.start_time;
+                inspection.yjsj = endrecord.start_time;
             }
             inspection.inspection_milimetres=@(self.textMile.text.floatValue);
             inspection.isdeliver=@(YES);

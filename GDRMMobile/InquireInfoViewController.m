@@ -1057,6 +1057,7 @@ Boolean isSelectMuban;
     organizationName = [organizationName stringByReplacingOccurrencesOfString:@"四中队" withString:@"大队"];
     
     text = [text stringByReplacingOccurrencesOfString:@"#机构#" withString:organizationName];
+    text = [text stringByReplacingOccurrencesOfString:@"大队大队#" withString:@"大队"];
     text = [text stringByReplacingOccurrencesOfString:@"#案件基本情况描述#" withString:[CaseProveInfo generateEventDescForInquire:self.caseID] ];
     text = [text stringByReplacingOccurrencesOfString:@"#伤亡情况#" withString:[CaseProveInfo generateWoundDesc:self.caseID] ];
     text = [text stringByReplacingOccurrencesOfString:@"#违反的法律#" withString:breakStr];

@@ -336,10 +336,10 @@
             NSString *timeString=[dateFormatter stringFromDate:inspectionRecord.start_time];
             NSString *remark=@"";
             if([self.textStationEndKM.text isEmpty]&&[self.textStationEndM.text isEmpty]){
-                remark=[[NSString alloc] initWithFormat:@"%@ 巡至%@%@K%02d+%03dM处时，在公路%@%@，巡逻班组%@。",timeString,self.textSegement.text,self.textSide.text,self.textStationStartKM.text.integerValue,self.textStationStartM.text.integerValue,self.textPlace.text,self.textCheckReason.text,self.textCheckStatus.text];
+                remark=[[NSString alloc] initWithFormat:@"%@ %@巡至K%02d+%03dM处时，在公路%@%@，%@。",timeString,self.textSide.text,self.textStationStartKM.text.intValue,self.textStationStartM.text.intValue,self.textPlace.text,self.textCheckReason.text,self.textCheckStatus.text];
             }
             else{
-                remark=[[NSString alloc] initWithFormat:@"%@ 巡至%@%@K%02d+%03dM与K%02d+%03dM之间时，在公路%@%@，巡逻班组%@。",timeString,self.textSegement.text,self.textSide.text,self.textStationStartKM.text.integerValue,self.textStationStartM.text.integerValue,self.textStationEndKM.text.integerValue,self.textStationEndM.text.integerValue,self.textPlace.text,self.textCheckReason.text,self.textCheckStatus.text];
+                remark=[[NSString alloc] initWithFormat:@"%@ %@巡至K%02d+%03dM与K%02d+%03dM之间时，在公路%@%@，%@。",timeString,self.textSide.text,self.textStationStartKM.text.intValue,self.textStationStartM.text.intValue,self.textStationEndKM.text.intValue,self.textStationEndM.text.intValue,self.textPlace.text,self.textCheckReason.text,self.textCheckStatus.text];
             }
             self.textCheckHandle.text=[self.textCheckHandle.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if (![self.textCheckHandle.text isEmpty]) {
@@ -350,20 +350,30 @@
             [[AppDelegate App] saveContext];
             [self.delegate reloadRecordData:NO];
             [self.delegate addObserverToKeyBoard];
-            [self dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     } else if(self.descState == kNormalDesc) {
+        //无异常情况   保存
         BOOL isBlank = NO;
         for (id obj in self.viewNormalDesc.subviews) {
             if ([obj isKindOfClass:[UITextField class]]) {
                 if ([[(UITextField *)obj text] isEmpty]) {
+                    if([(UITextField *)obj tag] == 683 ||[(UITextField *)obj tag] == 684)
+                    continue;
                     isBlank = YES;
                 }
             }
         }
         if (!isBlank) {
+            NSString * NormalstartKmAndendKm;
+            if([self.textNormalendKM.text isEmpty]&&[self.textNormalendM.text isEmpty]){
+                NormalstartKmAndendKm = [NSString stringWithFormat:@"K%02d+%03dM处时",self.textNormalstartKM.text.intValue,self.textNormalstartM.text.intValue];
+            }
+            else{
+                NormalstartKmAndendKm = [NSString stringWithFormat:@"K%02d+%03dM与K%02d+%03dM之间时",self.textNormalstartKM.text.intValue,self.textNormalstartM.text.intValue,self.textNormalendKM.text.intValue,self.textNormalendM.text.intValue];
+            }
             if ([self.textViewNormalDesc.text isEmpty]) {
-                self.textViewNormalDesc.text = [NSString stringWithFormat:@"%@ 巡查%@%@，%@",self.textTimeStart.text,self.textRoad.text,self.textPlaceNormal.text,self.textDescNormal.text];
+                self.textViewNormalDesc.text = [NSString stringWithFormat:@"%@ 巡查%@%@%@，%@",self.textTimeStart.text,self.textRoad.text,self.textPlaceNormal.text,NormalstartKmAndendKm,self.textDescNormal.text];
             }
             InspectionRecord *inspectionRecord=[InspectionRecord newDataObjectWithEntityName:@"InspectionRecord"];
             inspectionRecord.roadsegment_id=[NSString stringWithFormat:@"%d", [self.roadSegmentID intValue]];
@@ -664,8 +674,10 @@
 }
 -(void)btnToShiGongCheck:(UIButton *)sender{
     [self.delegate addObserverToKeyBoard];
-    [self dismissModalViewControllerAnimated:YES];
-    [((RoadInspectViewController*)self.delegate) performSegueWithIdentifier:@"inspectToShiGongCheck" sender:self];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [((RoadInspectViewController*)self.delegate) performSegueWithIdentifier:@"inspectToShiGongCheck" sender:self];
+    }];
+    
 }
 - (IBAction)toUnderBridgeCheck:(id)sender {
     //UIViewController *caseView = [self.storyboard instantiateViewControllerWithIdentifier:@"CaseView"];
@@ -700,8 +712,10 @@
 - (IBAction)toAdminidtrativeCaseView:(id)sender{
     //UIViewController *caseView = [self.storyboard instantiateViewControllerWithIdentifier:@"CaseView"];
     [self.delegate addObserverToKeyBoard];
-    [self dismissModalViewControllerAnimated:YES];
-    [((RoadInspectViewController*)self.delegate) performSegueWithIdentifier:@"insepectToAdminisCaseView" sender:self];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [((RoadInspectViewController*)self.delegate) performSegueWithIdentifier:@"insepectToAdminisCaseView" sender:self];
+    }];
+    
 }
 - (IBAction)toAttachmentView:(id)sender {
     if(self.inspectRecordID == nil || [self.inspectRecordID isEmpty]){
@@ -958,7 +972,14 @@
 }
 
 - (IBAction)btnFormNormalDesc:(id)sender {
-    self.textViewNormalDesc.text = [NSString stringWithFormat:@"%@ 巡查%@%@，%@",self.textTimeStart.text,self.textRoad.text,self.textPlaceNormal.text,self.textDescNormal.text];
+    NSString * NormalstartKmAndendKm;
+    if([self.textNormalendKM.text isEmpty]&&[self.textNormalendM.text isEmpty]){
+        NormalstartKmAndendKm = [NSString stringWithFormat:@"K%02d+%03dM处时",self.textNormalstartKM.text.intValue,self.textNormalstartM.text.intValue];
+    }
+    else{
+        NormalstartKmAndendKm = [NSString stringWithFormat:@"K%02d+%03dM与K%02d+%03dM之间时",self.textNormalstartKM.text.intValue,self.textNormalstartM.text.intValue,self.textNormalendKM.text.intValue,self.textNormalendM.text.intValue];
+    }
+    self.textViewNormalDesc.text = [NSString stringWithFormat:@"%@ 巡查%@%@%@，%@",self.textTimeStart.text,self.textRoad.text,self.textPlaceNormal.text,NormalstartKmAndendKm,self.textDescNormal.text];
 }
 - (IBAction)btnGenerateBridgeInspectDesc:(id)sender {
     //self.textBridgeInspectDesc.text = [NSString stringWithFormat:@"%@-%@ 巡查%@,%@",self.textBridgeStartTime.text,self.textBridgeEndTime.text,self.textBridgeName.text,self.textBridgeDesc];

@@ -51,6 +51,14 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UITextField *textStationEndKM;
 @property (weak, nonatomic) IBOutlet UITextField *textStationEndM;
 
+@property (weak, nonatomic) IBOutlet UITextField *textNormalstartKM;
+@property (weak, nonatomic) IBOutlet UITextField *textNormalstartM;
+//巡查无异常桩号
+@property (weak, nonatomic) IBOutlet UITextField *textNormalendKM;
+@property (weak, nonatomic) IBOutlet UITextField *textNormalendM;
+
+
+
 @property (weak, nonatomic) IBOutlet UIView *viewNormalDesc;
 @property (weak, nonatomic) IBOutlet UIView *viewUnderBridgeCheck;
 @property (weak, nonatomic) IBOutlet UIScrollView *ZLYHView;

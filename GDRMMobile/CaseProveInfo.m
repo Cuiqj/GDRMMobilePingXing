@@ -245,7 +245,7 @@
             // modified by cjl
             if (caseInfo.badcar_sum.integerValue!=0) {
                 //        caseStatusString=[caseStatusString stringByAppendingFormat:@"损坏%@辆车",caseInfo.badcar_sum];
-                caseStatusString=[caseStatusString stringByAppendingFormat:@"损坏%@辆车。",citizen.bad_desc];
+                caseStatusString=[caseStatusString stringByAppendingFormat:@"损坏%@辆车。",caseInfo.badcar_sum];
             } else {
                 caseStatusString=[caseStatusString stringByAppendingString:@"无车辆损坏。"];
             }

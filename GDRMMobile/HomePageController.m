@@ -45,10 +45,10 @@
         osVC.delegate=self;
         [self presentModalViewController:osVC animated:YES];
     } else {
-//        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
-//        if (currentUserID == nil || [currentUserID isEmpty]) {
-//            [self performSegueWithIdentifier:@"toLogin" sender:nil];
-//        }
+        NSString *currentUserID=[[NSUserDefaults standardUserDefaults] stringForKey:USERKEY];
+        if (currentUserID == nil || [currentUserID isEmpty]) {
+            [self performSegueWithIdentifier:@"toLogin" sender:nil];
+        }
     }
 }
 

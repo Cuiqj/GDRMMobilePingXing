@@ -37,6 +37,7 @@
 @dynamic gzzfj;
 @dynamic fcflws;
 @dynamic xcqxkj;
+@dynamic org_id;
 @dynamic isuploaded;
 
 

@@ -313,7 +313,7 @@
 #import "ServiceCheckDetail.h"
 //所需上传的表名称
 //modify by lxm 2013.05.13
-static NSString *dataNameArray[UPLOADCOUNT]={@"Project",@"Task",@"AtonementNotice",@"CaseDeformation",@"CaseInfo",@"CaseInquire",@"CaseProveInfo",@"CaseServiceFiles",@"CaseServiceReceipt",@"Citizen",@"RoadWayClosed",@"Inspection",@"InspectionCheck",@"InspectionOutCheck",@"InspectionPath",@"InspectionRecord",@"ParkingNode",@"CaseMap",@"ConstructionChangeBack",@"TrafficRecord",@"InspectionConstruction",@"CasePhoto",@"MaintainPlanCheck",@"RectificationNotice",@"StopNotice",@"RoadWayClosed",@"CaseLawInfo",@"ServiceCheck",@"ServiceCheckDetail",@"HelpWork",@"CarCheckRecords",@"CheckInstitutions",@"RoadAsset_Check_Main",@"RoadAsset_Check_detail",@"BridgeCheck",@"BridgeCheckDetail",@"ConstructionCorrect"};
+static NSString *dataNameArray[UPLOADCOUNT]={@"Project",@"Task",@"AtonementNotice",@"CaseDeformation",@"CaseInfo",@"CaseInquire",@"CaseProveInfo",@"CaseServiceFiles",@"CaseServiceReceipt",@"Citizen",@"RoadWayClosed",@"Inspection",@"InspectionCheck",@"InspectionOutCheck",@"InspectionPath",@"InspectionRecord",@"ParkingNode",@"CaseMap",@"ConstructionChangeBack",@"TrafficRecord",@"InspectionConstruction",@"CasePhoto",@"MaintainPlanCheck",@"RectificationNotice",@"StopNotice",@"RoadWayClosed",@"CaseLawInfo",@"ServiceCheck",@"ServiceCheckDetail",@"HelpWork",@"CarCheckRecords",@"CheckInstitutions",@"RoadAsset_Check_Main",@"RoadAsset_Check_detail",@"BridgeCheck",@"BridgeCheckDetail",@"ConstructionCorrect",@"Inspection_Main"};
 
 //static NSString *dataNameArray[UPLOADCOUNT]={@"CaseMap"};
 
@@ -438,6 +438,7 @@ static NSString *dataNameArray[UPLOADCOUNT]={@"Project",@"Task",@"AtonementNotic
                 dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
                     //[self.progressView hide];
                     [self.progressView dismissWithClickedButtonIndex:-1 animated:YES];
+                    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:USERKEY];
                     UIAlertView *finishAlert = [[UIAlertView alloc] initWithTitle:@"消息" message:@"上传成功" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
                     [finishAlert show];
                 });

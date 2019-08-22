@@ -464,13 +464,6 @@
 			remoteGlobalIDString = 33A5274514F4E3E6009BC91E;
 			remoteInfo = GDRMMobile;
 		};
-		8473B0E821C9F1AD0080762C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8473B0E421C9F1AD0080762C /* AipOcrSdk.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FFDAF4381E49C9EF00AB65B7;
-			remoteInfo = AipOcrSdk;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -1088,7 +1081,6 @@
 		846A364421C0F8E700E32F21 /* InitInspectionPath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitInspectionPath.m; sourceTree = "<group>"; };
 		846A364621C0F8F400E32F21 /* InitInspection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitInspection.h; sourceTree = "<group>"; };
 		846A364721C0F8F400E32F21 /* InitInspection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitInspection.m; sourceTree = "<group>"; };
-		8473B0E421C9F1AD0080762C /* AipOcrSdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AipOcrSdk.xcodeproj; path = AipOcrSdk/AipOcrSdk.xcodeproj; sourceTree = "<group>"; };
 		84763D9A219EA71B00C22A15 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
 		8477DB5A1FD68EFA00CC8241 /* UIImage+XLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XLExtension.h"; sourceTree = "<group>"; };
 		8477DB5B1FD68EFA00CC8241 /* UIImage+XLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XLExtension.m"; sourceTree = "<group>"; };
@@ -1764,7 +1756,6 @@
 		33A5273B14F4E3E6009BC91E = {
 			isa = PBXGroup;
 			children = (
-				8473B0E421C9F1AD0080762C /* AipOcrSdk.xcodeproj */,
 				84B459752021B02500FAEAF6 /* AipOcrSdk.framework */,
 				840628EB1FC7B22A0062FA6E /* AipBase.framework */,
 				840628ED1FC7B22A0062FA6E /* IdcardQuality.framework */,
@@ -2501,14 +2492,6 @@
 			name = InspectionDowned;
 			sourceTree = "<group>";
 		};
-		8473B0E521C9F1AD0080762C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8473B0E921C9F1AD0080762C /* AipOcrSdk.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		8473B0EC21CA103A0080762C /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -2822,12 +2805,6 @@
 			mainGroup = 33A5273B14F4E3E6009BC91E;
 			productRefGroup = 33A5274714F4E3E6009BC91E /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 8473B0E521C9F1AD0080762C /* Products */;
-					ProjectRef = 8473B0E421C9F1AD0080762C /* AipOcrSdk.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				33A5274514F4E3E6009BC91E /* GDRMPingXingMobile */,
@@ -2835,16 +2812,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		8473B0E921C9F1AD0080762C /* AipOcrSdk.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AipOcrSdk.framework;
-			remoteRef = 8473B0E821C9F1AD0080762C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		338BEA241EA9E5D8003361BA /* Resources */ = {

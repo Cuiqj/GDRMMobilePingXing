@@ -388,6 +388,11 @@
         //string is all whitespace
         return YES;
     }
+    if([self length] >0){
+        return NO;
+    }else{
+        return YES;
+    }
     return NO;
 }
 

@@ -61,22 +61,27 @@
             [[NSUserDefaults standardUserDefaults] setValue:self.loginUserID forKey:USERKEY];
             [self.delegate reloadUserLabel];
             NSMutableArray *temp = [[NSMutableArray alloc] initWithCapacity:1];
-            if (![self.textInspector1.text isEmpty]) {
+            if(![self.textUser.text isEqualToString:self.textInspector1.text] && ![self.textUser.text isEqualToString:self.textInspector2.text] && ![self.textUser.text isEqualToString:self.textInspector3.text] && ![self.textUser.text isEqualToString:self.textInspector4.text]){
+                [temp addObject:self.textUser.text];
+            }else{
+                [temp addObject:self.textUser.text];
+            }
+            if (![self.textInspector1.text isEmpty] && ![self.textUser.text isEqualToString:self.textInspector1.text]) {
                 [temp addObject:self.textInspector1.text];
             }
-            if (![self.textInspector2.text isEmpty]) {
+            if (![self.textInspector2.text isEmpty] && ![self.textUser.text isEqualToString:self.textInspector2.text]) {
                 [temp addObject:self.textInspector2.text];
             }
-            if (![self.textInspector3.text isEmpty]) {
+            if (![self.textInspector3.text isEmpty] && ![self.textUser.text isEqualToString:self.textInspector3.text]) {
                 [temp addObject:self.textInspector3.text];
             }
-            if (![self.textInspector4.text isEmpty]) {
+            if (![self.textInspector4.text isEmpty] && ![self.textUser.text isEqualToString:self.textInspector4.text]) {
                 [temp addObject:self.textInspector4.text];
             }
             NSArray *inspectorArray = [NSArray arrayWithArray:temp];
             [[NSUserDefaults standardUserDefaults] setObject:inspectorArray forKey:INSPECTORARRAYKEY];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            [self dismissModalViewControllerAnimated:YES];
+            [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             void(^ShowAlert)(void)=^(void){
                 UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"错误" message:@"密码错误!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

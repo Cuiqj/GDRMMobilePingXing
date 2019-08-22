@@ -11,6 +11,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextField *textdate_inspection;
+
+@property (weak, nonatomic) IBOutlet UITextField *textclasse;  //班次
 @property (weak, nonatomic) IBOutlet UITextField *textinspection_mile;               //当日巡查里程     当班"
 @property (weak, nonatomic) IBOutlet UITextField *textinspection_man_num;           //当日参加巡查人次"  当班    "8/4"
 @property (weak, nonatomic) IBOutlet UITextField *textaccident_num;                 //发生交通事故/其中涉及路产损害" "0/0"

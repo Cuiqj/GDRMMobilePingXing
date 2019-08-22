@@ -19,24 +19,27 @@
 @property (nonatomic,retain) NSString * fxqx;       //发现报送道路、交安设施缺陷
 @property (nonatomic,retain) NSString * fxwfxw;     //发现违法行为
 @property (nonatomic,retain) NSString * jzwfxw;     //纠正违法行为
-@property (nonatomic,retain) NSNumber * gasoline_amount;        //加油金额
-@property (nonatomic,retain) NSNumber * cllmzaw;    //处理路面障碍物（处）
-@property (nonatomic,retain) NSNumber * bzgzc;      //帮助故障车（次）
-@property (nonatomic,retain) NSNumber * jcsgd;     //检查施工点（次）
-@property (nonatomic,retain) NSNumber * correct_construct_behaviour;  //纠正违反公路施工安全作业规程行为（次）
-@property (nonatomic,retain) NSNumber * qlxr;       //劝离行人(人)
-@property (nonatomic,retain) NSNumber * dissuade_person_times;  //劝离行人（次）
-@property (nonatomic,retain) NSNumber * service_area_check;  //服务区检查（次）
-@property (nonatomic,retain) NSNumber * tissue_shunt;       //组织分流（次）
-@property (nonatomic,retain) NSNumber * tissue_outfire;     //组织灭火（次）
-@property (nonatomic,retain) NSNumber * tissue_advertise;   //组织宣传（次）
-@property (nonatomic,retain) NSNumber * law_enforcement_work;   //入口拒超和非现场执法工作（次）
-@property (nonatomic,retain) NSNumber * damage_road_asset_case; //抓获、破获损坏路产案件（宗）
-@property (nonatomic,retain) NSNumber * official_car_use;   //公务用车（公里）
+
+@property (nonatomic,retain) NSString * gasoline_amount;        //加油金额
+@property (nonatomic,retain) NSString * cllmzaw;    //处理路面障碍物（处）
+@property (nonatomic,retain) NSString * bzgzc;      //帮助故障车（次）
+@property (nonatomic,retain) NSString * jcsgd;     //检查施工点（次）
+@property (nonatomic,retain) NSString * correct_construct_behaviour;  //纠正违反公路施工安全作业规程行为（次）
+@property (nonatomic,retain) NSString * qlxr;       //劝离行人(人)
+@property (nonatomic,retain) NSString * dissuade_person_times;  //劝离行人（次）
+@property (nonatomic,retain) NSString * service_area_check;  //服务区检查（次）
+@property (nonatomic,retain) NSString * tissue_shunt;       //组织分流（次）
+@property (nonatomic,retain) NSString * tissue_outfire;     //组织灭火（次）
+@property (nonatomic,retain) NSString * tissue_advertise;   //组织宣传（次）
+@property (nonatomic,retain) NSString * law_enforcement_work;   //入口拒超和非现场执法工作（次）
+@property (nonatomic,retain) NSString * damage_road_asset_case; //抓获、破获损坏路产案件（宗）
+@property (nonatomic,retain) NSString * official_car_use;   //公务用车（公里）
+
 @property (nonatomic,retain) NSString * gzzfj;      //告知交通综合行政执法局处理案件
 @property (nonatomic,retain) NSString * fcflws;     //发出法律文书
 @property (nonatomic,retain) NSString * xcqxkj;     //桥下空间监管（立方米/处）
 
+@property (nonatomic,retain) NSString * org_id;
 @property (nonatomic, retain) NSNumber * isuploaded;
 //@property (nonatomic,retain) NSString * inspection_principal_content;
 //@property (nonatomic,retain) NSString * inspection_principal;

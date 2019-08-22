@@ -410,7 +410,6 @@ InspectionCheckState inspectionState;
             newPath.inspectionid = self.inspectionID;
             self.infpectionpath_id = newPath.myid;
             [[AppDelegate App] saveContext];
-            
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"是否生成巡查记录?" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
             [alert show];
             
@@ -449,7 +448,13 @@ InspectionCheckState inspectionState;
                 strFormat = [NSString stringWithFormat:@"%@ %@", @"%@", [remark stringByReplacingOccurrencesOfString:@"[站]" withString:@"%@"]];
             }
         }
-        NSString *remark=[NSString stringWithFormat:strFormat, timeString, self.textStationName.text];
+        NSString * stationname = self.textStationName.text;
+        if ([stationname containsString:@"(第"]) {
+            stationname = [stationname componentsSeparatedByString:@"(第"][0];
+        }else if ([stationname containsString:@"（第"]){
+            stationname = [stationname componentsSeparatedByString:@"（第"][0];
+        }
+        NSString *remark=[NSString stringWithFormat:strFormat, timeString, stationname];
         inspectionRecord.remark = remark;
         [[AppDelegate App] saveContext];
         [self reloadRecordData:NO];
