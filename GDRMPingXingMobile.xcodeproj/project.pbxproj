@@ -310,7 +310,6 @@
 		67CAEBED178AF174000BF8A7 /* InitFileCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAEBEC178AF174000BF8A7 /* InitFileCode.m */; };
 		67CAEBF0178AF569000BF8A7 /* FileCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAEBEF178AF569000BF8A7 /* FileCode.m */; };
 		67CAEBF3178BE1AF000BF8A7 /* CaseConstructionChangeBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAEBF2178BE1AE000BF8A7 /* CaseConstructionChangeBackViewController.m */; };
-		67CAEBF5178BEDA4000BF8A7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67CAEBF4178BEDA4000BF8A7 /* MainStoryboard.storyboard */; };
 		67CAEBF8178C4D1F000BF8A7 /* TrafficRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAEBF7178C4D1E000BF8A7 /* TrafficRecordViewController.m */; };
 		67CAEBFB178C6F73000BF8A7 /* SystemTypeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAEBFA178C6F6E000BF8A7 /* SystemTypeListViewController.m */; };
 		67CAEBFE178D5948000BF8A7 /* BaseManageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAEBFD178D5945000BF8A7 /* BaseManageObject.m */; };
@@ -342,8 +341,10 @@
 		841132F52119AE97007E9180 /* AdminstrativePenaltyConstructionTable.xml in Resources */ = {isa = PBXBuildFile; fileRef = 841132F42119AE97007E9180 /* AdminstrativePenaltyConstructionTable.xml */; };
 		84256FF122CAFBF70002239D /* EveryShiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84256FF022CAFBF70002239D /* EveryShiftViewController.m */; };
 		842B398220C7CA3700984830 /* SelectTypeResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842B398120C7CA3700984830 /* SelectTypeResultController.m */; };
+		842DF8662329D52200B17FD6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842DF8682329D52200B17FD6 /* MainStoryboard.storyboard */; };
 		842E7657224C9FC000A0DD10 /* old_Inspection_Main.m in Sources */ = {isa = PBXBuildFile; fileRef = 842E7656224C9FC000A0DD10 /* old_Inspection_Main.m */; };
 		843A515C200C90EF00279362 /* AipOcrSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843A515B200C90EF00279362 /* AipOcrSdk.framework */; };
+		843C0DE723308ABB004DD507 /* DataSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 843C0DE523308ABA004DD507 /* DataSimple.m */; };
 		84441020211423A800505843 /* AdminisInquireTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444101F211423A800505843 /* AdminisInquireTableViewController.m */; };
 		8444102621144C5300505843 /* AdminstrativePenaltyConstructionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444102521144C5300505843 /* AdminstrativePenaltyConstructionTableViewController.m */; };
 		8444102921144C7300505843 /* AdminstrativePenaltyServiceReceiptTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8444102821144C7300505843 /* AdminstrativePenaltyServiceReceiptTableViewController.m */; };
@@ -1004,7 +1005,6 @@
 		67CAEBEF178AF569000BF8A7 /* FileCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCode.m; sourceTree = "<group>"; };
 		67CAEBF1178BE1AD000BF8A7 /* CaseConstructionChangeBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseConstructionChangeBackViewController.h; sourceTree = "<group>"; };
 		67CAEBF2178BE1AE000BF8A7 /* CaseConstructionChangeBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseConstructionChangeBackViewController.m; sourceTree = "<group>"; };
-		67CAEBF4178BEDA4000BF8A7 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		67CAEBF6178C4D1D000BF8A7 /* TrafficRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrafficRecordViewController.h; sourceTree = "<group>"; };
 		67CAEBF7178C4D1E000BF8A7 /* TrafficRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrafficRecordViewController.m; sourceTree = "<group>"; };
 		67CAEBF9178C6F6C000BF8A7 /* SystemTypeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemTypeListViewController.h; sourceTree = "<group>"; };
@@ -1047,9 +1047,12 @@
 		84256FF022CAFBF70002239D /* EveryShiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryShiftViewController.m; sourceTree = "<group>"; };
 		842B398020C7CA3700984830 /* SelectTypeResultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectTypeResultController.h; sourceTree = "<group>"; };
 		842B398120C7CA3700984830 /* SelectTypeResultController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectTypeResultController.m; sourceTree = "<group>"; };
+		842DF8672329D52200B17FD6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		842E7655224C9FC000A0DD10 /* old_Inspection_Main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = old_Inspection_Main.h; sourceTree = "<group>"; };
 		842E7656224C9FC000A0DD10 /* old_Inspection_Main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = old_Inspection_Main.m; sourceTree = "<group>"; };
 		843A515B200C90EF00279362 /* AipOcrSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AipOcrSdk.framework; path = "../../Library/Developer/Xcode/DerivedData/GDRMMobile-ccubgkldojoojqegcfvsqeccobth/Build/Products/Debug-iphonesimulator/AipOcrSdk.framework"; sourceTree = "<group>"; };
+		843C0DE523308ABA004DD507 /* DataSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSimple.m; sourceTree = "<group>"; };
+		843C0DE623308ABB004DD507 /* DataSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSimple.h; sourceTree = "<group>"; };
 		8444101D211422DF00505843 /* AdminisInquireTable.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AdminisInquireTable.xml; sourceTree = "<group>"; };
 		8444101E211423A800505843 /* AdminisInquireTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdminisInquireTableViewController.h; sourceTree = "<group>"; };
 		8444101F211423A800505843 /* AdminisInquireTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdminisInquireTableViewController.m; sourceTree = "<group>"; };
@@ -1836,7 +1839,7 @@
 			isa = PBXGroup;
 			children = (
 				3316731A1EB9B2890090EDE7 /* SecondStoryboard.storyboard */,
-				67CAEBF4178BEDA4000BF8A7 /* MainStoryboard.storyboard */,
+				842DF8682329D52200B17FD6 /* MainStoryboard.storyboard */,
 				339BC5BD16BF592B002AE80F /* Font */,
 				803202D21804B9D00046843E /* Config */,
 				3379F26615639F5000C580E7 /* DataModelsHeader.h */,
@@ -2438,6 +2441,15 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
+		843C0DE823308AC1004DD507 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				843C0DE623308ABB004DD507 /* DataSimple.h */,
+				843C0DE523308ABA004DD507 /* DataSimple.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		84510A6820B4F41100C556D0 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -2716,6 +2728,7 @@
 		84ED1B171FCC0C5E00BA89E8 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				843C0DE823308AC1004DD507 /* Tool */,
 				84B459412021AB2200FAEAF6 /* IQKeyboardManager */,
 				84BDFB8920045FC8006F0193 /* Update */,
 				840A408A1FDA6F740012BCBB /* DataPersister */,
@@ -2899,7 +2912,7 @@
 				339BC5BB16BF5914002AE80F /* simfangGBK.ttf in Resources */,
 				339BC5BC16BF5914002AE80F /* simhei.ttf in Resources */,
 				33FD2B251F15C06F00E6440D /* ZLYHRoadAssetCheckViewController.xib in Resources */,
-				67CAEBF5178BEDA4000BF8A7 /* MainStoryboard.storyboard in Resources */,
+				842DF8662329D52200B17FD6 /* MainStoryboard.storyboard in Resources */,
 				84ED1B111FCBF0F600BA89E8 /* 其它检查.png in Resources */,
 				677B335B1793D1930066BE89 /* MatchLaw.plist in Resources */,
 				803202DB1804B9F00046843E /* Settings.plist in Resources */,
@@ -3097,6 +3110,7 @@
 				33C804731547F4440035EFB5 /* DynamicInfoViewController.m in Sources */,
 				33A2B6CC1E08E465005A14F7 /* InitBridge.m in Sources */,
 				84B459672021AB2200FAEAF6 /* IQUIScrollView+Additions.m in Sources */,
+				843C0DE723308ABB004DD507 /* DataSimple.m in Sources */,
 				8477DB991FD69B3B00CC8241 /* PicScrollView.m in Sources */,
 				84B4596B2021AB2200FAEAF6 /* IQUIWindow+Hierarchy.m in Sources */,
 				335DE5EC1E67B81700DF7A45 /* PoliceReport.m in Sources */,
@@ -3339,6 +3353,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		842DF8682329D52200B17FD6 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				842DF8672329D52200B17FD6 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		847CFFAE21461FC100DEF48E /* AtonementNoticeTable.xml */ = {
 			isa = PBXVariantGroup;
 			children = (

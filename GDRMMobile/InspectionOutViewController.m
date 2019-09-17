@@ -192,11 +192,13 @@
 //                }
                 //将开始和结束时间改为记录中的时间
                 NSArray * recorddata = [InspectionRecord recordsForInspection:inspectionID andisdowndata:NO];
-                InspectionRecord * startrecord = recorddata[0];
-                InspectionRecord * endrecord = recorddata[[recorddata count]-1];
-                inspection.time_start = startrecord.start_time;
-                inspection.time_end = endrecord.start_time;
-                inspection.yjsj = endrecord.start_time;
+                if ([recorddata count]>1) {
+                    InspectionRecord * startrecord = recorddata[0];
+                    InspectionRecord * endrecord = recorddata[[recorddata count]-1];
+                    inspection.time_start = startrecord.start_time;
+                    inspection.time_end = endrecord.start_time;
+                    inspection.yjsj = endrecord.start_time;
+                }
             }
             inspection.inspection_milimetres=@(self.textMile.text.floatValue);
             inspection.isdeliver=@(YES);
@@ -239,7 +241,7 @@
         [[NSUserDefaults standardUserDefaults] setValue:nil forKey:INSPECTIONKEY];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self.delegate popBackToMainView];
-        [self dismissModalViewControllerAnimated:NO];
+        [self dismissViewControllerAnimated:NO completion:nil];
     }
 }
 

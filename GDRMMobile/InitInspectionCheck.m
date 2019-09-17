@@ -12,7 +12,7 @@
 
 - (void)downLoadCheckType:(NSString *)orgID{
     WebServiceInit;
-    [service downloadDataSet:@"select * from CheckType"  ];
+    [service downloadDataSet:[NSString stringWithFormat:@"select * from CheckType where org_id = %@",orgID]];
 }
 
 - (NSDictionary *)xmlParser:(NSString *)webString{
@@ -27,7 +27,7 @@
 
 - (void)downLoadCheckReason:(NSString *)orgID{
     WebServiceInit;
-    [service downloadDataSet:@"select * from Reason" ];
+    [service downloadDataSet:[NSString stringWithFormat:@"select * from Reason where org_id = %@",orgID] ];
 }
 
 - (NSDictionary *)xmlParser:(NSString *)webString{
@@ -43,7 +43,7 @@
 
 - (void)downLoadCheckHandle:(NSString *)orgID{
     WebServiceInit;
-    [service downloadDataSet:@"select * from Handle"  ];
+    [service downloadDataSet:[NSString stringWithFormat:@"select * from Handle where org_id = %@",orgID]];
 }
 
 - (NSDictionary *)xmlParser:(NSString *)webString{
@@ -59,7 +59,7 @@
 
 - (void)downLoadCheckStatus:(NSString *)orgID{
     WebServiceInit;
-    [service downloadDataSet:@"select * from Status" ];
+    [service downloadDataSet:[NSString stringWithFormat:@"select * from Status where org_id = %@",orgID]];
 }
 
 - (NSDictionary *)xmlParser:(NSString *)webString{

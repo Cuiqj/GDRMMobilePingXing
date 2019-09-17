@@ -173,6 +173,7 @@
 // the application terminates.
 //
 - (void)applicationWillTerminate:(UIApplication *)application {
+    
     [self saveContext];
 }
 

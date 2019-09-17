@@ -737,7 +737,7 @@ InspectionCheckState inspectionState;
     [self.navigationController pushViewController:everyshift animated:YES];
 }
 
-- (void) createRecodeByCaseID:(NSString *)caseID{
+- (void)createRecodeByCaseID:(NSString *)caseID{
     if ([caseID isEmpty]) {
         return;
     }

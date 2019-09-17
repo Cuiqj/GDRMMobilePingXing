@@ -23,6 +23,7 @@
         case kCheckHandle:
             self.data=[[CheckHandle handleForCheckType:self.checkTypeID] valueForKey:@"handle_name"];
             break;
+            
         case kCheckReason:
             self.data=[[CheckReason reasonForCheckType:self.checkTypeID] valueForKey:@"reasonname"];
             break;
