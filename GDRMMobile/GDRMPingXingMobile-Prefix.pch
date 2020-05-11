@@ -62,7 +62,7 @@
 
 
 #define VERSION_NAME @"平兴路政"
-#define VERSION_TIME @"2019年09月11日"
+#define VERSION_TIME @"2019年10月21日"
 
 //自己写的更新用来检测最新版本    蒲公英不用
 //#define VERSION_NUMBER @2019040801

@@ -345,8 +345,14 @@
             if (![self.textCheckHandle.text isEmpty]) {
                 remark=[remark stringByAppendingFormat:@"%@。",self.textCheckHandle.text];
             }
-            inspectionRecord.station=@(self.textStationStartKM.text.integerValue*1000+self.textStationStartM.text.integerValue);
+            NSString * orgid = [[NSUserDefaults standardUserDefaults] stringForKey:@"CurrentOrgID"];
+            NSString * shortname = [[OrgInfo orgInfoForOrgID:orgid] valueForKey:@"orgshortname"];
+            if([shortname containsString:@"一中队"]){
+                remark = [remark stringByReplacingOccurrencesOfString:self.textSide.text withString:@""];
+                remark = [remark stringByReplacingOccurrencesOfString:@" 巡至" withString:[NSString stringWithFormat:@" 巡至%@",self.textSide.text]];
+            }
             inspectionRecord.remark = remark;
+            inspectionRecord.station = @(self.textStationStartKM.text.integerValue*1000+self.textStationStartM.text.integerValue);
             [[AppDelegate App] saveContext];
             [self.delegate reloadRecordData:NO];
             [self.delegate addObserverToKeyBoard];
